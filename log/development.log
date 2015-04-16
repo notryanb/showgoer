@@ -121,3 +121,873 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36m (33.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateConcerts (20150416202006)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "concerts" ("id" serial primary key, "venue" character varying NOT NULL, "date_time" timestamp NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202006"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAppearances (20150416202127)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "appearances" ("id" serial primary key, "artist_id" integer, "concert_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202127"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateArtists (20150416202150)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "artists" ("id" serial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202150"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVideos (20150416202200)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "videos" ("id" serial primary key, "caption" character varying, "url" character varying NOT NULL, "user_id" integer, "artist_id" integer, "concert_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202200"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20150416202206)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202206"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLikes (20150416202210)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "likes" ("id" serial primary key, "user_id" integer, "video_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202210"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateDislikes (20150416202215)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "dislikes" ("id" serial primary key, "user_id" integer, "video_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416202215"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'appearances'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'artists'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'concerts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'dislikes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'likes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'videos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mConcert Load (21.7ms)[0m  [1mSELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1[0m
+  [1m[35mConcert Load (0.5ms)[0m  SELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1
+  [1m[36mConcert Load (0.4ms)[0m  [1mSELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (30.4ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Space Ibiza NY"], ["date_time", "2015-01-01 00:00:00.000000"], ["created_at", "2015-04-16 23:03:36.224688"], ["updated_at", "2015-04-16 23:03:36.224688"]]
+  [1m[35m (48.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (44.7ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Victor Calderone"], ["created_at", "2015-04-16 23:03:36.334149"], ["updated_at", "2015-04-16 23:03:36.334149"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 1], ["concert_id", 1], ["created_at", "2015-04-16 23:03:36.415041"], ["updated_at", "2015-04-16 23:03:36.415041"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "MAMAJUANAS CAFE QUEENS"], ["date_time", "2015-01-01 00:00:00.000000"], ["created_at", "2015-04-16 23:03:36.420799"], ["updated_at", "2015-04-16 23:03:36.420799"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "DJ MLUV"], ["created_at", "2015-04-16 23:03:36.422796"], ["updated_at", "2015-04-16 23:03:36.422796"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 2], ["concert_id", 2], ["created_at", "2015-04-16 23:03:36.424469"], ["updated_at", "2015-04-16 23:03:36.424469"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "The Red Room"], ["date_time", "2015-01-01 00:00:00.000000"], ["created_at", "2015-04-16 23:03:36.426250"], ["updated_at", "2015-04-16 23:03:36.426250"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Araña"], ["created_at", "2015-04-16 23:03:36.427981"], ["updated_at", "2015-04-16 23:03:36.427981"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 3], ["concert_id", 3], ["created_at", "2015-04-16 23:03:36.429607"], ["updated_at", "2015-04-16 23:03:36.429607"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Carlos Chiesa"], ["created_at", "2015-04-16 23:03:36.431385"], ["updated_at", "2015-04-16 23:03:36.431385"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 4], ["concert_id", 3], ["created_at", "2015-04-16 23:03:36.433153"], ["updated_at", "2015-04-16 23:03:36.433153"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Terron Darby"], ["created_at", "2015-04-16 23:03:36.434682"], ["updated_at", "2015-04-16 23:03:36.434682"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 5], ["concert_id", 3], ["created_at", "2015-04-16 23:03:36.436447"], ["updated_at", "2015-04-16 23:03:36.436447"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Sam Jaspersohn"], ["created_at", "2015-04-16 23:03:36.438174"], ["updated_at", "2015-04-16 23:03:36.438174"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 6], ["concert_id", 3], ["created_at", "2015-04-16 23:03:36.440191"], ["updated_at", "2015-04-16 23:03:36.440191"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Aldee"], ["created_at", "2015-04-16 23:03:36.442397"], ["updated_at", "2015-04-16 23:03:36.442397"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 7], ["concert_id", 3], ["created_at", "2015-04-16 23:03:36.444053"], ["updated_at", "2015-04-16 23:03:36.444053"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Travisty"], ["created_at", "2015-04-16 23:03:36.445568"], ["updated_at", "2015-04-16 23:03:36.445568"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 8], ["concert_id", 3], ["created_at", "2015-04-16 23:03:36.447089"], ["updated_at", "2015-04-16 23:03:36.447089"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Verboten"], ["date_time", "2015-01-01 00:00:00.000000"], ["created_at", "2015-04-16 23:03:36.448780"], ["updated_at", "2015-04-16 23:03:36.448780"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Control Room"], ["created_at", "2015-04-16 23:03:36.450506"], ["updated_at", "2015-04-16 23:03:36.450506"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 9], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.452009"], ["updated_at", "2015-04-16 23:03:36.452009"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Damian Lazarus"], ["created_at", "2015-04-16 23:03:36.454070"], ["updated_at", "2015-04-16 23:03:36.454070"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 10], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.456325"], ["updated_at", "2015-04-16 23:03:36.456325"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Marc Faenger"], ["created_at", "2015-04-16 23:03:36.458471"], ["updated_at", "2015-04-16 23:03:36.458471"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 11], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.460362"], ["updated_at", "2015-04-16 23:03:36.460362"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dylan Schwarz"], ["created_at", "2015-04-16 23:03:36.461900"], ["updated_at", "2015-04-16 23:03:36.461900"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 12], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.463767"], ["updated_at", "2015-04-16 23:03:36.463767"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ashwin Khosha"], ["created_at", "2015-04-16 23:03:36.465930"], ["updated_at", "2015-04-16 23:03:36.465930"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 13], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.468318"], ["updated_at", "2015-04-16 23:03:36.468318"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "whiteowljaguar"], ["created_at", "2015-04-16 23:03:36.470374"], ["updated_at", "2015-04-16 23:03:36.470374"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 14], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.472021"], ["updated_at", "2015-04-16 23:03:36.472021"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cooper James"], ["created_at", "2015-04-16 23:03:36.473919"], ["updated_at", "2015-04-16 23:03:36.473919"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 15], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.475594"], ["updated_at", "2015-04-16 23:03:36.475594"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CABARET BAR"], ["created_at", "2015-04-16 23:03:36.477431"], ["updated_at", "2015-04-16 23:03:36.477431"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 16], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.479177"], ["updated_at", "2015-04-16 23:03:36.479177"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "DiSORiENT DJs"], ["created_at", "2015-04-16 23:03:36.480631"], ["updated_at", "2015-04-16 23:03:36.480631"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 17], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.482144"], ["updated_at", "2015-04-16 23:03:36.482144"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ashwin Khosa"], ["created_at", "2015-04-16 23:03:36.483616"], ["updated_at", "2015-04-16 23:03:36.483616"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 18], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.485046"], ["updated_at", "2015-04-16 23:03:36.485046"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dylan Schwartz"], ["created_at", "2015-04-16 23:03:36.486542"], ["updated_at", "2015-04-16 23:03:36.486542"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 19], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.488160"], ["updated_at", "2015-04-16 23:03:36.488160"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Talon&Claw"], ["created_at", "2015-04-16 23:03:36.490513"], ["updated_at", "2015-04-16 23:03:36.490513"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 20], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.492522"], ["updated_at", "2015-04-16 23:03:36.492522"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Disorient"], ["created_at", "2015-04-16 23:03:36.494275"], ["updated_at", "2015-04-16 23:03:36.494275"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 21], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.495808"], ["updated_at", "2015-04-16 23:03:36.495808"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Denada"], ["created_at", "2015-04-16 23:03:36.497225"], ["updated_at", "2015-04-16 23:03:36.497225"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 22], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.498702"], ["updated_at", "2015-04-16 23:03:36.498702"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "JOHN KOFI"], ["created_at", "2015-04-16 23:03:36.500299"], ["updated_at", "2015-04-16 23:03:36.500299"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 23], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.502375"], ["updated_at", "2015-04-16 23:03:36.502375"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pjay"], ["created_at", "2015-04-16 23:03:36.504631"], ["updated_at", "2015-04-16 23:03:36.504631"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 24], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.506475"], ["updated_at", "2015-04-16 23:03:36.506475"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "amo"], ["created_at", "2015-04-16 23:03:36.508162"], ["updated_at", "2015-04-16 23:03:36.508162"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 25], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.509693"], ["updated_at", "2015-04-16 23:03:36.509693"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "MARY"], ["created_at", "2015-04-16 23:03:36.511200"], ["updated_at", "2015-04-16 23:03:36.511200"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 26], ["concert_id", 4], ["created_at", "2015-04-16 23:03:36.512665"], ["updated_at", "2015-04-16 23:03:36.512665"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "RAINE LOUNGE"], ["date_time", "2015-01-01 01:00:00.000000"], ["created_at", "2015-04-16 23:03:36.514386"], ["updated_at", "2015-04-16 23:03:36.514386"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "New Years Extravaganza"], ["created_at", "2015-04-16 23:03:36.516094"], ["updated_at", "2015-04-16 23:03:36.516094"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 27], ["concert_id", 5], ["created_at", "2015-04-16 23:03:36.517538"], ["updated_at", "2015-04-16 23:03:36.517538"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "MISTER EAST"], ["date_time", "2015-01-01 01:00:00.000000"], ["created_at", "2015-04-16 23:03:36.519150"], ["updated_at", "2015-04-16 23:03:36.519150"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jay Dabhi"], ["created_at", "2015-04-16 23:03:36.520725"], ["updated_at", "2015-04-16 23:03:36.520725"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 28], ["concert_id", 6], ["created_at", "2015-04-16 23:03:36.522191"], ["updated_at", "2015-04-16 23:03:36.522191"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "NYE @ PLUNGE ROOFTOP - Gansevoort Hotel (Meatpacking)"], ["date_time", "2015-01-01 01:00:00.000000"], ["created_at", "2015-04-16 23:03:36.523837"], ["updated_at", "2015-04-16 23:03:36.523837"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "DJ Dom Caruso"], ["created_at", "2015-04-16 23:03:36.525559"], ["updated_at", "2015-04-16 23:03:36.525559"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 29], ["concert_id", 7], ["created_at", "2015-04-16 23:03:36.527051"], ["updated_at", "2015-04-16 23:03:36.527051"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "VIP Room"], ["date_time", "2015-01-01 01:00:00.000000"], ["created_at", "2015-04-16 23:03:36.528702"], ["updated_at", "2015-04-16 23:03:36.528702"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "DJ Yoossouph"], ["created_at", "2015-04-16 23:03:36.530499"], ["updated_at", "2015-04-16 23:03:36.530499"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 30], ["concert_id", 8], ["created_at", "2015-04-16 23:03:36.532407"], ["updated_at", "2015-04-16 23:03:36.532407"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Jeromes F&B"], ["date_time", "2015-01-01 02:00:00.000000"], ["created_at", "2015-04-16 23:03:36.534315"], ["updated_at", "2015-04-16 23:03:36.534315"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Kristin Lush"], ["created_at", "2015-04-16 23:03:36.535860"], ["updated_at", "2015-04-16 23:03:36.535860"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 31], ["concert_id", 9], ["created_at", "2015-04-16 23:03:36.537780"], ["updated_at", "2015-04-16 23:03:36.537780"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "SPACE IBIZA NEW YORK"], ["date_time", "2015-01-01 03:00:00.000000"], ["created_at", "2015-04-16 23:03:36.539729"], ["updated_at", "2015-04-16 23:03:36.539729"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Joseph Capriati"], ["created_at", "2015-04-16 23:03:36.541267"], ["updated_at", "2015-04-16 23:03:36.541267"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 32], ["concert_id", 10], ["created_at", "2015-04-16 23:03:36.542789"], ["updated_at", "2015-04-16 23:03:36.542789"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Pacha NYC"], ["date_time", "2015-01-01 03:00:00.000000"], ["created_at", "2015-04-16 23:03:36.544500"], ["updated_at", "2015-04-16 23:03:36.544500"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Oscar G."], ["created_at", "2015-04-16 23:03:36.546198"], ["updated_at", "2015-04-16 23:03:36.546198"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 33], ["concert_id", 11], ["created_at", "2015-04-16 23:03:36.548148"], ["updated_at", "2015-04-16 23:03:36.548148"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Stage 48"], ["date_time", "2015-01-01 04:00:00.000000"], ["created_at", "2015-04-16 23:03:36.550560"], ["updated_at", "2015-04-16 23:03:36.550560"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "DJ Boris"], ["created_at", "2015-04-16 23:03:36.552584"], ["updated_at", "2015-04-16 23:03:36.552584"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 34], ["concert_id", 12], ["created_at", "2015-04-16 23:03:36.554477"], ["updated_at", "2015-04-16 23:03:36.554477"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cocodrills"], ["created_at", "2015-04-16 23:03:36.556035"], ["updated_at", "2015-04-16 23:03:36.556035"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 35], ["concert_id", 12], ["created_at", "2015-04-16 23:03:36.557537"], ["updated_at", "2015-04-16 23:03:36.557537"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Melrose Ballroom"], ["date_time", "2015-01-01 12:00:00.000000"], ["created_at", "2015-04-16 23:03:36.559207"], ["updated_at", "2015-04-16 23:03:36.559207"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "MELROSE BALLROOM VIP"], ["created_at", "2015-04-16 23:03:36.560969"], ["updated_at", "2015-04-16 23:03:36.560969"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 36], ["concert_id", 13], ["created_at", "2015-04-16 23:03:36.563060"], ["updated_at", "2015-04-16 23:03:36.563060"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "B.B. King Blues Club"], ["date_time", "2015-01-01 13:30:00.000000"], ["created_at", "2015-04-16 23:03:36.564804"], ["updated_at", "2015-04-16 23:03:36.564804"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "NEW ORLEANS JAZZ BRUNCH MATINEE"], ["created_at", "2015-04-16 23:03:36.566465"], ["updated_at", "2015-04-16 23:03:36.566465"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 37], ["concert_id", 14], ["created_at", "2015-04-16 23:03:36.568552"], ["updated_at", "2015-04-16 23:03:36.568552"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Asellina"], ["date_time", "2015-01-01 14:00:00.000000"], ["created_at", "2015-04-16 23:03:36.570351"], ["updated_at", "2015-04-16 23:03:36.570351"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "DJ Stef Nava"], ["created_at", "2015-04-16 23:03:36.572193"], ["updated_at", "2015-04-16 23:03:36.572193"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 38], ["concert_id", 15], ["created_at", "2015-04-16 23:03:36.574016"], ["updated_at", "2015-04-16 23:03:36.574016"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "poisson rouge"], ["date_time", "2015-01-01 16:00:00.000000"], ["created_at", "2015-04-16 23:03:36.575790"], ["updated_at", "2015-04-16 23:03:36.575790"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "DJ Chopps"], ["created_at", "2015-04-16 23:03:36.577500"], ["updated_at", "2015-04-16 23:03:36.577500"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 39], ["concert_id", 16], ["created_at", "2015-04-16 23:03:36.579117"], ["updated_at", "2015-04-16 23:03:36.579117"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Brooklyn Bowl"], ["date_time", "2015-01-01 18:00:00.000000"], ["created_at", "2015-04-16 23:03:36.580805"], ["updated_at", "2015-04-16 23:03:36.580805"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Zoso - The Ultimate Led Zeppelin Experience"], ["created_at", "2015-04-16 23:03:36.582537"], ["updated_at", "2015-04-16 23:03:36.582537"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 40], ["concert_id", 17], ["created_at", "2015-04-16 23:03:36.584058"], ["updated_at", "2015-04-16 23:03:36.584058"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "46 LOUNGE"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.586771"], ["updated_at", "2015-04-16 23:03:36.586771"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New Year's Eve After Party @46 LOUNGE"], ["created_at", "2015-04-16 23:03:36.588980"], ["updated_at", "2015-04-16 23:03:36.588980"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 41], ["concert_id", 18], ["created_at", "2015-04-16 23:03:36.590709"], ["updated_at", "2015-04-16 23:03:36.590709"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Royal Park"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.592933"], ["updated_at", "2015-04-16 23:03:36.592933"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Antonio-Official Page."], ["created_at", "2015-04-16 23:03:36.594793"], ["updated_at", "2015-04-16 23:03:36.594793"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 42], ["concert_id", 19], ["created_at", "2015-04-16 23:03:36.596298"], ["updated_at", "2015-04-16 23:03:36.596298"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Bernard B Jacobs Theatre"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.597981"], ["updated_at", "2015-04-16 23:03:36.597981"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ONCE"], ["created_at", "2015-04-16 23:03:36.599696"], ["updated_at", "2015-04-16 23:03:36.599696"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 43], ["concert_id", 20], ["created_at", "2015-04-16 23:03:36.601785"], ["updated_at", "2015-04-16 23:03:36.601785"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (37.9ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Al Hirschfeld Theatre"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.603878"], ["updated_at", "2015-04-16 23:03:36.603878"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Kinky Boots"], ["created_at", "2015-04-16 23:03:36.645089"], ["updated_at", "2015-04-16 23:03:36.645089"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 44], ["concert_id", 21], ["created_at", "2015-04-16 23:03:36.647186"], ["updated_at", "2015-04-16 23:03:36.647186"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Neil Simon Theatre"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.649380"], ["updated_at", "2015-04-16 23:03:36.649380"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Last Ship"], ["created_at", "2015-04-16 23:03:36.651272"], ["updated_at", "2015-04-16 23:03:36.651272"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 45], ["concert_id", 22], ["created_at", "2015-04-16 23:03:36.653088"], ["updated_at", "2015-04-16 23:03:36.653088"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "CIRCLE LINE, THE BROOKLYN BOAT"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.654850"], ["updated_at", "2015-04-16 23:03:36.654850"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "The River"], ["created_at", "2015-04-16 23:03:36.656826"], ["updated_at", "2015-04-16 23:03:36.656826"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 46], ["concert_id", 23], ["created_at", "2015-04-16 23:03:36.658651"], ["updated_at", "2015-04-16 23:03:36.658651"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "59E59 Theaters"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.660497"], ["updated_at", "2015-04-16 23:03:36.660497"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Camille Thurman"], ["created_at", "2015-04-16 23:03:36.662055"], ["updated_at", "2015-04-16 23:03:36.662055"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 47], ["concert_id", 24], ["created_at", "2015-04-16 23:03:36.663759"], ["updated_at", "2015-04-16 23:03:36.663759"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "59 E 59th St. Theatre"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.665480"], ["updated_at", "2015-04-16 23:03:36.665480"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Allan Harris"], ["created_at", "2015-04-16 23:03:36.667031"], ["updated_at", "2015-04-16 23:03:36.667031"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 48], ["concert_id", 25], ["created_at", "2015-04-16 23:03:36.668543"], ["updated_at", "2015-04-16 23:03:36.668543"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Barrymore Theatre"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.670293"], ["updated_at", "2015-04-16 23:03:36.670293"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Curious Incident Of The Dog In The Night-Time"], ["created_at", "2015-04-16 23:03:36.671850"], ["updated_at", "2015-04-16 23:03:36.671850"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 49], ["concert_id", 26], ["created_at", "2015-04-16 23:03:36.673278"], ["updated_at", "2015-04-16 23:03:36.673278"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "1198 Pacific Coast Highway"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.674989"], ["updated_at", "2015-04-16 23:03:36.674989"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Benjaminlanda flowers"], ["created_at", "2015-04-16 23:03:36.676613"], ["updated_at", "2015-04-16 23:03:36.676613"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 50], ["concert_id", 27], ["created_at", "2015-04-16 23:03:36.678069"], ["updated_at", "2015-04-16 23:03:36.678069"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Metropolitan Room"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.679724"], ["updated_at", "2015-04-16 23:03:36.679724"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Longest Variety Show Ever"], ["created_at", "2015-04-16 23:03:36.681275"], ["updated_at", "2015-04-16 23:03:36.681275"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 51], ["concert_id", 28], ["created_at", "2015-04-16 23:03:36.682993"], ["updated_at", "2015-04-16 23:03:36.682993"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "59E59 Theatre"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.685806"], ["updated_at", "2015-04-16 23:03:36.685806"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Cyrille Aimée"], ["created_at", "2015-04-16 23:03:36.687829"], ["updated_at", "2015-04-16 23:03:36.687829"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 52], ["concert_id", 29], ["created_at", "2015-04-16 23:03:36.689557"], ["updated_at", "2015-04-16 23:03:36.689557"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Stephen Sondheim Theater"], ["date_time", "2015-01-01 19:00:00.000000"], ["created_at", "2015-04-16 23:03:36.691605"], ["updated_at", "2015-04-16 23:03:36.691605"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Beautiful"], ["created_at", "2015-04-16 23:03:36.693849"], ["updated_at", "2015-04-16 23:03:36.693849"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 53], ["concert_id", 30], ["created_at", "2015-04-16 23:03:36.695462"], ["updated_at", "2015-04-16 23:03:36.695462"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Subrosa"], ["date_time", "2015-01-01 19:30:00.000000"], ["created_at", "2015-04-16 23:03:36.697554"], ["updated_at", "2015-04-16 23:03:36.697554"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Pedrito Martinez Group"], ["created_at", "2015-04-16 23:03:36.699380"], ["updated_at", "2015-04-16 23:03:36.699380"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 54], ["concert_id", 31], ["created_at", "2015-04-16 23:03:36.701599"], ["updated_at", "2015-04-16 23:03:36.701599"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "BB King Blues Club"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.703426"], ["updated_at", "2015-04-16 23:03:36.703426"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Billy Joel Tribute"], ["created_at", "2015-04-16 23:03:36.705060"], ["updated_at", "2015-04-16 23:03:36.705060"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 55], ["concert_id", 32], ["created_at", "2015-04-16 23:03:36.706974"], ["updated_at", "2015-04-16 23:03:36.706974"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Orpheum Theatre"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.708941"], ["updated_at", "2015-04-16 23:03:36.708941"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Stomp"], ["created_at", "2015-04-16 23:03:36.710927"], ["updated_at", "2015-04-16 23:03:36.710927"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 56], ["concert_id", 33], ["created_at", "2015-04-16 23:03:36.712369"], ["updated_at", "2015-04-16 23:03:36.712369"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Palace Theatre-NY"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.713964"], ["updated_at", "2015-04-16 23:03:36.713964"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Temptations"], ["created_at", "2015-04-16 23:03:36.715863"], ["updated_at", "2015-04-16 23:03:36.715863"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 57], ["concert_id", 34], ["created_at", "2015-04-16 23:03:36.717650"], ["updated_at", "2015-04-16 23:03:36.717650"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Four Tops"], ["created_at", "2015-04-16 23:03:36.719336"], ["updated_at", "2015-04-16 23:03:36.719336"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 58], ["concert_id", 34], ["created_at", "2015-04-16 23:03:36.721140"], ["updated_at", "2015-04-16 23:03:36.721140"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Palace Theatre New York"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.723100"], ["updated_at", "2015-04-16 23:03:36.723100"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "The Temptations & The Four Tops"], ["created_at", "2015-04-16 23:03:36.724859"], ["updated_at", "2015-04-16 23:03:36.724859"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 59], ["concert_id", 35], ["created_at", "2015-04-16 23:03:36.726444"], ["updated_at", "2015-04-16 23:03:36.726444"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "The Temptations & The Four Tops on Broadway"], ["created_at", "2015-04-16 23:03:36.728422"], ["updated_at", "2015-04-16 23:03:36.728422"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 60], ["concert_id", 35], ["created_at", "2015-04-16 23:03:36.730425"], ["updated_at", "2015-04-16 23:03:36.730425"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "City Winery"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.732529"], ["updated_at", "2015-04-16 23:03:36.732529"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Joseph Arthur"], ["created_at", "2015-04-16 23:03:36.734593"], ["updated_at", "2015-04-16 23:03:36.734593"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 61], ["concert_id", 36], ["created_at", "2015-04-16 23:03:36.736373"], ["updated_at", "2015-04-16 23:03:36.736373"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Booth Theatre"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.738361"], ["updated_at", "2015-04-16 23:03:36.738361"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "The Elephant Man"], ["created_at", "2015-04-16 23:03:36.740348"], ["updated_at", "2015-04-16 23:03:36.740348"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 62], ["concert_id", 37], ["created_at", "2015-04-16 23:03:36.742060"], ["updated_at", "2015-04-16 23:03:36.742060"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Richard Rodgers Theatre"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.743754"], ["updated_at", "2015-04-16 23:03:36.743754"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "If Then"], ["created_at", "2015-04-16 23:03:36.745729"], ["updated_at", "2015-04-16 23:03:36.745729"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 63], ["concert_id", 38], ["created_at", "2015-04-16 23:03:36.747500"], ["updated_at", "2015-04-16 23:03:36.747500"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Saint Vitus"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.749574"], ["updated_at", "2015-04-16 23:03:36.749574"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Glue"], ["created_at", "2015-04-16 23:03:36.751611"], ["updated_at", "2015-04-16 23:03:36.751611"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 64], ["concert_id", 39], ["created_at", "2015-04-16 23:03:36.753367"], ["updated_at", "2015-04-16 23:03:36.753367"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Warthog"], ["created_at", "2015-04-16 23:03:36.755115"], ["updated_at", "2015-04-16 23:03:36.755115"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 65], ["concert_id", 39], ["created_at", "2015-04-16 23:03:36.757148"], ["updated_at", "2015-04-16 23:03:36.757148"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Allergy"], ["created_at", "2015-04-16 23:03:36.759133"], ["updated_at", "2015-04-16 23:03:36.759133"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 66], ["concert_id", 39], ["created_at", "2015-04-16 23:03:36.760769"], ["updated_at", "2015-04-16 23:03:36.760769"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Nandas"], ["created_at", "2015-04-16 23:03:36.762310"], ["updated_at", "2015-04-16 23:03:36.762310"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 67], ["concert_id", 39], ["created_at", "2015-04-16 23:03:36.763799"], ["updated_at", "2015-04-16 23:03:36.763799"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "The Ace Hotel"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.765505"], ["updated_at", "2015-04-16 23:03:36.765505"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "DJ Ripley"], ["created_at", "2015-04-16 23:03:36.767590"], ["updated_at", "2015-04-16 23:03:36.767590"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 68], ["concert_id", 40], ["created_at", "2015-04-16 23:03:36.769277"], ["updated_at", "2015-04-16 23:03:36.769277"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Pianos"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.771081"], ["updated_at", "2015-04-16 23:03:36.771081"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Grumby"], ["created_at", "2015-04-16 23:03:36.772933"], ["updated_at", "2015-04-16 23:03:36.772933"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 69], ["concert_id", 41], ["created_at", "2015-04-16 23:03:36.774544"], ["updated_at", "2015-04-16 23:03:36.774544"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Company XIV"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.776600"], ["updated_at", "2015-04-16 23:03:36.776600"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "NUTCRACKER ROUGE"], ["created_at", "2015-04-16 23:03:36.778146"], ["updated_at", "2015-04-16 23:03:36.778146"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 70], ["concert_id", 42], ["created_at", "2015-04-16 23:03:36.779946"], ["updated_at", "2015-04-16 23:03:36.779946"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "S.O.B.'s"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.782002"], ["updated_at", "2015-04-16 23:03:36.782002"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Talib Kweli"], ["created_at", "2015-04-16 23:03:36.783676"], ["updated_at", "2015-04-16 23:03:36.783676"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 71], ["concert_id", 43], ["created_at", "2015-04-16 23:03:36.785536"], ["updated_at", "2015-04-16 23:03:36.785536"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "The 2nd Annual Hangover Ball Hosted & DJ"], ["created_at", "2015-04-16 23:03:36.787227"], ["updated_at", "2015-04-16 23:03:36.787227"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 72], ["concert_id", 43], ["created_at", "2015-04-16 23:03:36.788974"], ["updated_at", "2015-04-16 23:03:36.788974"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Pianos Showroom"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.790905"], ["updated_at", "2015-04-16 23:03:36.790905"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Laney Jones"], ["created_at", "2015-04-16 23:03:36.792878"], ["updated_at", "2015-04-16 23:03:36.792878"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 73], ["concert_id", 44], ["created_at", "2015-04-16 23:03:36.794639"], ["updated_at", "2015-04-16 23:03:36.794639"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Imperial Theatre"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.796657"], ["updated_at", "2015-04-16 23:03:36.796657"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Claude-Michel Schönberg"], ["created_at", "2015-04-16 23:03:36.798444"], ["updated_at", "2015-04-16 23:03:36.798444"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 74], ["concert_id", 45], ["created_at", "2015-04-16 23:03:36.800280"], ["updated_at", "2015-04-16 23:03:36.800280"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Broadhurst Theatre"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.802355"], ["updated_at", "2015-04-16 23:03:36.802355"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamma Mia!"], ["created_at", "2015-04-16 23:03:36.804175"], ["updated_at", "2015-04-16 23:03:36.804175"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 75], ["concert_id", 46], ["created_at", "2015-04-16 23:03:36.805738"], ["updated_at", "2015-04-16 23:03:36.805738"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "B.B. King Blues Club and Grill"], ["date_time", "2015-01-01 20:00:00.000000"], ["created_at", "2015-04-16 23:03:36.807393"], ["updated_at", "2015-04-16 23:03:36.807393"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Big Shot"], ["created_at", "2015-04-16 23:03:36.808939"], ["updated_at", "2015-04-16 23:03:36.808939"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 76], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.810587"], ["updated_at", "2015-04-16 23:03:36.810587"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "The Ultimate BILLY JOEL Experience BIG SHOT"], ["created_at", "2015-04-16 23:03:36.812924"], ["updated_at", "2015-04-16 23:03:36.812924"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 77], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.814749"], ["updated_at", "2015-04-16 23:03:36.814749"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Harlem Gospel Choir"], ["created_at", "2015-04-16 23:03:36.816281"], ["updated_at", "2015-04-16 23:03:36.816281"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 78], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.818205"], ["updated_at", "2015-04-16 23:03:36.818205"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "HARLEM GOSPEL CHOIR Holiday Matinee Show"], ["created_at", "2015-04-16 23:03:36.819869"], ["updated_at", "2015-04-16 23:03:36.819869"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 79], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.821444"], ["updated_at", "2015-04-16 23:03:36.821444"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Joey Morant"], ["created_at", "2015-04-16 23:03:36.823255"], ["updated_at", "2015-04-16 23:03:36.823255"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 80], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.824846"], ["updated_at", "2015-04-16 23:03:36.824846"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Catfish Stew"], ["created_at", "2015-04-16 23:03:36.826650"], ["updated_at", "2015-04-16 23:03:36.826650"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 81], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.828138"], ["updated_at", "2015-04-16 23:03:36.828138"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "New Orleans Jazz Brunch JOEY MORANT Plays The Music of LOUIS ARMSTRONG"], ["created_at", "2015-04-16 23:03:36.829599"], ["updated_at", "2015-04-16 23:03:36.829599"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 82], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.831075"], ["updated_at", "2015-04-16 23:03:36.831075"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Nikki Armstrong"], ["created_at", "2015-04-16 23:03:36.832508"], ["updated_at", "2015-04-16 23:03:36.832508"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 83], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.834095"], ["updated_at", "2015-04-16 23:03:36.834095"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Lady Sings The Blues"], ["created_at", "2015-04-16 23:03:36.835846"], ["updated_at", "2015-04-16 23:03:36.835846"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 84], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.837937"], ["updated_at", "2015-04-16 23:03:36.837937"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "NY Blues Hall Of Fame Inductee NIKKI ARMSTRONG"], ["created_at", "2015-04-16 23:03:36.839606"], ["updated_at", "2015-04-16 23:03:36.839606"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 85], ["concert_id", 47], ["created_at", "2015-04-16 23:03:36.841118"], ["updated_at", "2015-04-16 23:03:36.841118"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Cafe Wha"], ["date_time", "2015-01-01 21:00:00.000000"], ["created_at", "2015-04-16 23:03:36.843405"], ["updated_at", "2015-04-16 23:03:36.843405"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The ? House Band"], ["created_at", "2015-04-16 23:03:36.845236"], ["updated_at", "2015-04-16 23:03:36.845236"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 86], ["concert_id", 48], ["created_at", "2015-04-16 23:03:36.847169"], ["updated_at", "2015-04-16 23:03:36.847169"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["venue", "Brooklyn Bowl"], ["date_time", "2015-01-01 21:00:00.000000"], ["created_at", "2015-04-16 23:03:36.849844"], ["updated_at", "2015-04-16 23:03:36.849844"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Zoso"], ["created_at", "2015-04-16 23:03:36.852084"], ["updated_at", "2015-04-16 23:03:36.852084"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 87], ["concert_id", 49], ["created_at", "2015-04-16 23:03:36.853605"], ["updated_at", "2015-04-16 23:03:36.853605"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "the Ultimate Led Zeppelin Experience"], ["created_at", "2015-04-16 23:03:36.855243"], ["updated_at", "2015-04-16 23:03:36.855243"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 88], ["concert_id", 49], ["created_at", "2015-04-16 23:03:36.857170"], ["updated_at", "2015-04-16 23:03:36.857170"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "New Years Day Brunch Family Bowl"], ["created_at", "2015-04-16 23:03:36.858724"], ["updated_at", "2015-04-16 23:03:36.858724"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 89], ["concert_id", 49], ["created_at", "2015-04-16 23:03:36.860549"], ["updated_at", "2015-04-16 23:03:36.860549"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Biz Markie"], ["created_at", "2015-04-16 23:03:36.862187"], ["updated_at", "2015-04-16 23:03:36.862187"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 90], ["concert_id", 49], ["created_at", "2015-04-16 23:03:36.864088"], ["updated_at", "2015-04-16 23:03:36.864088"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "concerts" ("venue", "date_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["venue", "Arlene's Grocery"], ["date_time", "2015-01-01 22:00:00.000000"], ["created_at", "2015-04-16 23:03:36.866085"], ["updated_at", "2015-04-16 23:03:36.866085"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "The Lesson"], ["created_at", "2015-04-16 23:03:36.867641"], ["updated_at", "2015-04-16 23:03:36.867641"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appearances" ("artist_id", "concert_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["artist_id", 91], ["concert_id", 50], ["created_at", "2015-04-16 23:03:36.869099"], ["updated_at", "2015-04-16 23:03:36.869099"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mConcert Load (0.4ms)[0m  SELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" DESC LIMIT 1
+  [1m[36mConcert Load (0.7ms)[0m  [1mSELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1[0m
+  [1m[35mConcert Load (0.5ms)[0m  SELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1
+  [1m[36mArtist Load (0.4ms)[0m  [1mSELECT  "artists".* FROM "artists"  ORDER BY "artists"."id" ASC LIMIT 1[0m
+  [1m[35mConcert Load (0.6ms)[0m  SELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1
+  [1m[36mArtist Load (0.4ms)[0m  [1mSELECT  "artists".* FROM "artists"  ORDER BY "artists"."id" ASC LIMIT 1[0m
+  [1m[35mAppearance Load (0.8ms)[0m  SELECT "appearances".* FROM "appearances"
+  [1m[36mConcert Load (0.2ms)[0m  [1mSELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1[0m
+  [1m[35mAppearance Load (0.7ms)[0m  SELECT "appearances".* FROM "appearances"
+  [1m[36mConcert Load (0.2ms)[0m  [1mSELECT  "concerts".* FROM "concerts"  ORDER BY "concerts"."id" ASC LIMIT 1[0m
+  [1m[35mArtist Load (0.4ms)[0m  SELECT "artists".* FROM "artists" INNER JOIN "appearances" ON "artists"."id" = "appearances"."artist_id" WHERE "appearances"."concert_id" = $1  [["concert_id", 1]]
+  [1m[36mConcert Load (0.3ms)[0m  [1mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mConcert Load (0.4ms)[0m  SELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mArtist Load (0.5ms)[0m  [1mSELECT "artists".* FROM "artists" INNER JOIN "appearances" ON "artists"."id" = "appearances"."artist_id" WHERE "appearances"."concert_id" = $1[0m  [["concert_id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "artists" INNER JOIN "appearances" ON "artists"."id" = "appearances"."artist_id" WHERE "appearances"."concert_id" = $1  [["concert_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "concerts"[0m
