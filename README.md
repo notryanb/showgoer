@@ -1,3 +1,8 @@
+  ![alt text](/public/img/schema.jpg "Schema")
+  ![alt text](/public/img/wireframe.jpg "General Wireframe Phase 1")
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
