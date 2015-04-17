@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   end
 
+  def upload
+
+  end
+
   def new
     @user = User.new
   end
