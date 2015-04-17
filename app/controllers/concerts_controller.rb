@@ -1,5 +1,5 @@
-class ConcertController < ApplicationController
-
+class ConcertsController < ApplicationController
+  
   def artist
 
   end
