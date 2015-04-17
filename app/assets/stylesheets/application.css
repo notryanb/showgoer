@@ -47,15 +47,23 @@
 
 #search {
 	width: 31em;
-	height: 2em;
+	height: 2.4em;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-left: transparent;
+	border-right: transparent;
+	border-top: transparent;
+	border-bottom-color: white;
+	color: white;
 }
+
 
 #search_but {
 	font-family: 'Ubuntu', sans-serif;
 	width: 6em;
 	height: 2.5em;
 	margin-top: 1em;
-	background-color: gray;
+	background-color: rgba(0, 0, 0, 0.1);
 	border-color: white;
 	border-style: solid;
 	color: white;
@@ -63,7 +71,10 @@
 	margin-top: -2.4em;
 	position: absolute;
 }
-
+::-webkit-input-placeholder {
+   color: white !important;
+   opacity: 1 !important;
+}
 
 
 #index_center {
