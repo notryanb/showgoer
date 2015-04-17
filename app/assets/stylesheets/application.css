@@ -25,6 +25,8 @@
 
 }
 
+
+
 #title {
 	color: white;
 	text-align: center;
@@ -46,8 +48,23 @@
 #search {
 	width: 31em;
 	height: 2em;
-	margin-left: 7em;
 }
+
+#search_but {
+	font-family: 'Ubuntu', sans-serif;
+	width: 6em;
+	height: 2.5em;
+	margin-top: 1em;
+	background-color: gray;
+	border-color: white;
+	border-style: solid;
+	color: white;
+	margin-left: 16.3em;
+	margin-top: -2.4em;
+	position: absolute;
+}
+
+
 
 #index_center {
 	text-align: center;
