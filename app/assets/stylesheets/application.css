@@ -57,6 +57,31 @@
 	color: white;
 }
 
+#menu {
+  margin-left: 74em;
+  position: absolute;
+  margin-top: -19em;
+}
+
+ul {
+	list-style-type: none; 
+}
+
+ul:hover {
+	margin: lem 0;
+}
+
+.line {
+	color: white;
+	height: .3em;
+	margin-top: .4em;
+	text-decoration: none;
+	transition-duration: .3s;
+}
+
+/*.line:hover {
+	margin-top: -.4em;
+}*/
 
 #search_but {
 	font-family: 'Ubuntu', sans-serif;
