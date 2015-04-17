@@ -1,26 +1,28 @@
-<h1>This is the index page for the project</h1>
+<h1 id='title'>SHOW<h1 id='goer'>GOER</h1></h1>
 
 <video autoplay loop poster="/assets/white.png" id="home_back">
 	<source src="Coachella2.webm" type="video/webm">
 	<source src="Coachella1.mp4" type="video/mp4">
 </video>
 
-<div>
-  <%= render partial: 'searchform' %>
-</div>
+<div id='index_center'>
+	<div>
+	  <%= render partial: 'searchform' %>
+	</div>
 
-<div class="signin_button">
-  <a href="#">LOGIN</a>
-</div>
+	<div class="signin_button">
+	  <a href="#" id='login_but'>LOGIN</a>
+	</div>
 
-<div class="signin">
-  <%= render partial: 'signin' %>
-</div>
+	<div class="signin">
+	  <%= render partial: 'signin' %>
+	</div>
 
-<div class="signup_button">
-  <a href="#">SIGNUP</a>
-</div>
+	<div class="signup_button">
+	  <a href="#" id='signup_but'>SIGNUP</a>
+	</div>
 
-<div class="signup">
-  <%= render partial: 'signup' %>
+	<div class="signup">
+	  <%= render partial: 'signup' %>
+	</div>
 </div>
