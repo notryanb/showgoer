@@ -42,3 +42,42 @@ end
 
 #   p api_request
 # end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Kirans Seed Data
+
+kiran = User.create(email:"kiran@gmail.com",
+            password:"123",
+            username: "kirawesome")
+
+ryan = User.create(email:"ryan@gmail.com",
+            password:"123",
+            username: "notryanb")
+
+malcolm = User.create(email:"malcolm@gmail.com",
+            password:"123",
+            username: "awesomesaucemalcolm")
