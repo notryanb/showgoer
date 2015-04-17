@@ -66,6 +66,8 @@ GEM
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -148,7 +150,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   aws-sdk-v1
+=======
+  aws-sdk
+>>>>>>> 3b2b0e5f1726d8824fd0f6f17952505ad054ce20
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
