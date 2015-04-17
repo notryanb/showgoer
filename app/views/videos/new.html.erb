@@ -4,7 +4,7 @@
   <div class="field">
     <%= f.label :url %><br>
     <%= f.file_field :url %>
-    <%= submit_tag 'Upload file' %>
+
 </div>
 <% end %>
 
@@ -47,11 +47,11 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var url   = 'https://<%= @s3_direct_post.url.host %>/' + key;
-
+        var url   = '<%= @s3_direct_post.url %>/' + key;
+        console.log(url);
         // create hidden field
-        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
-        form.append(input);
+        // var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
+        // form.append(input);
 
         $.ajax({
           url: '/videos',
