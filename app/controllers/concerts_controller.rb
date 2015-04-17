@@ -1,7 +1,6 @@
 class ConcertController < ApplicationController
 
   def artist
-    @Artists = @search.result
   end
 
   def show

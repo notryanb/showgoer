@@ -1,8 +1,8 @@
-class ArtistController < ApplicationController
+class ArtistsController < ApplicationController
 
   def index
-  @Artists = @search.result
-  redirect_to ''
+    @search = Artist.search(params[:q])
+    @artists = @search.result
   end
 
 end
