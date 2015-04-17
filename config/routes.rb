@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
 
   root :to => 'users#index'
-  resources :users, only: [:new, :create, :index, :show]
+  resources :users, only: [:new, :create, :index, :show, :upload]
   get 'signin', to: 'users#signin', as: :signin
   get 'signout', to: 'users#signout', as: :signout
   post 'signinpost',to: 'users#signinpost', as: :signinpost
-
-
+  resources :concerts, only: [:artist, :show, :upload]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
