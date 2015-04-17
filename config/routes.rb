@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'signin', to: 'users#signin', as: :signin
   get 'signout', to: 'users#signout', as: :signout
   post 'signinpost',to: 'users#signinpost', as: :signinpost
+  post 'search', to: 'concerts#search', as: :search
   resources :concerts, only: [:artist, :show, :upload]
 
   # The priority is based upon order of creation: first created -> highest priority.

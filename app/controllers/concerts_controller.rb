@@ -12,4 +12,8 @@ class ConcertController < ApplicationController
 
   end
 
+  def search
+
+  end
+
 end
