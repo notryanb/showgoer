@@ -1,4 +1,8 @@
 Rails.application.configure do
+
+  S3_BUCKET=dbc.showgoer.videos
+  AWS_ACCESS_KEY_ID=AKIAIJ36DPV2QV2EG66A
+  AWS_SECRET_ACCESS_KEY=wkacquOCzTzBABD1rWZybj9NczB8/qW+nggvYpZF
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

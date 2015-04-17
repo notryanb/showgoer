@@ -27,6 +27,9 @@ gem 'bcrypt', '~> 3.1.7'
 # to parse API
 gem 'httparty'
 
+# For S3 server
+gem 'aws-sdk'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
