@@ -1,7 +1,7 @@
 class ConcertController < ApplicationController
 
   def artist
-
+    @Artists = @search.result
   end
 
   def show
@@ -12,7 +12,7 @@ class ConcertController < ApplicationController
 
   end
 
-  def search
+  def videoupload
 
   end
 
