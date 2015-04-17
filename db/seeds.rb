@@ -7,20 +7,38 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'httparty'
 
-brklyn = HTTParty.get('http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-01-01,2015-04-16&app_id=YOUR_APP_ID')
+# CREATE CONCERTS
+30.times do |day|
+  day += 1
 
-# p brklyn[0]['artists'][0]['name']
-
-brklyn.each do |event|
-  # puts "Venue Name: #{event['venue']['name']}"
-  # puts "Venue City: #{event['venue']['city']}"
-  # puts "Venue Country: #{event['venue']['country']}"
-  # puts "Date and Time: #{event['datetime']}"
-  newConcert = Concert.create!(venue: event['venue']['name'], date_time:event['datetime'])
-  event['artists'].each do |artist|
-    # puts artist['name']
-    newArtist = Artist.create!(name:artist['name'])
-    Appearance.create!(artist_id: newArtist.id, concert_id: newConcert.id)
+  if day < 10
+    api_request = "http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-03-0"+day.to_s+"&app_id=SHOWGOER"
+  else
+    api_request = "http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-03-"+day.to_s+"&app_id=SHOWGOER"
   end
-    p '------------'
+    brklyn = HTTParty.get(api_request)
+
+    brklyn.each do |event|
+      newConcert = Concert.create!(venue: event['venue']['name'], date_time:event['datetime'])
+      event['artists'].each do |artist|
+        newArtist = Artist.create!(name:artist['name'])
+        Appearance.create!(artist_id: newArtist.id, concert_id: newConcert.id)
+      end
+    end
+
 end
+
+
+#-------- IRB TEST: REMOVE ME!!!!
+
+# 30.times do |day|
+#   day += 1
+
+#   if day < 10
+#     api_request = "http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-03-0"+day.to_s+"&app_id=SHOWGOER"
+#   else
+#     api_request = "http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-03-"+day.to_s+"&app_id=SHOWGOER"
+#   end
+
+#   p api_request
+# end
