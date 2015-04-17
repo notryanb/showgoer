@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def index
     @search = Artist.search(params[:q])
-    @Artists = @search.result
     @user = User.new
   end
 
