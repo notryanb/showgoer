@@ -28,7 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'httparty'
 
 # For S3 server
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk-v1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
