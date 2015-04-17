@@ -1,3 +1,12 @@
+<p>The folowing contains the Schema for the project</p>
+![alt text](/public/img/schema.jpg "Schema")
+
+<p> The folowing contains the first draft Wireframe </p>
+![alt text](/public/img/wireframe.jpg "General Wireframe Phase 1")
+
+<p> The folowing contains User Stories </p>
+![alt text](/public/img/user_story.jpg "User Stories")
+
 == README
 
 This README would normally document whatever steps are necessary to get the
