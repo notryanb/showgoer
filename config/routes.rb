@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :index, :show, :upload]
   get 'signin', to: 'users#signin', as: :signin
   get 'signout', to: 'users#signout', as: :signout
+  get 'index', to: 'artists#index', as: :index
   post 'signinpost',to: 'users#signinpost', as: :signinpost
-  post 'search', to: 'concerts#search', as: :search
-  resources :concerts, only: [:artist, :show, :upload]
+  get 'artist', to: 'concerts#artist', as: :artist
+  get 'upload', to: 'concerts#upload', as: :upload
+  post 'videoupload', to: 'concerts#videoupload', as: :videoupload
+
+  resources :concerts, only: [:show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

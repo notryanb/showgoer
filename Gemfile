@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 # to parse API
 gem 'httparty'
 
+gem 'ransack'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
