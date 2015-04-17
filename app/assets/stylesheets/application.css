@@ -96,6 +96,20 @@ ul:hover {
 	margin-top: -2.4em;
 	position: absolute;
 }
+
+.sign_mit {
+	font-family: 'Ubuntu', sans-serif;
+	width: 6em;
+	height: 2.5em;
+	margin-top: 1em;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-color: white;
+	border-style: solid;
+	color: white;
+	margin-left: -3em;
+	position: absolute;
+}
+
 ::-webkit-input-placeholder {
    color: white !important;
    opacity: 1 !important;
