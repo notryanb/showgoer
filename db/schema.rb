@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150416202215) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name",       null: false
+    t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150416202215) do
     t.string   "email",           null: false
     t.string   "password_digest", null: false
     t.string   "username",        null: false
+    t.string   "url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
