@@ -1,16 +1,16 @@
 <h1 id='title'>SHOW<h1 id='goer'>GOER</h1></h1>
 
 <video autoplay loop poster="/assets/white.png" id="home_back">
-	<source src="Coachella2.webm" type="video/webm">
-	<source src="Coachella1.mp4" type="video/mp4">
-</video>
+	<source src="Showgoer.webm" type="video/webm">
+		<source src="Showgoer.mp4" type="video/mp4">
+		</video>
 
-<div id='menu'>
-	<ul>
-		<li class='line'>_____</li>
-		<li class='line'>_____</li>
-		<li class='line'>_____</li>
-	</ul>
+		<div id='menu'>
+			<ul class="bounceInUp animated">
+				<li class='line'>_____</li>
+				<li class='line'>_____</li>
+				<li class='line'>_____</li>
+			</ul>
 	<!-- <p class='line'>_____</p>
 	<p class='line'>_____</p>
 	<p class='line'>_____</p> -->
@@ -18,24 +18,24 @@
 
 <div id='index_center'>
 	<div>
-	  <%= render partial: 'searchform' %>
+		<%= render partial: 'searchform' %>
 	</div>
 
-	<div class="signin_button">
-	  <a href="#" id='login_but'>LOGIN</a>
+	<div class="signin_button fadeInUp animated">
+		<a href="#" class="fadeInUp animated" id='login_but'>LOGIN</a>
 	</div>
 
-	<div class="signin">
-	  <%= render partial: 'signin' %>
+	<div class="signin fadeIn animated">
+		<%= render partial: 'signin' %>
 	</div>
 
-	<div class="signup_button">
-	  <a href="#" id='signup_but'>SIGNUP</a>
+	<div class="signup_button fadeInUp animated">
+		<a href="#" id='signup_but'>SIGNUP</a>
 	</div>
 
-
-<div class="signup">
-  <%= render partial: 'signup' %>
+	<div class="signup fadeIn animated">
+		<%= render partial: 'signup' %>
+	</div>
 </div>
 
 
