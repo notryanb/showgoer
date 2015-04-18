@@ -1,21 +1,22 @@
 
 <div id='login_form'>
+	<h1 id='ex1'>X</h1>
 	<%= form_for :user, url: signinpost_path do |f| %>
 
 
 	<p class='mini_title'>
 	  <%= f.label :email %><br>
-	  <%= f.text_field :email %>
+	  <%= f.text_field :email, :class => 'input' %>
 	</p>
 
 	<p class='mini_title'>
 	  <%= f.label :password %><br>
-	  <%= f.password_field :password %>
+	  <%= f.password_field :password, :class => 'input' %>
 	</p>
 
 
 	<p>
-	  <%= f.submit %>
+	  <%= f.submit :id => 'sign_mit' %>
 	</p>
 
 	<% end %>

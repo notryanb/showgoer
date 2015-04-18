@@ -1,15 +1,16 @@
 <div id='signup'>
+    <h1 id='ex2'>X</h1>
   <%= form_for @user do |f| %>
 
 
     <%= f.label :email, class: 'mini_title'  %><br>
-    <%= f.text_field :email, class: 'mini_title'  %><br>
-    <%= f.label :username, class: 'mini_title'  %><br>
-    <%= f.text_field :username, class: 'mini_title'  %><br>
-    <%= f.label :password, class: 'mini_title'  %><br>
-    <%= f.password_field :password, class: 'mini_title'  %><br>
-    <%= f.label :password, class: 'mini_title'  %><br>
-    <%= f.password_field :password_confirmation, class: 'mini_title'  %><br>
-    <%= f.submit %>
+    <%= f.text_field :email, class: 'mini_title input'   %><br>
+    <%= f.label :username, class: 'mini_title input'  %><br>
+    <%= f.text_field :username, class: 'mini_title input'  %><br>
+    <%= f.label :password, class: 'mini_title input'  %><br>
+    <%= f.password_field :password, class: 'mini_title input'  %><br>
+    <%= f.label :password, class: 'mini_title input'  %><br>
+    <%= f.password_field :password_confirmation, class: 'mini_title input'  %><br>
+    <%= f.submit :id => 'sign_mit2' %>
   <% end %>
 </div>
