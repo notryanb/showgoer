@@ -30,6 +30,8 @@ gem 'httparty'
 # For S3 server
 gem 'aws-sdk-v1'
 
+gem 'ransack'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

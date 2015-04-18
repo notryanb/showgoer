@@ -1,14 +1,15 @@
-<%= form_for @user do |f| %>
+<div id='signup'>
+  <%= form_for @user do |f| %>
 
-  Register for Showgoer<br>
 
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password_confirmation %><br>
-  <%= f.submit %>
-<% end %>
+    <%= f.label :email, class: 'mini_title'  %><br>
+    <%= f.text_field :email, class: 'mini_title'  %><br>
+    <%= f.label :username, class: 'mini_title'  %><br>
+    <%= f.text_field :username, class: 'mini_title'  %><br>
+    <%= f.label :password, class: 'mini_title'  %><br>
+    <%= f.password_field :password, class: 'mini_title'  %><br>
+    <%= f.label :password, class: 'mini_title'  %><br>
+    <%= f.password_field :password_confirmation, class: 'mini_title'  %><br>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @search = Artist.search(params[:q])
     @user = User.new
   end
 

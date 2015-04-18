@@ -1,5 +1,7 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag() %>
-  <%= text_field_tag placeholder: "Search Artists" %>
-  <%= submit_tag("Search Artists") %>
-<% end %>
+<%= search_form_for @search do |f|%>
+  <div class="field">
+    <%= f.text_field :name_cont, :placeholder =>"Artist Name", :id =>'search' %>
+  </div>
+  <div class="actions"><%= f.submit "Search", :id =>'search_but' %></div>
+  <% end %>
+
