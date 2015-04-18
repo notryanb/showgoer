@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'artist', to: 'concerts#artist', as: :artist
   get 'upload', to: 'concerts#upload', as: :upload
   post 'videoupload', to: 'concerts#videoupload', as: :videoupload
+
   resources :artists, only: [:index]
+  resources :concerts, only: [:index,:show]
 
   # resources :concerts, only: [:show]
 
