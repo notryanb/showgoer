@@ -36,3 +36,11 @@ $(document).ready(function() {
     });
 });
 
+// $(document).ready(function() {
+
+//     $(window).load(function(){
+//         $("#signup_but").css("visibility", "visible", "slow")
+//     });
+// });
+
+

@@ -131,7 +131,7 @@ video {
 #login_but {
 	font-size: 1.4em;
 	font-family: 'Ubuntu', sans-serif;
-	color: white !important;
+	color: white;
 	text-decoration: none !important;
 	transition-duration: .3s;
 	padding: .5em;
@@ -139,31 +139,31 @@ video {
 	margin-top: 1em;
 	position: absolute;
 	border-style: solid;
-	border-color: rgba(0, 0, 0, 0.1);	
+	border-color: transparent;
 }
 
 #login_but:hover {
 	border-style: solid;
-	border-color: white;	
+	border-color: white;
 }
 
 #signup_but {
 	font-size: 1.4em;
 	font-family: 'Ubuntu', sans-serif;
-	color: white !important;
+	color: white;
 	text-decoration: none !important;
 	transition-duration: .3s;
 	padding: .5em;
-	margin-left: 1em;
+	margin-left: 31em;
 	margin-top: 1em;
 	position: absolute;
 	border-style: solid;
-	border-color: rgba(0, 0, 0, 0.1);	
+	border-color: transparent;
 }
 
 #signup_but:hover {
 	border-style: solid;
-	border-color: white;	
+	border-color: white;
 } 
 
 #login_form {
@@ -181,4 +181,6 @@ video {
 	font-family: 'Ubuntu', sans-serif;
 	color: white;
 }
+
+
 
