@@ -1,8 +1,10 @@
+<div id="the-basics">
 <%= search_form_for @search do |f|%>
-  <div class="field">
     <%= f.label :name_cont, "Artist name" %>
-    <%= f.text_field :name_cont %>
+  <div class="typeahead">
+    <%= f.text_field :name_cont, :class => "typeahead" %>
   </div>
   <div class="actions"><%= f.submit "Search" %></div>
   <% end %>
+</div>
 
