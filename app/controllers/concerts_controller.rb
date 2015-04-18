@@ -1,7 +1,6 @@
 class ConcertsController < ApplicationController
   
   def artist
-
   end
 
   def show
@@ -12,7 +11,7 @@ class ConcertsController < ApplicationController
 
   end
 
-  def search
+  def videoupload
 
   end
 

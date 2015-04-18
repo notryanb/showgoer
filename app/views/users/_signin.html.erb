@@ -1,22 +1,22 @@
-<%= form_for :user, url: signinpost_path do |f| %>
 
-<p>
-  Login to your account
-</p>
-
-<p>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %>
-</p>
-
-<p>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %>
-</p>
+<div id='login_form'>
+	<%= form_for :user, url: signinpost_path do |f| %>
 
 
-<p>
-  <%= f.submit %>
-</p>
+	<p class='mini_title'>
+	  <%= f.label :email %><br>
+	  <%= f.text_field :email %>
+	</p>
 
-<% end %>
+	<p class='mini_title'>
+	  <%= f.label :password %><br>
+	  <%= f.password_field :password %>
+	</p>
+
+
+	<p>
+	  <%= f.submit %>
+	</p>
+
+	<% end %>
+</div>

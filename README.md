@@ -5,7 +5,7 @@
 ![alt text](/public/img/wireframe.jpg "General Wireframe Phase 1")
 
 <p> The folowing contains User Stories </p>
-![alt text](/public/img/user_story.jpg "User Stories")
+![alt text](/public/img/userstory.jpg "User Stories")
 
 == README
 
