@@ -48,6 +48,7 @@ $(function() {
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = '<%= @s3_direct_post.url %>/' + key;
+        var concertID = '<%= @test_concert_id %>/'
         console.log(url);
         // create hidden field
         // var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
@@ -57,7 +58,7 @@ $(function() {
           url: '/videos',
           method: 'post',
           dataType: 'HTML',
-          data: {'url': url}
+          data: {'url': url, "concert_id": concertID }
         }).done(function(data) {
             window.location.href = '/videos'
         }).fail(function(data){

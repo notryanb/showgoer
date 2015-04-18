@@ -1,6 +1,42 @@
-Your video uploaded successfully.
 
-<% @videos.each do |video| %>
-<img src="<%= video.url %>"/>
-<% end %>
+  <!-- Video Markup -->
+  <section class="masthead">
+    <video class="masthead-video" autoplay loop muted>
+      <source src="<%= @video_play_test.url %>" type="video/mp4">
+    </video>
+    <div class="masthead-overlay"></div>
+    <div class="masthead-arrow"></div>
+    <h1>
+      <% @concert.artists.each do |artist| %>
+        <a href="#"><%= artist.name %></a><br>
+      <% end %>
+
+
+      <span>@ Mr. Beery's</span></h1>
+
+    </a>
+  </section>
+  <section class="content">
+    <div class="container">
+      <h2>Concert Show Page</h2>
+
+      <% @related_videos.each do |video| %>
+      <p><%= video.url %></p>
+      <% end %>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- Call CoverVid -->
+  <script type="text/javascript">
+    // If using jQuery
+      $('.masthead-video').coverVid(1080,720);
+    // If not using jQuery (Native Javascript)
+      //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
+  </script>
+
+
 
