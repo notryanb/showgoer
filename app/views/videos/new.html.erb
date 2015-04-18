@@ -56,10 +56,12 @@ $(function() {
         $.ajax({
           url: '/videos',
           method: 'post',
-          dataType: 'JSON',
+          dataType: 'HTML',
           data: {'url': url}
-        }).done(function(response){
-          console.log(response);
+        }).done(function(data) {
+            window.location.href = '/videos'
+        }).fail(function(data){
+          console.log(data.statusText);
         });
 
       },
