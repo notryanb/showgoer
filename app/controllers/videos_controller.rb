@@ -1,18 +1,17 @@
 class VideosController < ApplicationController
 
   def index
-    @concert = Concert.find_by_id(1501) 
-    @video_play_test = @concert.videos.last
-    @related_videos = @concert.videos
 
   end
 
+ # NECESSARY FOR VIDEO UPLOAD
   def new
      @s3_direct_post = S3_BUCKET.presigned_post(key: "#{SecureRandom.uuid}"+"${filename}", success_action_status: 201, acl: :public_read)
 
      @test_concert_id = Concert.find_by_id(1501).id
   end
 
+ #CREATION OF VIDEO AND ASSOCATION TO CONCERT / ARTIST
   def create
     @video = Video.new(url: params[:url], concert_id: params[:concert_id])
 
@@ -25,7 +24,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video_play_test = Video.last
+
   end
 
 
