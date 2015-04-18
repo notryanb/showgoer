@@ -215,7 +215,7 @@ video {
 	text-decoration: none !important;
 	transition-duration: .3s;
 	padding: .5em;
-	margin-left: 31em;
+	margin-left: 3em;
 	margin-top: 1em;
 	position: absolute;
 	border-style: solid;
@@ -258,8 +258,8 @@ video {
 	background-size: contain;
 	padding-left: 48%;
 	padding-right: 44%;
-	padding-top: 28%;
-	padding-bottom: 30%;
+	padding-top: 30%;
+	padding-bottom: 32%;
 	background-color: rgba(0, 0, 0, 0.9);
 	transition-duration: 2s;
 }
