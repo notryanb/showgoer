@@ -1,8 +1,17 @@
 class ArtistsController < ApplicationController
 
-  def index
+ def index
     @search = Artist.search(params[:q])
     @artists = @search.result
-  end
+    @artistname = []
+    @theartists = Artist.all
+    @theartists.each do |artist|
+     @artistname << artist.name
+   end
+   if request.xhr?
+     @artistname.uniq!
+     p render json:@artistname
+   end
+ end
 
 end
