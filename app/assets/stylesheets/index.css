@@ -1,21 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-
-
+index.css
 /*@-webkit-keyframes slideBorder {
 	0% {border-bottom: 3px solid white}
 	25% {border-bottom:3px solid white;border-left: 3px solid white}
@@ -82,14 +65,6 @@
 	color: white;
 }
 
-.input {
-	background-color: transparent;
-  color: white;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-}
-
 #menu {
   margin-left: 74em;
   position: absolute;
@@ -130,41 +105,18 @@ ul:hover {
 	position: absolute;
 }
 
-#sign_mit {
+.sign_mit {
 	font-family: 'Ubuntu', sans-serif;
 	width: 6em;
 	height: 2.5em;
 	margin-top: 1em;
 	background-color: rgba(0, 0, 0, 0.1);
-	border-color: transparent;
+	border-color: white;
 	border-style: solid;
 	color: white;
 	margin-left: -3em;
 	position: absolute;
-	transition-duration: .5s;
-
 }
-
-#sign_mit2 {
-	font-family: 'Ubuntu', sans-serif;
-	width: 8em;
-	height: 2.5em;
-	margin-top: 1em;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-color: transparent;
-	border-style: solid;
-	color: white;
-	margin-left: -3.8em;
-	position: absolute;
-	transition-duration: .5s;
-
-}
-
-#sign_mit:hover, #sign_mit2:hover {
-	border-color: white;
-}
-
-
 
 ::-webkit-input-placeholder {
    color: white !important;
@@ -268,18 +220,12 @@ video {
 .mini_title {
 	font-family: 'Ubuntu', sans-serif;
 	color: white;
-	margin-bottom: 1em;
 }
 
 .signup_button, .signin_button {
 	visibility: hidden;
 
 }
-
-
-
-
-
 
 
 

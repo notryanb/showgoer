@@ -1,12 +1,13 @@
 $(document).ready(function() {
 
+    $(".signin_button").click(function(){
+        $(".signin").toggle();
+        $("#signup_but").css("visibility", "hidden");
+    });
 
-  $(".signin_button").click(function(){
-    $(".signin").toggle();
-  });
-
-  $(".signup_button").click(function(){
-    $(".signup").toggle();
-  });
+     $(".signup_button").click(function(){
+        $(".signup").toggle();
+        $("#login_but").css("visibility", "hidden");
+    });
 
 });
