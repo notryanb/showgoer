@@ -14,7 +14,13 @@
  *= require_self
  */
 
-
+/*@-webkit-keyframes slideBorder {
+	0% {border-bottom: 3px solid white}
+	25% {border-bottom:3px solid white;border-left: 3px solid white}
+	50% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 3px solid white}
+	75% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 1px solid white;border-right: 1px solid white}
+	100% {border:6pxpx solid white;}
+}*/
  .signin {
   display: none;
 
@@ -22,7 +28,8 @@
 
 .signup {
   display: none;
-
+  /*background-color: rgba(0, 0, 0, 0.4);
+  height: 20em;*/
 }
 
 
@@ -142,9 +149,12 @@ video {
 	border-color: transparent;
 }
 
-#login_but:hover {
+#login_but:hover, #signup_but:hover {
 	border-style: solid;
 	border-color: white;
+
+	/*-webkit-animation:slideBorder 3s linear .3s 1 ;
+	*/animation: slideBorder 3s linear .3s 1;
 }
 
 #signup_but {
@@ -161,10 +171,6 @@ video {
 	border-color: transparent;
 }
 
-#signup_but:hover {
-	border-style: solid;
-	border-color: white;
-} 
 
 #login_form {
 	margin-left: 30em;
