@@ -5,34 +5,33 @@ index.css
 	50% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 3px solid white}
 	75% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 1px solid white;border-right: 1px solid white}
 	100% {border:6pxpx solid white;}
-}*/
+  }*/
 
-@-webkit-keyframes spinnerRotate
-{
+  @-webkit-keyframes spinnerRotate
+  {
     from{-webkit-transform:rotate(0deg);}
     to{-webkit-transform:rotate(360deg);}
-}
-@-moz-keyframes spinnerRotate
-{
+  }
+  @-moz-keyframes spinnerRotate
+  {
     from{-moz-transform:rotate(0deg);}
     to{-moz-transform:rotate(360deg);}
-}
-@-ms-keyframes spinnerRotate
-{
+  }
+  @-ms-keyframes spinnerRotate
+  {
     from{-ms-transform:rotate(0deg);}
     to{-ms-transform:rotate(360deg);}
-}
+  }
 
- .signin {
-	display: none;
-}
+  .signin {
+   display: none;
+ }
 
-.signup {
+ .signup {
   display: none;
   /*background-color: rgba(0, 0, 0, 0.4);
   height: 20em;*/
 }
-
 
 
 #title {
@@ -72,7 +71,7 @@ index.css
 }
 
 ul {
-	list-style-type: none; 
+	list-style-type: none;
 }
 
 ul:hover {
@@ -89,51 +88,51 @@ ul:hover {
 
 /*.line:hover {
 	margin-top: -.4em;
-}*/
+  }*/
 
-#search_but {
-	font-family: 'Ubuntu', sans-serif;
-	width: 6em;
-	height: 2.5em;
-	margin-top: 1em;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-color: white;
-	border-style: solid;
-	color: white;
-	margin-left: 16.3em;
-	margin-top: -2.4em;
-	position: absolute;
-}
+  #search_but {
+   font-family: 'Ubuntu', sans-serif;
+   width: 6em;
+   height: 2.5em;
+   margin-top: 1em;
+   background-color: rgba(0, 0, 0, 0.1);
+   border-color: white;
+   border-style: solid;
+   color: white;
+   margin-left: 16.3em;
+   margin-top: -2.4em;
+   position: absolute;
+ }
 
-.sign_mit {
-	font-family: 'Ubuntu', sans-serif;
-	width: 6em;
-	height: 2.5em;
-	margin-top: 1em;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-color: white;
-	border-style: solid;
-	color: white;
-	margin-left: -3em;
-	position: absolute;
-}
+ .sign_mit {
+   font-family: 'Ubuntu', sans-serif;
+   width: 6em;
+   height: 2.5em;
+   margin-top: 1em;
+   background-color: rgba(0, 0, 0, 0.1);
+   border-color: white;
+   border-style: solid;
+   color: white;
+   margin-left: -3em;
+   position: absolute;
+ }
 
-::-webkit-input-placeholder {
+ ::-webkit-input-placeholder {
    color: white !important;
    opacity: 1 !important;
-}
+ }
 
 
-#index_center {
-	text-align: center;
-}
+ #index_center {
+   text-align: center;
+ }
 
-video {
-    position: fixed; right: 0; bottom: 0;
-    min-width: 100%; min-height: 100%;
-    width: auto; height: auto; z-index: -100;
-    background: url(white.png) no-repeat;
-    background-size: cover;
+ video {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background: url(white.png) no-repeat;
+  background-size: cover;
 }
 
 #login_but {
@@ -186,17 +185,17 @@ video {
 
 #ex1:hover, #ex2:hover {
 	-webkit-animation-name: spinnerRotate;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: spinnerRotate;
-    -moz-animation-duration: 1s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -ms-animation-name: spinnerRotate;
-    -ms-animation-duration: 1s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spinnerRotate;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spinnerRotate;
+  -ms-animation-duration: 1s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
 }
 
 

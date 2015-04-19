@@ -73,14 +73,14 @@ end
 kiran = User.create(email:"kiran@gmail.com",
             password:"123",
             username: "kirawesome",
-            url: "../public/img/kiran.jpg")
+            url: "/img/kiran.jpg")
 
 ryan = User.create(email:"ryan@gmail.com",
             password:"123",
             username: "notryanb",
-            url: "../public/img/ryan.jpg")
+            url: "/img/ryan.jpg")
 
 malcolm = User.create(email:"malcolm@gmail.com",
             password:"123",
             username: "awesomesaucemalcolm",
-            url: "../public/img/malcolm.jpg")
+            url: "/img/malcolm.jpg")

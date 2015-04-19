@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   root :to => 'users#index'
-  resources :users, only: [:new, :create, :index, :show, :upload]
+  resources :users, only: [:new, :create, :index, :show, :upload, :edit, :update]
   get 'signin', to: 'users#signin', as: :signin
   get 'signout', to: 'users#signout', as: :signout
   get 'artists', to: 'artists#index', as: :artists

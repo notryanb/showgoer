@@ -1,0 +1,6 @@
+  <% @user = current_user %>
+  <%= form_for(@user) do |f| %>
+  <%= f.text_field :email %><br><br>
+  <%= f.text_area :username %><br>
+  <%= f.submit %>
+  <%end%>
