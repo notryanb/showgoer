@@ -39,6 +39,13 @@
     to{-ms-transform:rotate(360deg);}
 }
 
+
+#logo	{
+  position: absolute;
+  width: 4em;
+  margin-top: -7em;
+  margin-left: 40em;
+}
  .signin {
 	display: none;
 }
