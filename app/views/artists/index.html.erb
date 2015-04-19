@@ -1,5 +1,21 @@
-<h1>This is the artists concerts page</h1>
+This is the artists concerts page
 
-<% @artists.each do |artist| %>
-  <%= artist.name %><br>
-  <% end %>
+
+ <!-- @artists.each do |artist| -->
+
+
+<h2><%= the_artist.name %></h2><br>
+<img src= "<%= the_artist.url %>" height="420" width="auto" /><br>
+
+<h3> Past Concerts </h3>
+
+<% past_concerts.each do |concert| %>
+<%= concert.venue %>
+<% end %>
+
+<h3> Upcoming Concerts </h3>
+
+
+<% future_concerts.each do |concert| %>
+<%= concert.venue %>
+<% end %>
