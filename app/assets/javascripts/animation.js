@@ -48,3 +48,16 @@ $(document).ready(function() {
         $("#search").css("visibility", "visible");
     });
 });
+
+$(document).ready(function() {
+
+    $("#straight").click(function(){
+        $(".one_vid").toggleClass("spread");
+        
+    });
+
+     $("#many").click(function(){
+        $(".spread").toggleClass("one_vid");
+    });
+
+});

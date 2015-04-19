@@ -4,24 +4,54 @@ This is the artists concerts page
  <!-- @artists.each do |artist| -->
 
 
-<h2><%= the_artist.name %></h2><br>
+
+<!-- Call CoverVid -->
+<script type="text/javascript">
+  // If using jQuery
+    $('.masthead-video').coverVid(1080,720);
+  // If not using jQuery (Native Javascript)
+    //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
+</script>
+
+
+<!-- Video Markup -->
+<section class="masthead">
+  <div></div>
+  <div class="masthead-overlay"></div>
+  <div class="masthead-arrow"></div>
+  <h2 id='a_name'><%= the_artist.name %></h2><br>
 <img src= "<%= the_artist.url %>" height="420" width="auto" /><br>
 
 
-<% artist_concerts.each do |concert| %>
-<%= concert.venue %><br>
-<%= concert.date_time %><br><br>
-<% end %>
 
+  </a>
+</section>
 
+<div id='straight'></div>
+<div id='many'></div>
 
-<h3> Past Concerts </h3>
+<div id='past_sect'>
+	<h3 id='past'> Past Concerts </h3>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
+	<div class="vid  one_vid spread"></div>
 
-<% past_concerts.each do |concert| %>
-<%= concert.venue %><br>
-<%= concert.date_time %><br><br>
-<% end %>
+	<% past_concerts.each do |concert| %>
+	<%= concert.venue %>
+	<% end %>
+</div>
 
+<div id='upcoming'>
+	<h3 > Upcoming Concerts </h3>
 
 <h3> Upcoming Concerts </h3>
 
@@ -29,3 +59,5 @@ This is the artists concerts page
 <%= concert.venue %><br>
 <%= concert.date_time %><br><br>
 <% end %>
+
+</div>
