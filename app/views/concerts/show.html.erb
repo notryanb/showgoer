@@ -1,10 +1,4 @@
-<!-- Call CoverVid -->
-<script type="text/javascript">
-  // If using jQuery
-    $('.masthead-video').coverVid(1080,720);
-  // If not using jQuery (Native Javascript)
-    //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
-</script>
+
 
 
 <!-- Video Markup -->
@@ -14,7 +8,7 @@
   </video>
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
-  <h1 class="videocover">
+  <h1>
     <% @test_concert.artists.each do |artist| %>
       <a href="#"><%= artist.name %></a><br>
     <% end %>
@@ -23,6 +17,8 @@
     <span>@ <%= @test_concert.venue %></span></h1>
 
   </a>
+
+
 </section>
 <section class="content">
   <div class="container">
@@ -45,3 +41,12 @@
 </section>
 
 
+<!-- Call CoverVid -->
+<script type="text/javascript">
+  // If using jQuery
+  $(document).ready(function(){
+    $('.masthead-video').coverVid(1080,720);
+  // If not using jQuery (Native Javascript)
+    //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
+  });
+</script>
