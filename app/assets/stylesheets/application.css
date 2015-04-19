@@ -54,19 +54,20 @@
 #title {
 	color: white;
 	text-align: center;
-	margin-top: 8em;
-	font-family: 'Open Sans', sans-serif;
+	margin-top: 1.3em;
+	font-family: "Helvetica Neue",helvetica,arial,sans-serif;;
 	font-weight: bold;
-	margin-right: 1em;
+	margin-right: 2em;
+	font-size: 6em;
 }
 
 #goer {
-	font-family: 'Droid Sans Mono';
-	color: white;
+	font-family: 'Oleo Script', cursive;	color: white;
 	text-align: center;
 	margin-top: -2em;
 	font-weight: bold;
-	margin-left: 4.7em;
+	margin-left: 3.7em;
+	font-size: 6em;
 }
 
 #search {
@@ -236,32 +237,37 @@ ul:hover {
 	margin-left: 21.4em;
 	margin-top: -6em;
 	border-color: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
+	border-radius: 50%;
 	border-style: solid;
 	transition-duration: .3s;
 	padding-left: .3em;
 	padding-right: .3em;
+	padding-top: .05em;
+	padding-bottom: .05em;
 }
 
 #ex1:hover, #ex2:hover {
 	-webkit-animation-name: spinnerRotate;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: spinnerRotate;
-    -moz-animation-duration: 1s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -ms-animation-name: spinnerRotate;
-    -ms-animation-duration: 1s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-    border-color: white;
-    border-style: solid;
-    border-radius: 50%;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: spinnerRotate;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: spinnerRotate;
+	-ms-animation-duration: 1s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	border-color: white;
+	border-style: solid;
+	border-radius: 50%;
 	padding-left: .3em;
 	padding-right: .3em;
+	padding-top: .05em;
+	padding-bottom: .05em;
 }
+
 
 
 #login_form, #signup {
