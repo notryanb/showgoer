@@ -33,17 +33,12 @@ class ApplicationController < ActionController::Base
   helper_method :user_contributed_concerts
 
   def the_artist
-    @artists.first
+    return first_artist = @artists.first
   end
   helper_method :the_artist
 
   def artist_concerts
-    artistconcertsid = []
-    artist_concert_object = []
-    appearances = Appearance.where(artist_id: the_artist.id)
-    appearances.each { |concert| artistconcertsid << concert.concert_id }
-    artistconcertsid.each { |con_id| artist_concert_object << Concert.find_by(id: con_id) }
-    return artist_concert_object
+    Concert.concerts_for_artist_name(the_artist.name)
   end
   helper_method :artist_concerts
 
@@ -58,7 +53,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :past_concerts
 
-
   def future_concerts
     futureconcerts = []
     artist_concerts.each do |concert|
@@ -69,7 +63,5 @@ class ApplicationController < ActionController::Base
     return futureconcerts
   end
   helper_method :future_concerts
-
-
 
 end
