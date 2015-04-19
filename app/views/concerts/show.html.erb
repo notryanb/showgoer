@@ -10,23 +10,27 @@
 <!-- Video Markup -->
 <section class="masthead">
   <video class="masthead-video" autoplay loop muted>
-    <source src="<%= @video_play_test.url %>" type="video/mp4">
+    <source src="<%= @header_video %>" type="video/mp4">
   </video>
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
-  <h1>
+  <h1 class="videocover">
     <% @test_concert.artists.each do |artist| %>
       <a href="#"><%= artist.name %></a><br>
     <% end %>
 
 
-    <span>@ Mr. Beery's</span></h1>
+    <span>@ <%= @test_concert.venue %></span></h1>
 
   </a>
 </section>
 <section class="content">
   <div class="container">
     <h2>Concert Show Page</h2>
+
+  <div class="upload-form-container">
+    <%= render partial: 'upload', :locals => {:s3_direct_post => @s3_direct_post} %>
+  </div>
 
     <% @related_videos.each do |video| %>
 

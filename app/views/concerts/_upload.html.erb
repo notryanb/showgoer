@@ -1,8 +1,7 @@
-<h1>Upload a file</h1>
+<h2>Upload a file</h2>
 
 <%= form_for(videos_path, html: { class: "directUpload" }, enctype: 'multipart/form-data') do |f| %>
   <div class="field">
-    <%= f.label :url %><br>
     <%= f.file_field :url %>
 
 </div>
@@ -47,8 +46,8 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var url   = '<%= @s3_direct_post.url %>/' + key;
-        var concertID = '<%= @test_concert_id %>/'
+        var url   = '<%= s3_direct_post.url %>/' + key;
+        var concertID = '<%= @test_concert.id %>/'
         // create hidden field
         // var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         // form.append(input);
