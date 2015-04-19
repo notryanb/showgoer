@@ -1,9 +1,9 @@
 /**
  * Masthead
  * -------------------------------------------------------------------------- */
-html {
+/*html {
     -webkit-font-smoothing: antialiased;
-}
+}*/
 .masthead {
     position: relative;
     min-width: 720px;

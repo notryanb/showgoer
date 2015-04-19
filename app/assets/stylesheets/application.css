@@ -87,6 +87,8 @@
   border-top-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
+	font-size: 1em;
+	width: 22em;
 }
 
 #menu {
@@ -129,6 +131,11 @@ ul:hover {
 	position: absolute;
 }
 
+#search_state {
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+}
+
 #sign_mit {
 	font-family: 'Ubuntu', sans-serif;
 	width: 6em;
@@ -141,7 +148,7 @@ ul:hover {
 	margin-left: -3em;
 	position: absolute;
 	transition-duration: .5s;
-
+	font-size: 1em;
 }
 
 #sign_mit2 {
@@ -156,7 +163,7 @@ ul:hover {
 	margin-left: -3.8em;
 	position: absolute;
 	transition-duration: .5s;
-
+	font-size: 1em;
 }
 
 #sign_mit:hover, #sign_mit2:hover {
@@ -226,9 +233,14 @@ ul:hover {
 	color: white;
 	font-family: 'Ubuntu', sans-serif;
 	position: absolute;
-	margin-left: 20em;
+	margin-left: 21.4em;
 	margin-top: -6em;
-
+	border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+	border-style: solid;
+	transition-duration: .3s;
+	padding-left: .3em;
+	padding-right: .3em;
 }
 
 #ex1:hover, #ex2:hover {
@@ -244,6 +256,11 @@ ul:hover {
     -ms-animation-duration: 1s;
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
+    border-color: white;
+    border-style: solid;
+    border-radius: 50%;
+	padding-left: .3em;
+	padding-right: .3em;
 }
 
 
@@ -251,7 +268,7 @@ ul:hover {
 /*	margin-left: 30em;
 	margin-top: 4em;
 	position: absolute;*/
-	margin-left: -12px;
+	margin-left: -8em;
 	margin-top: -32em;
 	position: absolute;
 	background-size: contain;
@@ -273,6 +290,46 @@ ul:hover {
 .signup_button, .signin_button {
 	visibility: hidden;
 
+}
+
+.icon {
+	-webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+#email_icon {
+	height: 2em;
+	width: 2.4em;
+	float: left;
+	position: absolute;
+	margin-left: -3em;
+}
+#password_icon {
+	height: 2.4em;
+	width: 2.4em;
+	float: left;
+	position: absolute;
+	margin-left: -3.1em;
+	margin-top: -.3em;
+}
+
+
+#pass_check_icon {
+	height: 2.4em;
+	width: 2.4em;
+	float: left;
+	position: absolute;
+	margin-left: -3.1em;
+	margin-top: -.3em;	
+}
+
+#user_icon {
+	height: 2.1em;
+	width: 2.1em;
+	float: left;
+	position: absolute;
+	margin-left: -3.1em;
+	margin-top: -.3em;	
 }
 
 
