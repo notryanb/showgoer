@@ -1,8 +1,8 @@
 <div id="the-basics">
   <%= search_form_for @search do |f|%>
-  <%= f.label :name_cont, "Artist name" %>
+  <%= f.label :name_cont, "Search By Artist Name", id: 'search_state' %>
   <div class="typeahead">
-    <%= f.text_field :name_cont, :class => "typeahead", :id => "search"%>
+     <%= f.text_field :name_cont, :class => "typeahead", :id => "search"%>
   </div>
   <div class="actions"><%= f.submit "Search", :id =>'search_but' %></div>
   <% end %>

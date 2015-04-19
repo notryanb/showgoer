@@ -4,13 +4,13 @@
 
 
     <%= f.label :email, class: 'mini_title'  %><br>
-    <%= f.text_field :email, class: 'mini_title input'   %><br>
+    <%= image_tag 'email.png', id: 'email_icon', class: 'icon' %><%= f.text_field :email, class: 'mini_title input'   %><br>
     <%= f.label :username, class: 'mini_title input'  %><br>
-    <%= f.text_field :username, class: 'mini_title input'  %><br>
+    <%= image_tag 'user.png', id: 'user_icon', class: 'icon' %><%= f.text_field :username, class: 'mini_title input'  %><br>
     <%= f.label :password, class: 'mini_title input'  %><br>
-    <%= f.password_field :password, class: 'mini_title input'  %><br>
+    <%= image_tag 'password.png', id: 'password_icon', class: 'icon' %><%= f.password_field :password, class: 'mini_title input'  %><br>
     <%= f.label :password, class: 'mini_title input'  %><br>
-    <%= f.password_field :password_confirmation, class: 'mini_title input'  %><br>
-    <%= f.submit :id => 'sign_mit2' %>
+    <%= image_tag 'pass_check.png', id: 'pass_check_icon', class: 'icon' %><%= f.password_field :password_confirmation, class: 'mini_title input'  %><br>
+    <%= f.submit "Create Account", :id => 'sign_mit2'  %>
   <% end %>
 </div>

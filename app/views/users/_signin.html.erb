@@ -6,17 +6,17 @@
 
 	<p class='mini_title'>
 	  <%= f.label :email %><br>
-	  <%= f.text_field :email, :class => 'input' %>
+	 <%= image_tag 'email.png', id: 'email_icon', class: 'icon' %> <%= f.text_field :email, :class => 'input' %>
 	</p>
 
 	<p class='mini_title'>
 	  <%= f.label :password %><br>
-	  <%= f.password_field :password, :class => 'input' %>
+	  <%= image_tag 'password.png', id: 'password_icon', class: 'icon' %><%= f.password_field :password, :class => 'input' %>
 	</p>
 
 
 	<p>
-	  <%= f.submit :id => 'sign_mit' %>
+	  <%= f.submit "Log In", :id => 'sign_mit' %>
 	</p>
 
 	<% end %>
