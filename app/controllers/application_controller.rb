@@ -32,4 +32,36 @@ class ApplicationController < ActionController::Base
   end
   helper_method :user_contributed_concerts
 
+  def the_artist
+    return first_artist = @artists.first
+  end
+  helper_method :the_artist
+
+  def artist_concerts
+    Concert.concerts_for_artist_name(the_artist.name)
+  end
+  helper_method :artist_concerts
+
+  def past_concerts
+    pastconcerts = []
+    artist_concerts.each do |concert|
+      if DateTime.now > concert.date_time
+        pastconcerts << concert
+      end
+    end
+    return pastconcerts
+  end
+  helper_method :past_concerts
+
+  def future_concerts
+    futureconcerts = []
+    artist_concerts.each do |concert|
+      if DateTime.now < concert.date_time
+        futureconcerts << concert
+      end
+    end
+    return futureconcerts
+  end
+  helper_method :future_concerts
+
 end

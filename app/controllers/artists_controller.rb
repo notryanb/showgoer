@@ -9,7 +9,7 @@ class ArtistsController < ApplicationController
      @artistname << artist.name
    end
    if request.xhr?
-     @artistname.uniq!
+     @artistname
      render json:@artistname
    end
  end

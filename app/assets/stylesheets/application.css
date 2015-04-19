@@ -45,6 +45,7 @@
   width: 4em;
   margin-top: -7em;
   margin-left: 40em;
+  visibility: visible;
 }
  .signin {
   display: none;
@@ -54,6 +55,7 @@
   display: none;
   /*background-color: rgba(0, 0, 0, 0.4);
   height: 20em;*/
+  visibility: visible;
 }
 
 
@@ -66,6 +68,7 @@
 	font-weight: bold;
 	margin-right: 2em;
 	font-size: 6em;
+	visibility: visible;
 }
 
 #goer {
@@ -104,6 +107,7 @@
   margin-left: 74em;
   position: absolute;
   margin-top: -19em;
+  visibility: visible;
 }
 
 ul {
@@ -345,6 +349,57 @@ ul:hover {
 	margin-left: -3.1em;
 	margin-top: -.3em;	
 }
+
+/*********USER SHOW**************/
+
+#user_show {
+	background-color: rgba(0, 0, 0, 0.9);
+	width: 72em;
+	height: 44em;
+	margin-top: -8em;
+	position: absolute;
+	margin-left: 82em;
+	transition-duration: 2s;
+
+}
+
+#ex3 {
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+	position: absolute;
+	margin-left: 33.4em;
+	border-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	border-style: solid;
+	transition-duration: .3s;
+	padding-left: .3em;
+	padding-right: .3em;
+	padding-top: .05em;
+	padding-bottom: .05em;
+}
+
+#ex3:hover {
+	-webkit-animation-name: spinnerRotate;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: spinnerRotate;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: spinnerRotate;
+	-ms-animation-duration: 1s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	border-color: white;
+	border-style: solid;
+	border-radius: 50%;
+	padding-left: .3em;
+	padding-right: .3em;
+	padding-top: .05em;
+	padding-bottom: .05em;
+}
+
 
 
 
