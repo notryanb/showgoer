@@ -409,7 +409,8 @@ ul:hover {
 #past_sect {
 	float: left;
 	width: 70%;
-	margin-left: 6em;
+
+	margin-left: 5em;
 }
 
 #past {
