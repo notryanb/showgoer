@@ -21,8 +21,13 @@ require 'httparty'
     brklyn.each do |event|
       newConcert = Concert.create!(venue: event['venue']['name'], date_time:event['datetime'])
       event['artists'].each do |artist|
-        newArtist = Artist.create!(name:artist['name'])
-        Appearance.create!(artist_id: newArtist.id, concert_id: newConcert.id)
+        existing = Artist.find_by(name: artist['name'])
+        if existing
+          Appearance.create!(artist: existing, concert_id: newConcert.id)
+        else
+          newArtist = Artist.create!(name:artist['name'])
+          Appearance.create!(artist: newArtist, concert_id: newConcert.id)
+        end
       end
     end
 
@@ -70,20 +75,20 @@ end
 
 # Kirans Seed Data
 
-kiran = User.create(email:"kiran@gmail.com",
-            password:"123",
-            username: "kirawesome",
-            url: "/img/kiran.jpg")
+# kiran = User.create(email:"kiran@gmail.com",
+#             password:"123",
+#             username: "kirawesome",
+#             url: "/img/kiran.jpg")
 
-ryan = User.create(email:"ryan@gmail.com",
-            password:"123",
-            username: "notryanb",
-            url: "/img/ryan.jpg")
+# ryan = User.create(email:"ryan@gmail.com",
+#             password:"123",
+#             username: "notryanb",
+#             url: "/img/ryan.jpg")
 
-malcolm = User.create(email:"malcolm@gmail.com",
-            password:"123",
-            username: "awesomesaucemalcolm",
-            url: "/img/malcolm.jpg")
+# malcolm = User.create(email:"malcolm@gmail.com",
+#             password:"123",
+#             username: "awesomesaucemalcolm",
+#             url: "/img/malcolm.jpg")
 
 # saintsofvalory = Artist.create(name:"Saints of Valory",
 #             url: "/img/saintsofvalory.jpg",
