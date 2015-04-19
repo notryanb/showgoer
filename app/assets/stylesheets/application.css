@@ -45,15 +45,18 @@
   width: 4em;
   margin-top: -7em;
   margin-left: 40em;
+  visibility: visible;
 }
  .signin {
 	display: none;
+	visibility: visible;
 }
 
 .signup {
   display: none;
   /*background-color: rgba(0, 0, 0, 0.4);
   height: 20em;*/
+  visibility: visible;
 }
 
 
@@ -66,6 +69,7 @@
 	font-weight: bold;
 	margin-right: 2em;
 	font-size: 6em;
+	visibility: visible;
 }
 
 #goer {
@@ -75,6 +79,7 @@
 	font-weight: bold;
 	margin-left: 3.7em;
 	font-size: 6em;
+	visibility: visible;
 }
 
 #search {
@@ -87,6 +92,7 @@
 	border-top: transparent;
 	border-bottom-color: white;
 	color: white;
+	visibility: visible;
 }
 
 .input {
@@ -139,6 +145,7 @@ ul:hover {
 	margin-left: 16.3em;
 	margin-top: -2.4em;
 	position: absolute;
+	visibility: visible;
 }
 
 #search_state {
