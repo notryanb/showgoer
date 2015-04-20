@@ -39,6 +39,10 @@
     to{-ms-transform:rotate(360deg);}
 }
 
+#split_logo {
+	margin-left: 2em;
+	margin-bottom: -3em;
+}
 
 #logo	{
 	position: absolute;
@@ -47,6 +51,40 @@
 	margin-left: 0em;
 	visibility: visible;
 }
+
+.pillars {
+	margin-top: 4.6em;
+	margin-right: -.05em;
+}
+
+#camera {
+	width: 3em;
+	height: 3em;
+	margin-top: 7em;
+	position: absolute;
+}
+
+#pillar1 {
+	height: 1em;
+}
+
+#pillar2 {
+	height: 1.5em;
+	
+}
+
+#pillar3 {
+	height: 2.2em;
+}
+
+#pillar2_2 {
+	height: 1.5em;
+}
+
+#pillar1_1 {
+	height: 1em;	
+}
+
  .signin {
   display: none;
 }
