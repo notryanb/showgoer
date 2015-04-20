@@ -7,6 +7,7 @@ $(document).ready(function(){
   $('.like-btn').on('click', function(event){
     event.preventDefault();
     var $target = $(event.target);
+    $target.attr("disabled", true);
     var userID = $target.data('user-id');
     var videoID = $target.data('video-id');
 
@@ -27,6 +28,7 @@ $(document).ready(function(){
   $('.dislike-btn').on('click', function(event){
     event.preventDefault();
     var $target = $(event.target);
+    $target.attr("disabled", true);
     var userID = $target.data('user-id');
     var videoID = $target.data('video-id');
 
