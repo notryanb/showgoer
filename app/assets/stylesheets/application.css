@@ -367,6 +367,7 @@ ul:hover {
 	transition-duration: 2s;
 	left: 80em;
 	padding-bottom: 12em;
+	z-index: 1;
 }
 
 #off_left {
