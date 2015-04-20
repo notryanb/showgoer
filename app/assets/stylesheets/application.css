@@ -64,7 +64,7 @@
 	color: white;
 	text-align: center;
 	margin-top: 1.3em;
-	font-family: "Helvetica Neue",helvetica,arial,sans-serif;;
+	font-family: 'Fascinate Inline', cursive;
 	font-weight: bold;
 	margin-right: 2em;
 	font-size: 6em;
@@ -72,19 +72,21 @@
 }
 
 #goer {
-	font-family: 'Oleo Script', cursive;	color: white;
+	font: 400 130px/0.8 'Great Vibes', Helvetica, sans-serif;
+	color: white;
 	text-align: center;
-	margin-top: -2em;
+	margin-top: -2.1em;
 	font-weight: bold;
-	margin-left: 3.7em;
-	font-size: 6em;
+	margin-left: 4.7em;
+	font-size: 4.5em;
+	margin-bottom: 1em;
 
 }
 
 #search {
   width: 31em;
   height: 2.4em;
-  font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
   background-color: rgba(0, 0, 0, 0.05);
   border-left: transparent;
   border-right: transparent;
@@ -131,7 +133,7 @@ ul:hover {
 }*/
 
 #search_but {
-  font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
   width: 6em;
   height: 2.5em;
   margin-top: 1em;
@@ -146,16 +148,37 @@ ul:hover {
 
 #search_state {
 	color: white;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	margin-top: -2em;
+	position: absolute;
+	margin-left: -3em;
 }
 
-.names {
-	color: red;
-	background-color: red;
+.tt-suggestion {
+	background-color: #FFEBBD;
+	font-family: 'Raleway', sans-serif;
+	margin-top: -2em;
+	color: white;
 }
+
+.tt-suggestions {
+	min-width: 100%;
+	margin-top: 2em;
+}
+
+.tt-highlight {
+	color: red;
+}
+
+.tt-hint {
+	background-color: white;
+}
+
+
 
 #sign_mit {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	width: 6em;
 	height: 2.5em;
 	margin-top: 1em;
@@ -170,7 +193,7 @@ ul:hover {
 }
 
 #sign_mit2 {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	width: 8em;
 	height: 2.5em;
 	margin-top: 1em;
@@ -210,7 +233,7 @@ ul:hover {
 
 #login_but {
   font-size: 1.4em;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: white;
   text-decoration: none !important;
   transition-duration: .3s;
@@ -221,6 +244,7 @@ ul:hover {
   border-style: solid;
   border-color: transparent;
   visibility: visible;
+  border-width: .2em; 
 }
 
 #login_but:hover, #signup_but:hover {
@@ -234,7 +258,7 @@ ul:hover {
 
 #signup_but {
   font-size: 1.4em;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: white;
   text-decoration: none !important;
   transition-duration: .3s;
@@ -245,11 +269,12 @@ ul:hover {
   border-style: solid;
   visibility: visible;
   border-color: transparent;
+  border-width: .2em;
 }
 
 #ex1, #ex2 {
 	color: white;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	position: absolute;
 	margin-left: 21.4em;
 	margin-top: -6em;
@@ -305,7 +330,7 @@ ul:hover {
 
 
 .mini_title {
-  font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
   color: white;
   margin-bottom: 1em;
 }
@@ -381,7 +406,7 @@ ul:hover {
 
 #ex3 {
 	color: white;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	position: absolute;
 	margin-left: 33.4em;
 	border-color: rgba(0, 0, 0, 0.1);
