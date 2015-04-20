@@ -8,9 +8,9 @@
   </video>
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
-  <h1 class="videocover">
+  <h1 id="video-header">
     <% @test_concert.artists.each do |artist| %>
-      <a href="#"><%= artist.name %></a><br>
+       <%= link_to artist.name, "#" %><br>
     <% end %>
 
 
@@ -22,17 +22,38 @@
 </section>
 <section class="content">
   <div class="container">
-    <h2>Concert Show Page</h2>
+
 
   <div class="upload-form-container">
     <%= render partial: 'upload', :locals => {:s3_direct_post => @s3_direct_post} %>
   </div>
 
     <% @related_videos.each do |video| %>
+      <video class="concert-video" width="400" controls>
+        <source src="<%= video.url %>" type="video/mp4">
+      </video>
 
-    <video class="concert-video" width="400" controls>
-      <source src="<%= video.url %>" type="video/mp4">
-    </video>
+      <div class="video-console">
+        <div class="likes">
+          <%= button_to 'like', likes_path(:user_id => current_user.id, :video_id => video.id), class: "like-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
+          <span class="likes-vote-count<%= video.id %>" 
+                data-video-id="<%= video.id %>">
+                <%= video.likes.count %>
+          </span>
+        </div>
+
+        <div class="dislikes">
+          <%= button_to 'dislike', dislikes_path(:user_id => 1, :video_id => video.id), class: "dislike-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
+
+          <span class="dislikes-vote-count<%= video.id %>" 
+                data-video-id="<%= video.id %>">
+                <%= video.dislikes.count %>
+          </span>
+
+        </div>
+     </div>
+
+
     <% end %>
 
 
