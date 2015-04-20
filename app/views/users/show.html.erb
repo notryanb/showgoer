@@ -6,12 +6,12 @@
 <!-- @user_videos = Video.where(user_id = current_user.url) -->
 
 
-<% user_videos.each do |video| %>
+<% User.user_videos(current_user.id).each do |video| %>
 <%= video.url %>
 <% end %>
 
 
-<% user_contributed_concerts.each do |concert| %>
+<% User.user_contributed_concerts(current_user.id).each do |concert| %>
 <!-- complete the link_to the concert page when the user clicks on the concert venue page. -->
 <%= concert.venue %>
 <%= concert.date_time %>
