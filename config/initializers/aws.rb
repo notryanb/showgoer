@@ -3,5 +3,5 @@ AWS.config(
   :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
 )
 
-S3_BUCKET =  AWS::S3.new.buckets[ENV['S3_BUCKET']]
+S3_BUCKET = AWS::S3.new.buckets[ENV['S3_BUCKET']]
 

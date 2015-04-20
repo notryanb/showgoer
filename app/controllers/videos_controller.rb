@@ -16,7 +16,7 @@ class VideosController < ApplicationController
     @video = Video.new(url: params[:url], concert_id: params[:concert_id])
 
     if @video.save
-      redirect_to '/videos'
+      redirect_to "/concerts/#{@video.concert_id}"
     else
       flash.now[:notice] = 'There was an error'
       render :new

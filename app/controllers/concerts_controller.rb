@@ -4,10 +4,17 @@ class ConcertsController < ApplicationController
   end
 
   def show
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "#{SecureRandom.uuid}"+"${filename}", success_action_status: 201, acl: :public_read)
+
     @test_concert = Concert.find_by(id: params[:id])
     @test_concert_id = @test_concert.id
     @related_videos = @test_concert.videos
-    @video_play_test = @related_videos.sample
+    if @related_videos.count == 0
+      p "I'M IN THE NIL THING!---------------------"
+      @header_video = "../Coachella1.mp4"
+    else
+      @header_video = @related_videos.sample.url
+    end
   end
 
   def upload
