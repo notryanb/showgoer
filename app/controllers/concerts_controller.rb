@@ -10,8 +10,12 @@ class ConcertsController < ApplicationController
     @test_concert_id = @test_concert.id
     @related_videos = @test_concert.videos
 
+    if current_user == nil
+      current_user = "no one"
+    end 
+
     if @related_videos.count == 0
-      @header_video = "../Coachella1.mp4"
+      @header_video = '../blipfest2012.mp4'
     else
       @header_video = @related_videos.sample.url
     end

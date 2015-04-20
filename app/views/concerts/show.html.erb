@@ -22,9 +22,20 @@
 
   <div class="container">
 
+  <div = "no-videos">
+     <% if @related_videos.count == 0 %>
+      <h2> Sorry, there are no videos for the concert yet.</h2>
+    <% if !current_user %>
+      <h3> Why don't you sign up and post some (^_^)?</h3>
+     <% end %>
+    <% end %>  
+  </div>
+
+  <% if current_user %>
     <div class="upload-form-container">
       <%= render partial: 'upload', :locals => {:s3_direct_post => @s3_direct_post} %>
     </div>
+  <% end %>
 
 
     <div class="video-container">

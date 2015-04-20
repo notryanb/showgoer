@@ -6,9 +6,9 @@ class VideosController < ApplicationController
 
  # NECESSARY FOR VIDEO UPLOAD
   def new
-     @s3_direct_post = S3_BUCKET.presigned_post(key: "#{SecureRandom.uuid}"+"${filename}", success_action_status: 201, acl: :public_read)
+     # @s3_direct_post = S3_BUCKET.presigned_post(key: "#{SecureRandom.uuid}"+"${filename}", success_action_status: 201, acl: :public_read)
 
-     @test_concert_id = Concert.find_by_id(1501).id
+     # @test_concert_id = Concert.find_by_id(1501).id
   end
 
  #CREATION OF VIDEO AND ASSOCATION TO CONCERT / ARTIST

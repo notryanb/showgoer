@@ -48,7 +48,13 @@ $(function() {
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = '<%= s3_direct_post.url %>/' + key;
         var concertID = '<%= @test_concert.id %>/';
+
+        if ('<%= current_user %>' === 'no one'){
+        var userID = 'nil'  
+        } else  {
         var userID = '<%= current_user.id %>'
+        }
+
 
         $.ajax({
           url: '/videos',
