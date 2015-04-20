@@ -16,7 +16,6 @@ class ArtistsController < ApplicationController
  def autocomplete_list
   list = Artist.pluck(:name)
   render json: list
-
  end
 
 end

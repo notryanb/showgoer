@@ -12,25 +12,14 @@ class Artist < ActiveRecord::Base
   end
 
   def self.past_concerts(artist_name)
-    pastconcerts = []
-    artist_concerts = Concert.concerts_for_artist_name(artist_name)
-    artist_concerts.each do |concert|
-      if DateTime.now > concert.date_time
-        pastconcerts << concert
-      end
-    end
-    return pastconcerts
+    artist_concerts = Concert.concerts_for_artist_name(artist_name).where('date_time < ?', DateTime.now)
+
+    return artist_concerts
   end
 
   def self.future_concerts(artist_name)
-    futureconcerts = []
-    artist_concerts = Concert.concerts_for_artist_name(artist_name)
-    artist_concerts.each do |concert|
-      if DateTime.now < concert.date_time
-        futureconcerts << concert
-      end
-    end
-    return futureconcerts
+    artist_concerts = Concert.concerts_for_artist_name(artist_name).where('date_time > ?', DateTime.now)
+    return artist_concerts
   end
 
 end
