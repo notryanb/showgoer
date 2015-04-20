@@ -6,9 +6,9 @@ class ConcertsController < ApplicationController
   def show
     @s3_direct_post = S3_BUCKET.presigned_post(key: "#{SecureRandom.uuid}"+"${filename}", success_action_status: 201, acl: :public_read)
 
-    @test_concert = Concert.find_by(id: params[:id])
-    @test_concert_id = @test_concert.id
-    @related_videos = @test_concert.videos
+    @concert = Concert.find_by(id: params[:id])
+    @concert_id = @concert.id
+    @related_videos = @concert.videos
 
     if current_user == nil
       current_user = "no one"

@@ -7,12 +7,12 @@
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
   <h1 id="video-header">
-    <% @test_concert.artists.each do |artist| %>
+    <% @concert.artists.each do |artist| %>
        <%= link_to artist.name, "#" %><br>
     <% end %>
 
 
-    <span>@ <%= @test_concert.venue %></span></h1>
+    <span>@ <%= @concert.venue %></span></h1>
 
   </a>
 </section>
@@ -37,6 +37,17 @@
     </div>
   <% end %>
 
+  <% if current_user %>
+
+  <% end %>
+
+  <div id="attendance-count">
+    <% if @concert.attendance == 1 %>
+      <h4><%= @concert.attendance %> person attended </h4>
+    <% else %>
+      <h4><%= @concert.attendance %> people attended </h4>
+    <% end %>
+  </div>
 
     <div class="video-container">
       <%= render partial: 'videos', :locals => {:related_videos => @related_videos} %>

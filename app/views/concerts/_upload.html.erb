@@ -1,4 +1,4 @@
-<h2>Upload a file</h2>
+<h2>Upload a video of this concert</h2>
 
 <%= form_for(videos_path, html: { class: "directUpload" }, enctype: 'multipart/form-data') do |f| %>
   <div class="field">
@@ -47,7 +47,7 @@ $(function() {
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = '<%= s3_direct_post.url %>/' + key;
-        var concertID = '<%= @test_concert.id %>/';
+        var concertID = '<%= @concert.id %>/';
 
         if ('<%= current_user %>' === 'no one'){
         var userID = 'nil'  
@@ -62,7 +62,7 @@ $(function() {
           dataType: 'HTML',
           data: {'url': url, "concert_id": concertID, "user_id": userID }
         }).done(function(data) {
-            window.location.href = '../concerts/<%= @test_concert_id %>'
+            window.location.href = '../concerts/<%= @concert_id %>'
         }).fail(function(data){
           console.log(data);
         });
