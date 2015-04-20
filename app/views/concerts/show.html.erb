@@ -33,15 +33,15 @@
         <source src="<%= video.url %>" type="video/mp4">
       </video>
 
-      <div class="likes">
-        <%= button_to 'like', likes_path(:user_id => 1, :video_id => video.id) %>
-        Total Likes <%= video.likes.count %><br><br>
-      </div>
+      <div class="video-console">
+        <div class="likes">
+          <%= button_to video.likes.count, likes_path(:user_id => 1, :video_id => video.id), class: "like-btn" %>
+        </div>
 
-      <div class="dislikes">
-        <%= button_to 'dislike', dislikes_path(:user_id => 1, :video_id => video.id) %>
-        Total Likes <%= video.dislikes.count %><br><br>
-      </div>
+        <div class="dislikes">
+          <%= button_to video.dislikes.count, dislikes_path(:user_id => 1, :video_id => video.id), class: "dislike-btn" %>
+        </div>
+     </div>
 
 
     <% end %>
