@@ -48,8 +48,7 @@
   visibility: visible;
 }
  .signin {
-	display: none;
-	visibility: visible;
+  display: none;
 }
 
 .signup {
@@ -79,20 +78,19 @@
 	font-weight: bold;
 	margin-left: 3.7em;
 	font-size: 6em;
-	visibility: visible;
+
 }
 
 #search {
-	width: 31em;
-	height: 2.4em;
-	font-family: 'Ubuntu', sans-serif;
-	background-color: rgba(0, 0, 0, 0.05);
-	border-left: transparent;
-	border-right: transparent;
-	border-top: transparent;
-	border-bottom-color: white;
-	color: white;
-	visibility: visible;
+  width: 31em;
+  height: 2.4em;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  border-bottom-color: white;
+  color: white;
 }
 
 .input {
@@ -121,12 +119,11 @@ ul:hover {
 }
 
 .line {
-	color: white;
-	height: .3em;
-	margin-top: .4em;
-	text-decoration: none;
-	transition-duration: .3s;
-	-webkit-transform:scale(1,2); 
+  color: white;
+  height: .3em;
+  margin-top: .4em;
+  text-decoration: none;
+  transition-duration: .3s;
 }
 
 /*.line:hover {
@@ -134,18 +131,17 @@ ul:hover {
 }*/
 
 #search_but {
-	font-family: 'Ubuntu', sans-serif;
-	width: 6em;
-	height: 2.5em;
-	margin-top: 1em;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-color: white;
-	border-style: solid;
-	color: white;
-	margin-left: 16.3em;
-	margin-top: -2.4em;
-	position: absolute;
-	visibility: visible;
+  font-family: 'Ubuntu', sans-serif;
+  width: 6em;
+  height: 2.5em;
+  margin-top: 1em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: white;
+  border-style: solid;
+  color: white;
+  margin-left: 16.3em;
+  margin-top: -2.4em;
+  position: absolute;
 }
 
 #search_state {
