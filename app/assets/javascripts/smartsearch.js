@@ -29,8 +29,6 @@ $.ajax({
   dataType: 'json'
 })
 .done(function(response) {
-  console.log("success:", response)
-
   var theartists = response;
 
   $('#the-basics .typeahead').typeahead({

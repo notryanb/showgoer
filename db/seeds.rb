@@ -34,20 +34,13 @@ require 'httparty'
 end
 
 
-#-------- IRB TEST: REMOVE ME!!!!
+# Stubbed demo Concert for '/concerts/1501' route
+mb = Concert.create!(venue: "Mr. Beery's", date_time: "2015-03-30 20:00:00")
+wp = Artist.create!(name: "Wax Phantom")
+fp = Artist.create!(name: "Fellow Project")
 
-# 30.times do |day|
-#   day += 1
-
-#   if day < 10
-#     api_request = "http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-03-0"+day.to_s+"&app_id=SHOWGOER"
-#   else
-#     api_request = "http://api.bandsintown.com/events/search.json?location=Brooklyn,NY&date=2015-03-"+day.to_s+"&app_id=SHOWGOER"
-#   end
-
-#   p api_request
-# end
-
+Appearance.create!(artist_id: wp.id, concert_id: mb.id)
+Appearance.create!(artist_id: fp.id, concert_id: mb.id)
 
 
 

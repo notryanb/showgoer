@@ -14,13 +14,13 @@
  */
 
 
-
+ 
 /*@-webkit-keyframes slideBorder {
-	0% {border-bottom: 3px solid white}
-	25% {border-bottom:3px solid white;border-left: 3px solid white}
-	50% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 3px solid white}
-	75% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 1px solid white;border-right: 1px solid white}
-	100% {border:6pxpx solid white;}
+  0% {border-bottom: 3px solid white}
+  25% {border-bottom:3px solid white;border-left: 3px solid white}
+  50% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 3px solid white}
+  75% {border-bottom: 3px solid white;border-left: 3px solid white;border-top: 1px solid white;border-right: 1px solid white}
+  100% {border:6pxpx solid white;}
 }*/
 
 @-webkit-keyframes spinnerRotate
@@ -96,7 +96,7 @@
 }
 
 .input {
-	background-color: transparent;
+  background-color: transparent;
   color: white;
   border-top-color: transparent;
   border-left-color: transparent;
@@ -113,11 +113,11 @@
 }
 
 ul {
-	list-style-type: none; 
+  list-style-type: none; 
 }
 
 ul:hover {
-	margin: lem 0;
+  margin: lem 0;
 }
 
 .line {
@@ -130,7 +130,7 @@ ul:hover {
 }
 
 /*.line:hover {
-	margin-top: -.4em;
+  margin-top: -.4em;
 }*/
 
 #search_but {
@@ -184,7 +184,7 @@ ul:hover {
 }
 
 #sign_mit:hover, #sign_mit2:hover {
-	border-color: white;
+  border-color: white;
 }
 
 
@@ -196,7 +196,7 @@ ul:hover {
 
 
 #index_center {
-	text-align: center;
+  text-align: center;
 }
 
 #home_back {
@@ -208,42 +208,42 @@ ul:hover {
 }
 
 #login_but {
-	font-size: 1.4em;
-	font-family: 'Ubuntu', sans-serif;
-	color: white;
-	text-decoration: none !important;
-	transition-duration: .3s;
-	padding: .5em;
-	margin-left: -6em;
-	margin-top: 1em;
-	position: absolute;
-	border-style: solid;
-	border-color: transparent;
-	visibility: visible;
+  font-size: 1.4em;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-decoration: none !important;
+  transition-duration: .3s;
+  padding: .5em;
+  margin-left: -6em;
+  margin-top: 1em;
+  position: absolute;
+  border-style: solid;
+  border-color: transparent;
+  visibility: visible;
 }
 
 #login_but:hover, #signup_but:hover {
-	border-style: solid;
-	border-color: white;
+  border-style: solid;
+  border-color: white;
 
 
-	/*-webkit-animation:slideBorder 3s linear .3s 1 ;
-	*/animation: slideBorder 3s linear .3s 1;
+  /*-webkit-animation:slideBorder 3s linear .3s 1 ;
+  */animation: slideBorder 3s linear .3s 1;
 }
 
 #signup_but {
-	font-size: 1.4em;
-	font-family: 'Ubuntu', sans-serif;
-	color: white;
-	text-decoration: none !important;
-	transition-duration: .3s;
-	padding: .5em;
-	margin-left: 3em;
-	margin-top: 1em;
-	position: absolute;
-	border-style: solid;
-	visibility: visible;
-	border-color: transparent;
+  font-size: 1.4em;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-decoration: none !important;
+  transition-duration: .3s;
+  padding: .5em;
+  margin-left: 3em;
+  margin-top: 1em;
+  position: absolute;
+  border-style: solid;
+  visibility: visible;
+  border-color: transparent;
 }
 
 #ex1, #ex2 {
@@ -304,13 +304,13 @@ ul:hover {
 
 
 .mini_title {
-	font-family: 'Ubuntu', sans-serif;
-	color: white;
-	margin-bottom: 1em;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  margin-bottom: 1em;
 }
 
 .signup_button, .signin_button {
-	visibility: hidden;
+  visibility: hidden;
 
 }
 
