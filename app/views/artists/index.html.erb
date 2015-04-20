@@ -1,10 +1,4 @@
-This is the artists concerts page
-
-
  <!-- @artists.each do |artist| -->
-
-
-
 <!-- Call CoverVid -->
 <script type="text/javascript">
   // If using jQuery
@@ -32,29 +26,15 @@ This is the artists concerts page
 
 <div id='past_sect'>
 	<h3 id='past'> Past Concerts </h3>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-	<div class="vid  one_vid spread"></div>
-
-
 	<% past_concerts.each do |concert| %>
-	<%= concert.venue %>
+  <div class="vid  one_vid spread"></div><br>
+  <%= link_to concert.venue, concert_path(concert.id) %><br>
+  <%= concert.date_time %><br>
 	<% end %>
 </div>
 
 <div id='upcoming'>
-	<h3 > Upcoming Concerts </h3>
-
-<h3> Upcoming Concerts </h3>
+	<h3> Upcoming Concerts </h3>
 
 <% future_concerts.each do |concert| %>
 <%= concert.venue %><br>
