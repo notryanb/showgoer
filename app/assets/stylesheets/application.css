@@ -267,13 +267,13 @@ ul:hover {
 .tt-suggestion {
 	background-color: #FFEBBD;
 	font-family: 'Raleway', sans-serif;
-	margin-top: -2em;
-	color: white;
+	margin-top: -1em;
+	color: black;
 }
 
 .tt-suggestions {
 	min-width: 100%;
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 .tt-highlight {
@@ -282,6 +282,16 @@ ul:hover {
 
 .tt-hint {
 	background-color: white;
+	color: red;
+	text-decoration: none !important;
+}
+
+.twitter-typehead {
+	text-decoration: none !important;
+}
+
+.tt-dropdown-menu {
+	min-width: 100%
 }
 
 

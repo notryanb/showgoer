@@ -746,7 +746,8 @@
                 left: "0",
                 borderColor: "transparent",
                 boxShadow: "none",
-                opacity: "1"
+                opacity: ".5",
+                fontWeight: "bold"
             },
             input: {
                 position: "relative",
