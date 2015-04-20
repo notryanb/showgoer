@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :index, :show, :upload, :edit, :update]
   get 'signin', to: 'users#signin', as: :signin
   get 'signout', to: 'users#signout', as: :signout
-  get 'artists', to: 'artists#index', as: :artists
   post 'signinpost',to: 'users#signinpost', as: :signinpost
-  get 'artist', to: 'concerts#artist', as: :artist
   get 'upload', to: 'concerts#upload', as: :upload
   post 'videoupload', to: 'concerts#videoupload', as: :videoupload
 
-  resources :artists, only: [:index]
+  resources :artists, only: [:index, :show] do
+    collection do
+      get 'autocomplete_list'
+    end
+  end
   resources :concerts, only: [:index,:show]
 
   resources :likes, only: [:create]

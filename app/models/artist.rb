@@ -3,6 +3,10 @@ class Artist < ActiveRecord::Base
   has_many :concerts, through: :appearances
   has_many :videos
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
   def self.the_artist(artist)
     return first_artist = artist.first
   end
