@@ -14,7 +14,6 @@
       <h2 id='a_name'><%= @artist.name %></h2><br>
       <img src= "<%= @artist.url %>" height="420" width="auto" /><br>
 
-      <!-- the_artist.past_concerts(the_artist); -->
 
     </a>
   </section>
@@ -24,7 +23,7 @@
 
   <div id='past_sect'>
    <h3 id='past'> Past Concerts </h3>
-   <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> || <%= link_to "oldest", artists_path(:sort_type => "oldest" ) %><br></p>
+   <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> || <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
    <% @artist_past_concerts.each do |concert| %>
    <div class="vid  one_vid spread"></div><br>
    <%= link_to concert.venue, concert_path(concert.id) %><br>
