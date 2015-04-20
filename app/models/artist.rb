@@ -22,4 +22,5 @@ class Artist < ActiveRecord::Base
     return artist_concerts
   end
 
+
 end
