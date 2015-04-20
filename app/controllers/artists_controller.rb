@@ -9,6 +9,8 @@ class ArtistsController < ApplicationController
 
  def show
   @artist = Artist.find(params[:id])
+  @artist_past_concerts = Artist.past_concerts(@artist.name)
+  @artist_future_concerts = Artist.future_concerts(@artist.name)
  end
 
  def autocomplete_list

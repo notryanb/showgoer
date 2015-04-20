@@ -25,7 +25,7 @@
   <div id='past_sect'>
    <h3 id='past'> Past Concerts </h3>
    <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> || <%= link_to "oldest", artists_path(:sort_type => "oldest" ) %><br></p>
-   <% Artist.past_concerts(@artist.name).each do |concert| %>
+   <% @artist_past_concerts.each do |concert| %>
    <div class="vid  one_vid spread"></div><br>
    <%= link_to concert.venue, concert_path(concert.id) %><br>
    <%= concert.date_time %><br>
@@ -35,7 +35,7 @@
  <div id='upcoming'>
    <h3> Upcoming Concerts </h3>
 
-   <% Artist.future_concerts(@artist.name).each do |concert| %>
+   <% @artist_future_concerts.each do |concert| %>
    <%= concert.venue %><br>
    <%= concert.date_time %><br><br>
    <% end %>
