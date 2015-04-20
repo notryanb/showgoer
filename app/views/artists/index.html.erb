@@ -13,8 +13,8 @@
   <div></div>
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
-  <h2 id='a_name'><%= the_artist.name %></h2><br>
-<img src= "<%= the_artist.url %>" height="420" width="auto" /><br>
+  <h2 id='a_name'><%= Artist.the_artist(@artists).name %></h2><br>
+<img src= "<%= Artist.the_artist(@artists).url %>" height="420" width="auto" /><br>
 
 
 
@@ -26,7 +26,7 @@
 
 <div id='past_sect'>
 	<h3 id='past'> Past Concerts </h3>
-	<% past_concerts.each do |concert| %>
+	<% Artist.past_concerts(Artist.the_artist(@artists).name).each do |concert| %>
   <div class="vid  one_vid spread"></div><br>
   <%= link_to concert.venue, concert_path(concert.id) %><br>
   <%= concert.date_time %><br>
@@ -36,7 +36,7 @@
 <div id='upcoming'>
 	<h3> Upcoming Concerts </h3>
 
-<% future_concerts.each do |concert| %>
+<% Artist.future_concerts(Artist.the_artist(@artists).name).each do |concert| %>
 <%= concert.venue %><br>
 <%= concert.date_time %><br><br>
 <% end %>

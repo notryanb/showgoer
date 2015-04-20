@@ -12,56 +12,36 @@ class ApplicationController < ActionController::Base
     redirect_to '/' unless current_user
   end
 
-  def user_videos
-    @user_videos = Video.where(user_id: current_user.id)
-  end
-  helper_method :user_videos
+  # def the_artist
+  #   return first_artist = @artists.first
+  # end
+  # helper_method :the_artist
 
-  def user_contributed_concerts
-    concert_ids = []
-    user_concerts = []
-    user_videos = Video.where(user_id: current_user.id)
-    user_videos.each do |video|
-      concert_ids << video.concert_id
-    end
+  # def artist_concerts
+  #   Concert.concerts_for_artist_name(Artist.the_artist(@artists).name)
+  # end
+  # helper_method :artist_concerts
 
-    concert_ids.each do |concertid|
-      user_concerts << Concert.find_by(id: concertid)
-    end
-    return user_concerts
-  end
-  helper_method :user_contributed_concerts
+  # def past_concerts
+  #   pastconcerts = []
+  #   artist_concerts.each do |concert|
+  #     if DateTime.now > concert.date_time
+  #       pastconcerts << concert
+  #     end
+  #   end
+  #   return pastconcerts
+  # end
+  # helper_method :past_concerts
 
-  def the_artist
-    return first_artist = @artists.first
-  end
-  helper_method :the_artist
-
-  def artist_concerts
-    Concert.concerts_for_artist_name(the_artist.name)
-  end
-  helper_method :artist_concerts
-
-  def past_concerts
-    pastconcerts = []
-    artist_concerts.each do |concert|
-      if DateTime.now > concert.date_time
-        pastconcerts << concert
-      end
-    end
-    return pastconcerts
-  end
-  helper_method :past_concerts
-
-  def future_concerts
-    futureconcerts = []
-    artist_concerts.each do |concert|
-      if DateTime.now < concert.date_time
-        futureconcerts << concert
-      end
-    end
-    return futureconcerts
-  end
-  helper_method :future_concerts
+  # def future_concerts
+  #   futureconcerts = []
+  #   artist_concerts.each do |concert|
+  #     if DateTime.now < concert.date_time
+  #       futureconcerts << concert
+  #     end
+  #   end
+  #   return futureconcerts
+  # end
+  # helper_method :future_concerts
 
 end

@@ -68,20 +68,20 @@ Appearance.create!(artist_id: fp.id, concert_id: mb.id)
 
 # Kirans Seed Data
 
-# kiran = User.create(email:"kiran@gmail.com",
-#             password:"123",
-#             username: "kirawesome",
-#             url: "/img/kiran.jpg")
+kiran = User.create(email:"kiran@gmail.com",
+            password:"123",
+            username: "kirawesome",
+            url: "/img/kiran.jpg")
 
-# ryan = User.create(email:"ryan@gmail.com",
-#             password:"123",
-#             username: "notryanb",
-#             url: "/img/ryan.jpg")
+ryan = User.create(email:"ryan@gmail.com",
+            password:"123",
+            username: "notryanb",
+            url: "/img/ryan.jpg")
 
-# malcolm = User.create(email:"malcolm@gmail.com",
-#             password:"123",
-#             username: "awesomesaucemalcolm",
-#             url: "/img/malcolm.jpg")
+malcolm = User.create(email:"malcolm@gmail.com",
+            password:"123",
+            username: "awesomesaucemalcolm",
+            url: "/img/malcolm.jpg")
 
 # saintsofvalory = Artist.create(name:"Saints of Valory",
 #             url: "/img/saintsofvalory.jpg",
