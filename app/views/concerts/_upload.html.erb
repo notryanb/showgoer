@@ -58,7 +58,15 @@ $(function() {
           dataType: 'HTML',
           data: {'url': url, "concert_id": concertID }
         }).done(function(data) {
-            window.location.href = '../concerts/<%= @test_concert_id %>'
+          $('.video-container').prepend(
+        '<video width="400" controls>' +
+            '<source src="'+data+'" type="video/mp4"></source>' +
+             '</video>');
+
+          barContainer.hide();
+
+  
+            // window.location.href = '../concerts/<%= @test_concert_id %>'
         }).fail(function(data){
           console.log(data);
         });

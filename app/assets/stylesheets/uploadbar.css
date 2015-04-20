@@ -1,9 +1,10 @@
 .progress {
-  max-width: 600px;
+  max-width: 400px;
   margin:    0.2em 0 0.2em 0;
 }
 
 .progress .bar {
+  border-radius: 2px;
   height:  1.2em;
   padding: 0.2em;
   color:   white;
