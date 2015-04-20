@@ -12,11 +12,11 @@ def show
   @artist_past_concerts = Artist.past_concerts(@artist.name)
   @artist_future_concerts = Artist.future_concerts(@artist.name)
 
-  case params[:sort_type]
-  when "newest"
-    @artist_past_concerts.order(date_time: :desc)
+  case params["sort_type"]
   when "oldest"
-    @artist_past_concerts.order(date_time: :asc)
+    @artist_past_concerts = Artist.past_concerts(@artist.name).order(date_time: :asc)
+  else
+    @artist_past_concerts = Artist.past_concerts(@artist.name).order(date_time: :desc)
   end
 end
 
