@@ -1,25 +1,27 @@
-<%= link_to "Sign-Out", signout_path %>
+<div id='user_prof'>	
+
+	<div>
+		<img id='user_prof' src= "<%=current_user.url%>">
+		<p id='user_name'><%=current_user.username%></p>
+		<%= link_to "Sign-Out", signout_path %>
+		<div id="edit_user">
+			<%= link_to "Edit Profile", { :class=>"edit_profile_link" } %>
+		</div>
+	</div>
+
+	<!-- @user_videos = Video.where(user_id = current_user.url) -->
 
 
-<img src= "<%=current_user.url%>" height="420" width="auto" /><br>
-
-<!-- @user_videos = Video.where(user_id = current_user.url) -->
-
-
-<% User.user_videos(current_user.id).each do |video| %>
-<%= video.url %>
-<% end %>
+	<% User.user_videos(current_user.id).each do |video| %>
+	<%= video.url %>
+	<% end %>
 
 
-<% User.user_contributed_concerts(current_user.id).each do |concert| %>
-<!-- complete the link_to the concert page when the user clicks on the concert venue page. -->
-<%= concert.venue %>
-<%= concert.date_time %>
-<% end %>
+	<% User.user_contributed_concerts(current_user.id).each do |concert| %>
+	<!-- complete the link_to the concert page when the user clicks on the concert venue page. -->
+	<%= concert.venue %>
+	<%= concert.date_time %>
+	<% end %>
 
 
-<%= link_to "Edit Profile", { :class=>"edit_profile_link" } %>
-
-<div class="edit_profile_div">
-  <%= render partial: 'edituser' %>
 </div>

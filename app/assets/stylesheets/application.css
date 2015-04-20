@@ -365,7 +365,7 @@ ul:hover {
 	position: absolute;
 	/*margin-left: 82em;*/
 	transition-duration: 2s;
-	left: 80em;
+	left: 82em;
 	padding-bottom: 12em;
 	z-index: 1;
 }
@@ -415,6 +415,14 @@ ul:hover {
 	padding-right: .3em;
 	padding-top: .05em;
 	padding-bottom: .05em;
+}
+
+#user_prof {
+	margin-left: 17em;
+	width: 10em;
+	height: 10em;
+	margin-top: 5em;
+	border-radius: 50%;
 }
 
 /****************ALL SHOWS****************/

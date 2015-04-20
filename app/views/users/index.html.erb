@@ -1,6 +1,9 @@
 <div id='off_left'>
 	<div id='user_show'>
 		<h1 id="ex3">X</h1>
+		<% if session[:user_id] %>
+			<%= render partial: 'dashboard' %>
+		<% end %>
 	</div>
 </div>
 
