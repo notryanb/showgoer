@@ -25,7 +25,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 
     $("#menu").click(function(){
-        $("#user_show").css("margin-left", "10em");
+        $("#user_show").css("left", "10em");
         $(this).css("visibility", "hidden");
         $("#logo").css("visibility", "hidden");
         $("#signup_but").css("visibility", "hidden");
@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
 
     $("#ex3").click(function(){
-        $("#user_show").css("margin-left", "82em");
+        $("#user_show").css("left", "80em");
         $("#menu").css("visibility", "visible");
         $("#logo").css("visibility", "visible");
         $("#signup_but").css("visibility", "visible");
