@@ -80,7 +80,13 @@
 	margin-left: 4.7em;
 	font-size: 4.5em;
 	margin-bottom: 1em;
+  animation-delay: 10s;
 
+}
+
+.fadeInDown {
+  animation-delay: 10s;
+	
 }
 
 #search {
@@ -93,6 +99,7 @@
   border-top: transparent;
   border-bottom-color: white;
   color: white;
+  font-weight: bold;
 }
 
 .input {
@@ -103,6 +110,7 @@
   border-right-color: transparent;
 	font-size: 1em;
 	width: 22em;
+	font-weight: bold;
 }
 
 #menu {
