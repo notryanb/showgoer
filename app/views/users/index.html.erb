@@ -23,7 +23,14 @@
 </div>
 
 <div id='index_center'>
-	<%= image_tag 'logo.png', id: 'logo' %>
+	<div id='split_logo'>
+		<%= image_tag 'camera.png', id: 'camera' %>
+		<%= image_tag 'pillar1.png', class: 'pillars', id: 'pillar1' %>
+		<%= image_tag 'pillar2.png', class: 'pillars', id: 'pillar2' %>
+		<%= image_tag 'pillar3.png', class: 'pillars', id: 'pillar3' %>
+		<%= image_tag 'pillar2.png', class: 'pillars', id: 'pillar2_2' %>
+		<%= image_tag 'pillar1.png', class: 'pillars', id: 'pillar1_1' %>
+	</div>
 	<h1 id='title'>SHOW<h1 id='goer' class="wow fadeInDown animated" data-wow-delay='2s'>GOER</h1></h1>
 	<div>
 		<%= render partial: 'searchform' %>
