@@ -24,7 +24,7 @@ $(document).ready(function() {
 };
 
 $.ajax({
-  url: "/artists",
+  url: "/artists/autocomplete_list",
   type: "get",
   dataType: 'json'
 })
