@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :artists, only: [:index]
   resources :concerts, only: [:index,:show]
 
+  resources :likes, only: [:create]
+  resources :dislikes, only: [:create]
+
   # resources :concerts, only: [:show]
 
 

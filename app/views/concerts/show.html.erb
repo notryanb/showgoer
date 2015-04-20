@@ -22,17 +22,28 @@
 </section>
 <section class="content">
   <div class="container">
-    <h2>Concert Show Page</h2>
+
 
   <div class="upload-form-container">
     <%= render partial: 'upload', :locals => {:s3_direct_post => @s3_direct_post} %>
   </div>
 
     <% @related_videos.each do |video| %>
+      <video class="concert-video" width="400" controls>
+        <source src="<%= video.url %>" type="video/mp4">
+      </video>
 
-    <video class="concert-video" width="400" controls>
-      <source src="<%= video.url %>" type="video/mp4">
-    </video>
+      <div class="likes">
+        <%= button_to 'like', likes_path(:user_id => 1, :video_id => video.id) %>
+        Total Likes <%= video.likes.count %><br><br>
+      </div>
+
+      <div class="dislikes">
+        <%= button_to 'dislike', dislikes_path(:user_id => 1, :video_id => video.id) %>
+        Total Likes <%= video.dislikes.count %><br><br>
+      </div>
+
+
     <% end %>
 
 
