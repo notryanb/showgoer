@@ -41,11 +41,11 @@
 
 
 #logo	{
-  position: absolute;
-  width: 4em;
-  margin-top: -7em;
-  margin-left: 40em;
-  visibility: visible;
+	position: absolute;
+	width: 4em;
+	margin-top: -6em;
+	margin-left: 0em;
+	visibility: visible;
 }
  .signin {
   display: none;
@@ -104,10 +104,10 @@
 }
 
 #menu {
-  margin-left: 74em;
-  position: absolute;
-  margin-top: -19em;
-  visibility: visible;
+	margin-left: 75em;
+	position: absolute;
+	margin-top: -9em;
+	visibility: visible;
 }
 
 ul {
@@ -147,6 +147,11 @@ ul:hover {
 #search_state {
 	color: white;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+.names {
+	color: red;
+	background-color: red;
 }
 
 #sign_mit {
