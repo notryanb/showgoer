@@ -1,7 +1,5 @@
 class LikesController < ApplicationController
 
-
-
   def create
     @like = Like.create(user_id: params[:user_id], video_id: params[:video_id])
 
