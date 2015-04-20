@@ -13,7 +13,7 @@ class VideosController < ApplicationController
 
  #CREATION OF VIDEO AND ASSOCATION TO CONCERT / ARTIST
   def create
-    @video = Video.new(url: params[:url], concert_id: params[:concert_id])
+    @video = Video.new(url: params[:url], concert_id: params[:concert_id], user_id: params[:user_id])
 
     if @video.save
       if request.xhr?
