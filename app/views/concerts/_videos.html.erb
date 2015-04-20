@@ -1,0 +1,36 @@
+
+    <% related_videos.each do |video| %>
+      <video class="concert-video" width="600" controls>
+        <source src="<%= video.url %>" type="video/mp4">
+      </video>
+
+      <div class="video-console">
+        <div class="likes">
+          
+         <% if current_user %> 
+          <%= button_to 'like', likes_path(:user_id => current_user.id, :video_id => video.id), class: "like-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
+          <% else %>
+            <span>Likes:</span>
+          <% end %>
+          <span class="likes-vote-count<%= video.id %>" 
+                data-video-id="<%= video.id %>">
+                <%= video.likes.count %>
+          </span>
+        </div>
+
+        
+       <% if current_user %> 
+        <div class="dislikes">
+          <%= button_to 'dislike', dislikes_path(:user_id => 1, :video_id => video.id), class: "dislike-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
+        <% else %>
+          <span>Dislikes:</span>
+        <% end %>
+
+          <span class="dislikes-vote-count<%= video.id %>" 
+                data-video-id="<%= video.id %>">
+                <%= video.dislikes.count %>
+          </span>
+        </div>
+
+      <% end %>
+     </div>

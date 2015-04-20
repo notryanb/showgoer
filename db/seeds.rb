@@ -42,6 +42,11 @@ fp = Artist.create!(name: "Fellow Project")
 Appearance.create!(artist_id: wp.id, concert_id: mb.id)
 Appearance.create!(artist_id: fp.id, concert_id: mb.id)
 
+Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/cc11cddf-efc1-49a6-9add-dd2ce5fd28ccWax%20Phantom%20-%2001.mp4")
+
+Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/8c470ac7-7be4-4c74-852f-f19cb5e19de3Bit%20Part%20-%2003%20Paris_France.mp4")
+
+Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/a4ebddd4-2039-4b73-89c6-57e2a1a94e11Wax%20Phantom%20-%2002.mp4")
 
 
 

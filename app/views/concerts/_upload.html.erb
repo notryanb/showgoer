@@ -47,18 +47,28 @@ $(function() {
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = '<%= s3_direct_post.url %>/' + key;
-        var concertID = '<%= @test_concert.id %>/'
-        // create hidden field
-        // var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
-        // form.append(input);
+        var concertID = '<%= @test_concert.id %>/';
+
+        if ('<%= current_user %>' === 'no one'){
+        var userID = 'nil'  
+        } else  {
+        var userID = '<%= current_user.id %>'
+        }
+
 
         $.ajax({
           url: '/videos',
           method: 'post',
           dataType: 'HTML',
-          data: {'url': url, "concert_id": concertID }
+          data: {'url': url, "concert_id": concertID, "user_id": userID }
         }).done(function(data) {
-            window.location.href = '../concerts/<%= @test_concert_id %>'
+
+          var videoLayout = '<video width="400" controls>' +
+            '<source src="'+data+'" type="video/mp4"></source>' +
+             '</video>'
+          $('.video-container').prepend(videoLayout);
+  
+            // window.location.href = '../concerts/<%= @test_concert_id %>'
         }).fail(function(data){
           console.log(data);
         });
