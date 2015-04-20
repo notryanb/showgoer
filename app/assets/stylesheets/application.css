@@ -116,7 +116,7 @@
 
 #pillar2 {
 	height: 1.5em;
-	margin-left: .4em;
+	margin-left: .6em;
 	margin-top: -3.7em;	
 	-webkit-animation: move2 1.2s .5s  infinite;
 	transition-duration: 1s;
@@ -124,7 +124,7 @@
 
 #pillar3 {
 	height: 2.2em;
-	margin-left: .8em;
+	margin-left: 1.1em;
 	margin-top: -4.4em;	
 	-webkit-animation: move3 1.3s 1s  infinite;
 	transition-duration: 1s;
@@ -132,7 +132,7 @@
 
 #pillar2_2 {
 	height: 1.5em;
-	margin-left: 2.1em;
+	margin-left: 1.65em;
 	margin-top: -3.7em;	
 	-webkit-animation: move2 1.4s 1.5s  infinite;
 	transition-duration: 1s;
@@ -140,7 +140,7 @@
 
 #pillar1_1 {
 	height: 1em;
-	margin-left: 2.7em;
+	margin-left: 2.25em;
 	margin-top: -3.2em;	
 	-webkit-animation: move 1.5s 2s infinite;
 	transition-duration: 1s;
