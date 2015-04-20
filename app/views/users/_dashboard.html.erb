@@ -2,10 +2,12 @@
 
 	<div>
 		<img id='user_prof' src= "<%=current_user.url%>">
-		<p id='user_name'><%=current_user.username%></p>
-		<%= link_to "Sign-Out", signout_path %>
-		<div id="edit_user">
-			<%= link_to "Edit Profile", { :class=>"edit_profile_link" } %>
+			<p id='user_name'><%=current_user.username%></p>
+		<div id='area'>
+			<%= link_to "Sign-Out", signout_path %>
+			<div id="edit_user">
+				<%= link_to "Edit Profile", { :class=>"edit_profile_link" } %>
+			</div>
 		</div>
 	</div>
 
