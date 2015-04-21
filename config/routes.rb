@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
 
 post 'createfollowings/:target_id', to: 'followings#create', as: :createfollowings
+get 'originators/:user_id', to: 'followings#originators', as: :originators
+get 'targets/:user_id', to: 'followings#targets', as: :targets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

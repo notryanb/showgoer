@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
   has_many :dislikes
   has_many :videos
   has_many :comments
+   has_many :originated_followings, class_name: 'Following', foreign_key: :originator_id
+  has_many :received_followings, class_name: 'Following', foreign_key: :target_id
+
+  has_many :people_followed, through: :originated_followings, source: :target
+  has_many :followers, through: :received_followings, source: :originator
 
   def self.user_videos(userid)
     @user_videos = Video.where(user_id: userid)

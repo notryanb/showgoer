@@ -7,15 +7,10 @@
     <div id='area'>
       <div id="edit_user">
         <%= link_to "Follow", createfollowings_path(@user.id), method: :post %> |
-        <%= link_to "Following" %> |
-        <%= link_to "Followers" %>
+        <%= link_to "Followers", originators_path(@user.id) %> |
+        <%= link_to "Following", targets_path(@user.id) %>
       </div>
     </div>
   </div>
-
-
 </div>
 </div>
-
-
-

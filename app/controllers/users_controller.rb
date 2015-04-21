@@ -55,7 +55,7 @@ def signinpost
     session[:user_id] = c_user.id
     redirect_to '/'
   else
-    redirect_to root
+    redirect_to '/'
   end
 end
 
