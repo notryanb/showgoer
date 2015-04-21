@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :attends
   has_many :dislikes
   has_many :videos
+  has_many :comments
 
   def self.user_videos(userid)
     @user_videos = Video.where(user_id: userid)

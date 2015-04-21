@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20150421115007) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "content",    null: false
+    t.integer  "user_id",    null: false
+    t.integer  "video_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "concerts", force: :cascade do |t|
     t.string   "venue",      null: false
     t.datetime "date_time",  null: false
