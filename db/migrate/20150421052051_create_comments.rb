@@ -1,9 +1,9 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
-      t.text :content
-      t.belongs_to :user
-      t.belongs_to :video
+      t.text :content, null: false
+      t.belongs_to :user, null: false
+      t.belongs_to :video, null: false
 
       t.timestamps null: false
     end
