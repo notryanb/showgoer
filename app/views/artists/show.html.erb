@@ -36,6 +36,12 @@
      <div class="vid  one_vid spread">
      <%= link_to concert.venue, concert_path(concert.id) %><br>
      <%= concert.date_time %><br>
+
+
+     <% if concert.videos.count > 0 %>
+       <img class="concert-thumbnail" src="<%= concert.videos.sample.thumbnail_url %>"/>
+      <% end %>
+
      <% end %>
      </div><br>
     </div>

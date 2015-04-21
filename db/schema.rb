@@ -82,12 +82,13 @@ ActiveRecord::Schema.define(version: 20150421115007) do
 
   create_table "videos", force: :cascade do |t|
     t.string   "caption"
-    t.string   "url",        null: false
+    t.string   "url",           null: false
+    t.string   "thumbnail_url"
     t.integer  "user_id"
     t.integer  "artist_id"
     t.integer  "concert_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
