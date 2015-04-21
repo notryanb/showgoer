@@ -90,6 +90,16 @@ malcolm = User.create(email:"malcolm@gmail.com",
             username: "awesomesaucemalcolm",
             url: "/img/malcolm.jpg")
 
+Following.create(originator_id:1,target_id:2)
+Following.create(originator_id:1,target_id:3)
+
+Following.create(originator_id:2,target_id:1)
+Following.create(originator_id:2,target_id:3)
+
+Following.create(originator_id:3,target_id:1)
+Following.create(originator_id:3,target_id:2)
+
+
 # saintsofvalory = Artist.create(name:"Saints of Valory",
 #             url: "/img/saintsofvalory.jpg",
 #   )
