@@ -1,7 +1,7 @@
 The Followers of <%= @user.username %><br>
 <br>
 
-<% @user_originators.each do |originator| %>
+<% @usr_followers.each do |originator| %>
 <img id='user_prof' src= "<%= originator.url%>">
 <%= originator.username %><br>
 <% end %>
