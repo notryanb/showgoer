@@ -45,7 +45,25 @@ $(document).ready(function(){
   });
 
   //------- Show attendance
+  $('#attend-btn').on('click', function(event){
+    event.preventDefault();
+    var $target = $(event.target);
+    $target.attr("disabled", true);
+    var userID = $target.data('user-id');
+    var concertID = $target.data('concert-id');
 
+    $.ajax({
+      url: '/attends',
+      method: 'POST',
+      data: { "user_id": userID, "concert_id": concertID }
+    }).done(function(response){
+       $('#user-numbers').html(response);
+       $('#attend-btn').html("You were there!");
+    }).fail(function(err){
+      console.log("Error" + err)
+    });
+    
+  });
 
 
 

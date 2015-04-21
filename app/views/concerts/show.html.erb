@@ -53,13 +53,27 @@
 
   <% end %>
 
-  <div id="attendance-count">
-    <% if @concert.attendance == 1 %>
-      <h4><%= @concert.attendance %> person attended </h4>
-    <% else %>
-      <h4><%= @concert.attendance %> people attended </h4>
-    <% end %>
-  </div>
+    <div id="attendance-container">
+      <div id="attendance-count">
+        <% if @concert.attendance == 1 %>
+          <h4><span id="user-numbers"><%= @concert.attendance %></span> user attended</h4>
+        <% else %>
+            <h4><span id="user-numbers"><%= @concert.attendance %></span> users attended</h4>
+        <% end %>
+      </div>
+
+      <% if current_user %>    
+        <div id="user-attend">
+          <% if current_user.attends.where(concert_id: @concert.id).count > 0 %>
+            <button id="attend-btn">You were there!</button>
+          <% else %>
+            <%= button_to 'I was there!', attends_path(:user_id => current_user.id, :concert_id => @concert.id), id: "attend-btn", data:{ :user_id => current_user.id, :concert_id => @concert.id }   %>
+          <% end %>
+        </div>
+      <% end %>
+
+
+    </div>
 
     <div class="video-container">
       <%= render partial: 'videos', :locals => {:related_videos => @related_videos} %>
