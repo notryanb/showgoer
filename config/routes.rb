@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :likes, only: [:create]
   resources :dislikes, only: [:create]
+  get 'all', to: 'users#all', as: :all
+  resources :follows, only: [:create]
 
   # resources :concerts, only: [:show]
 
