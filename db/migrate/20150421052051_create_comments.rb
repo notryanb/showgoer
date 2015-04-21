@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration
       t.belongs_to :user, null: false
       t.belongs_to :video, null: false
 
+
       t.timestamps null: false
     end
   end
