@@ -1,1 +1,17 @@
-<%= render partial: 'dashboard' %>
+<div id='user_prof'>
+
+  <div>
+    <img id='user_prof' src= "<%= @user.url%>">
+      <p id='user_name'><%= @user.username %></p>
+    <div id='area'>
+      <div id="edit_user">
+        <%= link_to "Follow", { :class=>"follow_profile_link" } %> |
+        <%= link_to "Following", { :class=>"" } %> |
+        <%= link_to "Followers", { :class=>"" } %>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

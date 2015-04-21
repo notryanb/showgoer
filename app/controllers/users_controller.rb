@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by_id(params[:id])
+  end
 
+  def all
+    @users = User.all
   end
 
   def upload
