@@ -48,6 +48,8 @@ Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.s
 
 Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/a4ebddd4-2039-4b73-89c6-57e2a1a94e11Wax%20Phantom%20-%2002.mp4")
 
+Comment.create!(user_id: 1, video_id: 1, content: "Good vid")
+
 
 
 
