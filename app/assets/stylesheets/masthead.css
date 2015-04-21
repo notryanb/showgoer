@@ -76,6 +76,7 @@ html {
     line-height: 1 !important;
     color: #fff !important;
     margin-top: 2em;
+    opacity: 0.9;
 }
 
 h1 span {
@@ -87,6 +88,7 @@ h1 span {
     text-transform: uppercase;
     padding-left: 30px;
 }
+
 h2 {
     margin-top: 0;
     margin-bottom: 10px;

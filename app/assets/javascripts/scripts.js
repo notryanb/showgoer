@@ -13,10 +13,10 @@ function fullscreen() {
 
 function headerParallax() {
 	var st = $(window).scrollTop();
-	var headerScroll = $('.masthead h1');
+	var headerScroll = $('#video-header');
 
 	if (st < 500) {
-		headerScroll.css('opacity', 0.4-st/1000);
+		headerScroll.css('opacity', 0.9-st/1000);
 		$('.masthead-arrow ').css('opacity', 0.4-st/250);
 		headerScroll.css({
 			'-webkit-transform' : 'translateY(' + st/7 + '%)',

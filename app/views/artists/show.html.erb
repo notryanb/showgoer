@@ -1,43 +1,45 @@
- <!-- @artists.each do |artist| -->
- <!-- Call CoverVid -->
- <script type="text/javascript">
-  // If using jQuery
-  $('.masthead-video').coverVid(1080,720);
-  // If not using jQuery (Native Javascript)
-    //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
-</script>
-    <!-- Video Markup -->
-    <section class="masthead">
-      <div></div>
-      <div class="masthead-overlay"></div>
-      <div class="masthead-arrow"></div>
-      <h2 id='a_name'><%= @artist.name %></h2><br>
-      <img src= "<%= @artist.url %>" height="420" width="auto" /><br>
+<div ='artist_content'>
+   <!-- @artists.each do |artist| -->
+   <!-- Call CoverVid -->
+   <script type="text/javascript">
+    // If using jQuery
+    $('.masthead-video').coverVid(1080,720);
+    // If not using jQuery (Native Javascript)
+      //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
+  </script>
+      <!-- Video Markup -->
+      <section class="masthead">
+        <div></div>
+        <div class="masthead-overlay"></div>
+        <div class="masthead-arrow"></div>
+        <h1 id='video-header' class="wow fadeInDown animated" data-wow-delay='1.3s'><%= @artist.name %></h1><br>
+        <img src= "<%= @artist.url %>" height="420" width="auto" /><br>
+      </a>
+    </section>
+  <div>
+    <%= image_tag "layout.png", id: 'many' %>
+  </div>
 
+    <div id='past_sect'>
+     <h3 id='past'> Past Concerts </h3>
+     <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> | <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
+     <% @artist_past_concerts.each do |concert| %>
+     <div class="vid  one_vid spread">
+     <%= link_to concert.venue, concert_path(concert.id) %><br>
+     <%= concert.date_time %><br>
+     <% end %>
+     </div><br>
+    </div>
 
-    </a>
-  </section>
+   <div id='upcoming'>
+     <h3> Upcoming Concerts </h3>
 
-  <div id='straight'></div>
-  <div id='many'></div>
+     <% @artist_future_concerts.each do |concert| %>
+     <%= concert.venue %><br>
+     <%= concert.date_time %><br><br>
+     <% end %>
+   </div>
 
-  <div id='past_sect'>
-   <h3 id='past'> Past Concerts </h3>
-   <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> | <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
-   <% @artist_past_concerts.each do |concert| %>
-   <div class="vid  one_vid spread"></div><br>
-   <%= link_to concert.venue, concert_path(concert.id) %><br>
-   <%= concert.date_time %><br>
-   <% end %>
- </div>
+  </div>
 
- <div id='upcoming'>
-   <h3> Upcoming Concerts </h3>
-
-   <% @artist_future_concerts.each do |concert| %>
-   <%= concert.venue %><br>
-   <%= concert.date_time %><br><br>
-   <% end %>
-
-
- </div>
+</div>

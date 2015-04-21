@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-    $("#straight").click(function(){
+    $(".straight").click(function(){
         $(".one_vid").toggleClass("spread");
         
     });
