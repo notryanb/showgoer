@@ -1,3 +1,4 @@
+<div class="all_users_page">
 <div id='user_prof'>
 
   <div>
@@ -5,13 +6,16 @@
       <p id='user_name'><%= @user.username %></p>
     <div id='area'>
       <div id="edit_user">
-        <%= link_to "Follow", { :class=>"follow_profile_link" } %> |
-        <%= link_to "Following", { :class=>"" } %> |
-        <%= link_to "Followers", { :class=>"" } %>
+        <%= link_to "Follow", createfollowings_path(@user.id), method: :post %> |
+        <%= link_to "Following" %> |
+        <%= link_to "Followers" %>
       </div>
     </div>
   </div>
 
 
-
 </div>
+</div>
+
+
+

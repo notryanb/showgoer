@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   resources :dislikes, only: [:create]
 
   get 'all', to: 'users#all', as: :all
-  resources :follows, only: [:create]
 
   resources :attends, only: [:create]
 
@@ -30,6 +29,11 @@ Rails.application.routes.draw do
 
   resources :videos
 
+
+
+
+
+post 'createfollowings/:target_id', to: 'followings#create', as: :createfollowings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
