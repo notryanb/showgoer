@@ -32,7 +32,7 @@ gem 'aws-sdk-v1'
 
 gem 'ransack'
 
-
+gem 'streamio-ffmpeg'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
