@@ -1,18 +1,35 @@
 
 <!-- Video Markup -->
+<header id='concert_header'>
+  <ul class="concert_menu wow bounceInUp animated">
+    <li class='line'>_____</li>
+    <li class='line'>_____</li>
+    <li class='line'>_____</li>
+  </ul>
+  <%= image_tag 'camera.png', id: 'camera_concert' %>
+</header>
+
 <section class="masthead">
   <video class="masthead-video" autoplay loop muted>
     <source src="<%= @header_video %>" type="video/mp4">
   </video>
   <div class="masthead-overlay"></div>
   <div class="masthead-arrow"></div>
+
+  <% if false %>
   <h1 id="video-header">
     <% @concert.artists.each do |artist| %>
+  <% end %>
+
+  <h1 id="video-header" class="wow fadeInDown animated" data-wow-delay='1.3s'>
+    <% @test_concert.artists.each do |artist| %>
+      video area
        <%= link_to artist.name, "#" %><br>
     <% end %>
 
 
     <span>@ <%= @concert.venue %></span></h1>
+
 
   </a>
 </section>

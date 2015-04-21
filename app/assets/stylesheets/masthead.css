@@ -19,7 +19,9 @@ html {
     bottom: 0; right: 0;
     width: 100%;
     height: 100%;
+    opacity: .6;
 }
+
 .masthead-video-credit {
     position: absolute;
     bottom: 0;
@@ -65,29 +67,28 @@ html {
 #video-header {
     position: absolute !important;
     width: 100% !important;
-    font-family: 'HelveticaNeue-UltraLight', helvetica, sans-serif !important;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold !important;
     letter-spacing: -0.06em !important;
     font-size: 120px !important;
     text-align: center !important;
     height: 120px !important;
     line-height: 1 !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    margin: auto !important;
     color: #fff !important;
-    opacity: 0.4 !important;
+    margin-top: 2em;
+    opacity: 0.9;
 }
 
 h1 span {
     display: block;
     font-size: 24px;
     letter-spacing: 5px;
-    font-family: 'HelveticaNeue-Thin', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 100;
     text-transform: uppercase;
     padding-left: 30px;
 }
+
 h2 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -106,7 +107,7 @@ h2 {
     line-height: 1.5;
 }
 a {
-    color: #1191db;
+    color: white;
     text-decoration: none;
 }
 ol {

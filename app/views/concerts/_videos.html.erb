@@ -9,11 +9,8 @@
         <div class="likes">
           
          <% if current_user %> 
-           <% if current_user.likes.where(video_id: video.id).count > 0 %>
-              <button class = "like-btn">like</button>
-           <% else %>
-              <%= button_to 'like', likes_path(:user_id => current_user.id, :video_id => video.id), class: "like-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
-           <% end %>
+
+          <%= link_to 'like', likes_path(:user_id => current_user.id, :video_id => video.id), class: "like-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
           <% else %>
             <span>Likes:</span>
           <% end %>
@@ -27,12 +24,7 @@
       <div class="dislikes">
        <% if current_user %> 
 
-         <% if (current_user.dislikes.where(video_id: video.id).count > 0) %>
-            <button class = "dislike-btn">dislike</button>
-         <% else %>
-           <%= button_to 'dislike', dislikes_path(:user_id => 1, :video_id => video.id), class: "dislike-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
-         <% end %>
-
+          <%= link_to 'dislike', dislikes_path(:user_id => 1, :video_id => video.id), class: "dislike-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
         <% else %>
           <span>Dislikes:</span>
         <% end %>
@@ -42,8 +34,5 @@
                 <%= video.dislikes.count %>
           </span>
       </div>
-        <% end %>
-
-     </div> 
 
 

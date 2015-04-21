@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-    $("#straight").click(function(){
+    $(".straight").click(function(){
         $(".one_vid").toggleClass("spread");
         
     });
@@ -44,4 +44,12 @@ $(document).ready(function() {
         $(".spread").toggleClass("one_vid");
     });
 
+});
+$(document).ready(function() {
+    var target = $(".content").offset().top;
+    var interval = setInterval(function() {
+        if ($(window).scrollTop() >= target) {
+            $("#camera_concert").css("filter","invert",("100%"));
+        }
+    }, 250);
 });
