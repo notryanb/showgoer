@@ -16,7 +16,7 @@ function headerParallax() {
 	var headerScroll = $('.masthead h1');
 
 	if (st < 500) {
-		headerScroll.css('opacity', 0.4-st/1000);
+		headerScroll.css();
 		$('.masthead-arrow ').css('opacity', 0.4-st/250);
 		headerScroll.css({
 			'-webkit-transform' : 'translateY(' + st/7 + '%)',
