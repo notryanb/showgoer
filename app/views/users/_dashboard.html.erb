@@ -29,13 +29,21 @@
 	<% end %>
 
 	<h6>The Videos that the User has liked.</h6>
+	<% if @user_liked_vids.count > 0 %>
 	<% @user_liked_vids.each do |video| %>
 	<%= video.video_url %>
 	<% end %>
+	<% else %>
+	<h6> The User hasen't liked any videos yet!</h6>
+	<% end %>
 
 	<h6>The list of Concerts that the User has Attended.</h6>
+	<% if @user_attendance.count > 0 %>
 	<%  @user_attendance.each do |concert| %>
 	<%= concert.venue %>
 	<%= concert.date_time %>
+	<% end %>
+	<% else %>
+	<h6> The User hasen't attended any concerts yet!</h6>
 	<% end %>
 </div>
