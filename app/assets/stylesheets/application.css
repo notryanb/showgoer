@@ -646,6 +646,26 @@ ul:hover {
 	background-color: rgb(237, 225, 197);
 }
 
+#camera_concert {
+	width: 2em;
+	height: 2em;
+	margin-left: 1em;
+	margin-top: -5em;
+}
+
+#concert_header {
+	background-color: transparent;
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	margin-top: -2em;
+}
+
+.concert_menu {
+	margin-left: 52em;
+	margin-top: 2em;
+}
+
 
 
 

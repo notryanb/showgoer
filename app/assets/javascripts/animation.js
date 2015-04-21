@@ -45,3 +45,11 @@ $(document).ready(function() {
     });
 
 });
+$(document).ready(function() {
+    var target = $(".content").offset().top;
+    var interval = setInterval(function() {
+        if ($(window).scrollTop() >= target) {
+            $("#camera_concert").css("filter","invert",("100%"));
+        }
+    }, 250);
+});
