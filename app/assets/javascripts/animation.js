@@ -45,7 +45,8 @@ $(document).ready(function() {
     });
 
 });
-$(document).ready(function() {
+
+$(window).load(function() {
     var target = $(".content").offset().top;
     var interval = setInterval(function() {
         if ($(window).scrollTop() >= target) {
