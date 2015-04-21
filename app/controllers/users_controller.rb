@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 
   def index
+    @user_liked_video_ids =[]
     @search = Artist.search(params[:q])
     @user = User.new
+    @user_liked_vids = User.user_liked_videos(current_user)
+    @user_attendance = current_user.attends
   end
 
   def show

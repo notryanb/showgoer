@@ -12,5 +12,14 @@
       </div>
     </div>
   </div>
+
+  <% User.user_videos(@user.id).each do |video| %>
+  <%= video.url %><br>
+  <% end %>
+
+  <% User.user_contributed_concerts(@user.id).each do |concert| %>
+  <%= link_to concert.venue, concert_path(concert.id) %>
+  <%= concert.date_time %><br>
+  <% end %>
 </div>
 </div>

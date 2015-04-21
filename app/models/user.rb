@@ -29,4 +29,17 @@ class User < ActiveRecord::Base
     return user_concerts
   end
 
+  def self.user_liked_videos(crt_usr)
+    user_liked_video_ids = []
+    user_liked_vds = []
+    user_likes = crt_usr.likes
+    user_likes.each do |concert|
+      user_liked_video_ids << concert.video_id
+     end
+     user_liked_video_ids.each do |videoid|
+      user_liked_vds << Video.find_by(id: videoid)
+    end
+    return user_liked_vds
+  end
+
 end
