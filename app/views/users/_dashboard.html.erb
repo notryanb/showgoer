@@ -1,8 +1,8 @@
-<div id='user_prof'>	
+<div id='user_prof'>
 
 	<div>
 		<img id='user_prof' src= "<%=current_user.url%>">
-			<p id='user_name'><%=current_user.username%></p>
+		<p id='user_name'><%=current_user.username%></p>
 		<div id='area'>
 			<%= link_to "Sign-Out", signout_path %>
 			<div id="edit_user">
@@ -13,17 +13,25 @@
 
 	<!-- @user_videos = Video.where(user_id = current_user.url) -->
 
-
+	<h6>The User Videos</h6>
 	<% User.user_videos(current_user.id).each do |video| %>
 	<%= video.url %>
 	<% end %>
 
-
+	<h6>The Concerts that the User Contributed to</h6>
 	<% User.user_contributed_concerts(current_user.id).each do |concert| %>
-	<!-- complete the link_to the concert page when the user clicks on the concert venue page. -->
-	<%= concert.venue %>
+	<%= link_to concert.venue, concert_path(concert.id) %>
 	<%= concert.date_time %>
 	<% end %>
 
+	<h6>The Videos that the User has liked.</h6>
+	<% @user_liked_vids.each do |video| %>
+	<%= video.video_url %>
+	<% end %>
 
+	<h6>The list of Concerts that the User has Attended.</h6>
+	<%  @user_attendance.each do |concert| %>
+	<%= concert.venue %>
+	<%= concert.date_time %>
+	<% end %>
 </div>
