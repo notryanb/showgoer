@@ -75,7 +75,7 @@ Comment.create!(user_id: 1, video_id: 1, content: "Good vid")
 
 # Kirans Seed Data
 
-kiran = User.create(email:"kiran@gmail.com",
+kiran = User.create(email:"phanendar@gmail.com",
             password:"123",
             username: "kirawesome",
             url: "/img/kiran.jpg")

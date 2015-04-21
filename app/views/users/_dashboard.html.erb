@@ -1,7 +1,11 @@
 <div id='user_prof'>
 
 	<div>
-		<img id='user_prof' src= "<%=current_user.url%>">
+		<% if current_user.url == nil %>
+		<img id='user_prof' src= "<%= gravatar_url(current_user)%>">
+		<% else %>
+		<img id='user_prof' src= "<%= current_user.url %>">
+		<% end %>
 		<p id='user_name'><%=current_user.username%></p>
 		<div id='area'>
 			<%= link_to "Sign-Out", signout_path %>
