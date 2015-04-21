@@ -58,7 +58,7 @@ $(document).ready(function(){
       data: { "user_id": userID, "concert_id": concertID }
     }).done(function(response){
        $('#user-numbers').html(response);
-       $('#attend-btn').html("You were there!");
+       $('#attend-btn').attr('value', 'Attended!');
     }).fail(function(err){
       console.log("Error" + err)
     });
