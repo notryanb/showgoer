@@ -1,6 +1,6 @@
 The Users that <%= @user.username %> Follows
 <br>
-<% @user_targets.each do |target| %>
+<% @usr_followings.each do |target| %>
 <img id='user_prof' src= "<%= target.url%>">
 <%= target.username %><br>
 <% end %>

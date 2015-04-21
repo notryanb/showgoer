@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @user_followers_count = Following.user_originators(@user).count
+    @user_followings_count = Following.user_targetors(@user).count
   end
 
   def all
