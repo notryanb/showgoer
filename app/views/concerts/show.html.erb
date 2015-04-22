@@ -29,7 +29,7 @@
 
     <h1 id="video-header" class="wow fadeInDown animated" data-wow-delay='1.3s'>
       <% @concert.artists.each do |artist| %>
-        <%= link_to artist.name, "../artists/<% artist.id %>" %><br>
+        <%= link_to artist.name, "../artists/#{artist.id}" %><br>
       <% end %>
 
 
