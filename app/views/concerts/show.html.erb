@@ -1,4 +1,13 @@
-
+  <!-- Call CoverVid -->
+  <script type="text/javascript">
+    // If using jQuery
+    $(document).ready(function(){
+      $('.masthead-video').coverVid(1080,720);
+    // If not using jQuery (Native Javascript)
+      //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
+    });
+  </script>
+  
 <!-- Video Markup -->
 <header id='concert_header'>
   <ul class="concert_menu wow bounceInUp animated">
@@ -92,12 +101,3 @@
 </div>
 
 
-  <!-- Call CoverVid -->
-  <script type="text/javascript">
-    // If using jQuery
-    $(document).ready(function(){
-      $('.masthead-video').coverVid(1080,720);
-    // If not using jQuery (Native Javascript)
-      //coverVid(document.querySelector('.masthead-video'), 1920, 1080);
-    });
-  </script>
