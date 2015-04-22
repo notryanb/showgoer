@@ -2,14 +2,15 @@
   <div id='user_prof'>
     <div>
       <img id='user_prof' src= "<%= @user.url%>">
-      <p id='user_name'><%= @user.username %></p>
+      <p id='user_name'>@<%=@user.username %></p>
       <div id='area'>
         <div id="edit_user">
-          <%= link_to "Follow", createfollowings_path(@user.id), :class=>"follow_link", data:{ :originator_id => current_user.id, :target_id => @user.id }, method: :post %> |
+
+          <%= link_to "Follow", createfollowings_path(@user.id), :class=>"follow_link", data:{ :originator_id => current_user.id, :target_id => @user.id }, method: :post %>
+          <%= link_to "Followers", originators_path(@user.id) %>
           <%= @user_followers_count %>
-          <%= link_to "Followers", originators_path(@user.id) %> |
-          <%= @user_followings_count %>
           <%= link_to "Following", targets_path(@user.id) %>
+          <%= @user_followers_count %>
         </div>
       </div>
     </div>
