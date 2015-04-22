@@ -32,7 +32,7 @@
 	<% if current_user %>
 	<% if @user_liked_vids.count > 0 %>
 	<% @user_liked_vids.each do |video| %>
-	<%= video.video_url %>
+	<%= video.url %>
 	<% end %>
 	<% else %>
 	<h6> The User hasen't liked any videos yet!</h6>
