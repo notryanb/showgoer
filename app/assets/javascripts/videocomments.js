@@ -9,12 +9,10 @@ $(".post_com").click(function(event){
     event.preventDefault(); 
     $target = $(event.target); 
     var form = this;
-    var videoID = $('.the_new_form').data('video-id');
     console.log("VIDEOID: "+ videoID);
     $.ajax({
       url: "/comments", // /greeting
       type: "POST", // 'post'
-      // data: { "video_id": commentvideoID, "user_id": commentuserID, "concert_id": commentconcertID },
       data: $target.serialize(),
       dataType: 'json'
     }).done(function(response) {
