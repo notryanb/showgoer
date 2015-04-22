@@ -39,19 +39,19 @@ THUMBNAILS = [ "https://s3.amazonaws.com/dbc.showgoer.videos/BearTrade1.jpg", "h
      
      
  # Stubbed demo Concert for '/concerts/1501' route     # Stubbed demo Concert for '/concerts/1501' route
- mb = Concert.create!(venue: "Mr. Beery's", date_time: "2015-03-30 20:00:00")    mb = Concert.create!(venue: "Mr. Beery's", date_time: "2015-03-30 20:00:00")
- wp = Artist.create!(name: "Wax Phantom")    wp = Artist.create!(name: "Wax Phantom")
- fp = Artist.create!(name: "Fellow Project")     fp = Artist.create!(name: "Fellow Project")
+mb = Concert.create!(venue: "Mr. Beery's", date_time: "2015-03-30 20:00:00")
+wp = Artist.create!(name: "Wax Phantom")
+fp = Artist.create!(name: "Fellow Project")
 vd = Artist.create!(name: "Veda")    
-     
- Appearance.create!(artist_id: wp.id, concert_id: mb.id)     Appearance.create!(artist_id: wp.id, concert_id: mb.id)
- Appearance.create!(artist_id: fp.id, concert_id: mb.id)     Appearance.create!(artist_id: fp.id, concert_id: mb.id)
+ 
+Appearance.create!(artist_id: wp.id, concert_id: mb.id)
+Appearance.create!(artist_id: fp.id, concert_id: mb.id) 
 Appearance.create!(artist_id: vd.id, concert_id: mb.id)    
-   
+
 Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/43a8f032-9864-4cbc-81b0-ea1660d3769fWax+Phantom+-+02.mp4", thumbnail_url: THUMBNAILS.sample)    
-   
+
 Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Wax+Phantom+-+01.mp4", thumbnail_url: THUMBNAILS.sample)    
-   
+
 Video.create!(user_id: 3, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Veda+-+03.mp4", thumbnail_url: THUMBNAILS.sample)   
 
 
