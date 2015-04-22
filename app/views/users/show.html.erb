@@ -21,7 +21,7 @@
 
     <% User.user_contributed_concerts(@user.id).each do |concert| %>
     <%= link_to concert.venue, concert_path(concert.id) %>
-    <%= concert.date_time %><br>
+    <%= concert.date_time.strftime("%b . %d . %Y")  %><br>
     <% end %>
   </div>
 </div>
