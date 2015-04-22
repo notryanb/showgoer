@@ -32,21 +32,44 @@ require 'httparty'
     end
 
 end
+#
+
+
+
+
+
+
+#
+THUMBNAILS = [ "https://s3.amazonaws.com/dbc.showgoer.videos/BearTrade1.jpg", "https://s3.amazonaws.com/dbc.showgoer.videos/BearTrade2.jpg", "https://s3.amazonaws.com/dbc.showgoer.videos/BitPart1.jpg", "https://s3.amazonaws.com/dbc.showgoer.videos/Omadaka1.jpg"
+]
 
 
 # Stubbed demo Concert for '/concerts/1501' route
 mb = Concert.create!(venue: "Mr. Beery's", date_time: "2015-03-30 20:00:00")
 wp = Artist.create!(name: "Wax Phantom")
 fp = Artist.create!(name: "Fellow Project")
+vd = Artist.create!(name: "Veda")
 
 Appearance.create!(artist_id: wp.id, concert_id: mb.id)
 Appearance.create!(artist_id: fp.id, concert_id: mb.id)
+Appearance.create!(artist_id: vd.id, concert_id: mb.id)
 
-Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/cc11cddf-efc1-49a6-9add-dd2ce5fd28ccWax%20Phantom%20-%2001.mp4")
+Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/43a8f032-9864-4cbc-81b0-ea1660d3769fWax+Phantom+-+02.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/8c470ac7-7be4-4c74-852f-f19cb5e19de3Bit%20Part%20-%2003%20Paris_France.mp4")
+Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Wax+Phantom+-+01.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/a4ebddd4-2039-4b73-89c6-57e2a1a94e11Wax%20Phantom%20-%2002.mp4")
+Video.create!(user_id: 3, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Veda+-+03.mp4", thumbnail_url: THUMBNAILS.sample)
+
+
+
+
+
+
+
+
+
+
+
 
 Comment.create!(user_id: 1, video_id: 1, content: "Good vid")
 
