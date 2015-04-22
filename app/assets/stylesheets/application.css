@@ -557,6 +557,7 @@ ul:hover {
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
+	margin-left: 63em;
 }
 
 #ex3 {
@@ -790,6 +791,52 @@ ul:hover {
   transition-duration: .3s;
 margin-left: 22em;
 }
+
+/************************USER PROF********************/
+
+
+#edit_user {
+	background: white;
+	padding: 3em 1em 1em 1em;
+	margin-top: -3em;
+	box-shadow: 5px 10px 5px #888888;
+	margin-top: 4em;
+
+}
+
+ #user_prof img {
+ 	margin-top: -2.8em;
+ 	  box-shadow: 5px 7px 5px #888888;
+ 	  position: absolute;
+ }
+
+#edit_user text {
+	font-size: 10em;
+}
+
+#edit_user a {
+	font-family: 'Raleway', sans-serif;
+
+}
+
+.follow_link {
+	font-family: 'Raleway', sans-serif;
+	position: absolute;
+	margin-top: -2.5em;
+	color: white !important;
+	background: rgb(13, 250, 13);
+	padding: .3em;
+}
+
+#user_name {
+		font-family: 'Raleway', sans-serif;
+	position: absolute;
+	margin-left: 14.5em;
+	margin-top: -1em;
+	z-index: 100;
+	color: gray;
+}
+
 
 
 
