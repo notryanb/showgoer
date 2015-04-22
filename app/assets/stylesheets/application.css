@@ -679,8 +679,9 @@ ul:hover {
 }
 
 #concert_header.stuck {
-	background-color: red;
+	background-color: rgba(255, 0, 0, 0.83);
 }
+
 
 .concert_menu {
 	margin-left: 44em;
