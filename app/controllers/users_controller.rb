@@ -11,9 +11,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user_liked_video_ids =[]
     @user = User.find_by_id(params[:id])
     @user_followers_count = Following.user_originators(@user).count
     @user_followings_count = Following.user_targetors(@user).count
+    if current_user
+    @user_liked_vids = User.user_liked_videos(current_user)
+    @user_attendance = current_user.attends
+    end
   end
 
   def all

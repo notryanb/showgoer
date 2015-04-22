@@ -25,3 +25,45 @@
     <% end %>
   </div>
 </div>
+
+<div>
+<h6>The Videos that the User has liked.</h6>
+<% if current_user %>
+<% if @user_liked_vids.count > 0 %>
+<% @user_liked_vids.each do |video| %>
+<%= video.url %>
+<% end %>
+<% else %>
+<h6> The User hasen't liked any videos yet!</h6>
+<% end %>
+<% end %>
+
+<h6>The list of Concerts that the User has Attended.</h6>
+<% if current_user %>
+<% if @user_attendance.count > 0 %>
+<%  @user_attendance.each do |concert| %>
+<%= concert.venue %>
+<%= concert.date_time.strftime("%b . %d . %Y") %>
+<% end %>
+<% else %>
+<h6> The User hasen't attended any concerts yet!</h6>
+<% end %>
+<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
