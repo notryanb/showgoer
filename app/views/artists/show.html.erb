@@ -38,12 +38,11 @@
        <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> | <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
         <div id='vids'>     
          <% @artist_past_concerts.each do |concert| %>
-         <div class="vid  one_vid spread">
-         <%= link_to concert.venue, concert_path(concert.id) %><br>
-         <%= concert.date_time %><br>
+           <%= link_to image_tag(concert.videos.sample.thumbnail_url, class: "vid  one_vid spread"),concert_path(concert.id) %>
+           <%= link_to concert.venue, concert_path(concert.id) %><br>
+           <%= concert.date_time %><br>
          <% end %>
          </div><br>
-        </div> 
       </div>
 
   <div id='upcoming'>
