@@ -8,18 +8,19 @@ $(".post_com").click(function(event){
    $(".the_new_form").submit(function(event){
     event.preventDefault();
     $target = $(event.target);
-    var form = this;
-    var commentvideoID = $('#comment_video_id').data('videoId');
-    var commentuserID = $('#comment_user_id').data('userId');
-    var commentconcertID = $('#comment_concert_id').data('concertId');
-    console.log(commentvideoID);
-    console.log(commentuserID);
-    console.log(commentconcertID);
+    // var form = this;
+    // var commentvideoID = $('#comment_video_id').data('videoId');
+    // var commentuserID = $('#comment_user_id').data('userId');
+    // var commentconcertID = $('#comment_concert_id').data('concertId');
+    // console.log(commentvideoID);
+    // console.log(commentuserID);
+    // console.log(commentconcertID);
+    console.log($target.serialize());
     $.ajax({
-      url: "/comments", // /greeting
+      url: "../comments", // /greeting
       type: "POST", // 'post'
-      data: { "video_id": commentvideoID, "user_id": commentuserID, "concert_id": commentconcertID },
-      // data: $target.serialize(),
+      // data: { "video_id": commentvideoID, "user_id": commentuserID, "concert_id": commentconcertID },
+      data: $target.serialize(),
       dataType: 'json'
     }).done(function(response) {
       console.log(response);
