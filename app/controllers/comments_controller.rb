@@ -5,23 +5,16 @@ class CommentsController < ApplicationController
   end
 
   def create
-    p "***********************************************"
-    p "These are the comment_params: #{comment_params}"
-      @new_comment = Comment.new(comment_params)
-      
-    if request.xhr?
-      render json: @new_comment.content, layout: false
-      flash[:notice] = "Thank You for Commenting!"
+    @new_comment = Comment.new(comment_params)
+
+    if @new_comment.save
+      if request.xhr?
+        render json: @new_comment
+        flash[:notice] = "Thank You for Commenting!"
+      end
     else
-      @concertid = params[:comment][:theconcert_id]
+      [404,'Err']
     end
-    # if @new_comment.save!
-    #   flash[:notice] = "Thank You for Commenting!"
-    #   redirect_to concert_path(@concertid)
-    # else
-    #   flash.now[:notice] = 'There was an error'
-    #   render :new
-    # end
   end
 
   def edit
