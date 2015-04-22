@@ -25,11 +25,13 @@ $(document).ready(function() {
 $(document).ready(function() {
 
     $("#menu").click(function(){
+        // $("#off_left").css("overflow","visible")
         $("#user_show").css("left", "10em");
     });
 
     $("#ex3").click(function(){
         $("#user_show").css("left", "83em");
+        // $("#off_left").css("overflow","hidden")
     });
 });
 
