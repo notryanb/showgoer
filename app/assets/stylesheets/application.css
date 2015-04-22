@@ -81,6 +81,13 @@
     100% {margin-top: -3.7em;}
 }
 
+html {
+	max-width: 1300px;
+	margin: 0 auto;
+	background: #eee;
+	position: relative;
+}
+
 #split_logo {
 	margin-left: 2em;
 	margin-bottom: -7em;
@@ -235,6 +242,7 @@ ul:hover {
   margin-top: .4em;
   text-decoration: none;
   transition-duration: .3s;
+	margin-left: -9em;
 }
 
 
@@ -268,7 +276,7 @@ ul:hover {
 }
 
 .tt-suggestion {
-	background-color: #FFEBBD;
+	background-color: rgba(255, 255, 255, 0.77);
 	font-family: 'Raleway', sans-serif;
 	margin-top: -1em;
 	color: black;
@@ -542,7 +550,8 @@ ul:hover {
 	padding-right: .3em;
 	padding-top: .05em;
 	padding-bottom: .05em;
-	margin-top: 4.4em;
+	  margin-top: 4.4em;
+  margin-left: 29em;
 }
 
 #ex3:hover {
@@ -648,7 +657,7 @@ ul:hover {
 /*########### CONCERT SHOW ###############*/
 
 .content {
-	background-color: rgb(237, 225, 197);
+	background-color: white;
 }
 
 #camera_concert {
