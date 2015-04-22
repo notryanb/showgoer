@@ -25,7 +25,7 @@
 	<h6>The Concerts that the User Contributed to</h6>
 	<% User.user_contributed_concerts(current_user.id).each do |concert| %>
 	<%= link_to concert.venue, concert_path(concert.id) %>
-	<%= concert.date_time %>
+	<%= concert.date_time.strftime("%b . %d . %Y") %>
 	<% end %>
 
 	<h6>The Videos that the User has liked.</h6>
@@ -44,7 +44,7 @@
 	<% if @user_attendance.count > 0 %>
 	<%  @user_attendance.each do |concert| %>
 	<%= concert.venue %>
-	<%= concert.date_time %>
+	<%= concert.date_time.strftime("%b . %d . %Y") %>
 	<% end %>
 	<% else %>
 	<h6> The User hasen't attended any concerts yet!</h6>
