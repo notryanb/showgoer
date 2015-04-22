@@ -1,16 +1,18 @@
-    <% related_videos.each do |video| %>
+
+  <% related_videos.each do |video| %>
     <video class="concert-video" width="600" controls>
       <source src="<%= video.url %>" type="video/mp4">
+    </video>
+
+    <% related_videos.each do |video| %>
+      <video class="concert-video" width="600" controls>
+        <source src="<%= video.url %>" type="video/mp4">
       </video>
       <br>
-      <% if current_user %>
-      <%= link_to "Post Comment", new_comment_path(:thevideo_id => video.id, :concert_id => concert_id) %>
-      <%= render partial: 'comments', :locals => {:commentvideo => video} %>
-      <% end %>
+      <%= render partial: 'comments' %>
 
 
       <div class="likes">
-
         
        <% if current_user %> 
           <% if current_user.likes.where(video_id: video.id).count < 1 %>
@@ -35,9 +37,10 @@
       </span>
       </div>
 
-   
 
-
+    <div class="dislikes">
+      
+     <% if current_user %> 
 
         <% if current_user.dislikes.where(video_id: video.id).count < 1 %>
           <%= button_to 'x', dislikes_path(:user_id => current_user.id, :video_id => video.id), class: "dislike-btn", data:{ :user_id => current_user.id, :video_id => video.id }   %>
@@ -55,4 +58,6 @@
     <% end %>
   </div>
 
+      
+  
 
