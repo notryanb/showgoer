@@ -193,7 +193,7 @@
 #search {
   width: 31em;
   height: 2.4em;
-	font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: rgba(0, 0, 0, 0.05);
   border-left: transparent;
   border-right: transparent;
@@ -237,12 +237,9 @@ ul:hover {
   transition-duration: .3s;
 }
 
-/*.line:hover {
-  margin-top: -.4em;
-}*/
 
 #search_but {
-	font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   width: 6em;
   height: 2.5em;
   margin-top: 1em;
@@ -253,7 +250,13 @@ ul:hover {
   margin-left: 16.3em;
   margin-top: -2.4em;
   position: absolute;
+  transition-duration: .7s;
 }
+
+#search_but:hover {
+	color: black;
+	background-color: white;
+} 
 
 #search_state {
 	color: white;
@@ -265,10 +268,10 @@ ul:hover {
 }
 
 .tt-suggestion {
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: #FFEBBD;
 	font-family: 'Raleway', sans-serif;
 	margin-top: -1em;
-	color: black;	
+	color: black;
 }
 
 .tt-suggestions {
@@ -630,6 +633,8 @@ ul:hover {
 	height: 3em;
 	width: 3em;
 	float: right;
+	margin-right: 6.4em;
+	margin-top: .4em;
 }
 
 #a_name {
@@ -650,7 +655,8 @@ ul:hover {
 	width: 2em;
 	height: 2em;
 	margin-left: 1em;
-	margin-top: -5em;
+	margin-top: -2em;
+	position: absolute;	
 }
 
 #concert_header {
@@ -658,13 +664,103 @@ ul:hover {
 	position: fixed;
 	z-index: 100;
 	width: 100%;
-	margin-top: -2em;
+	margin-top: -.4em;
+	padding-bottom: 1.2em;
+	transition-duration: .8s;
+}
+
+#concert_header.stuck {
+	background-color: red;
+	margin-top: -1.4em;
 }
 
 .concert_menu {
 	margin-left: 52em;
 	margin-top: 2em;
 }
+
+.pillars_menu {
+	margin-top: 4.6em;
+	margin-right: -.05em;
+	position: absolute;
+	-webkit-filter: hue-rotate(0deg);
+}
+
+.pillars_menu.hue {
+	-webkit-filter: hue-rotate(74deg);
+}
+
+#pillar1_menu {
+	height: .7em;
+	margin-top: -2.9em;
+	margin-left: .9em;
+	transition-duration: .5s;
+}
+
+#pillar1_menu:hover {
+	margin-top: -3.3em;
+}
+
+#pillar2_menu {
+	height: 1.2em;
+	margin-left: 1.28em;
+	margin-top: -3.4em;	
+	transition-duration: .5s;
+}
+
+#pillar2_menu:hover {
+	margin-top: -3.9em;
+}
+
+#pillar3_menu {
+	height: 1.9em;
+	margin-left: 1.75em;
+	margin-top: -4.1em;	
+	transition-duration: .5s;
+}
+
+#pillar3_menu:hover {
+	margin-top: -4.6em;
+}
+
+#pillar2_2_menu {
+	height: 1.2em;
+	margin-left: 2.25em;
+	margin-top: -3.4em;	
+	transition-duration: .5s;
+}
+
+#pillar2_2_menu:hover {
+	margin-top: -3.9em;
+}
+
+#pillar1_1_menu {
+	height: .7em;
+	margin-left: 2.8em;
+	margin-top: -2.9em;	
+	transition-duration: .5s;
+}
+
+#pillar1_1_menu:hover {
+	margin-top: -3.3em;
+}
+
+
+#music {
+	color: red;
+	margin-top: 2em;
+}
+
+.concert_line {
+  color: white;
+  height: .3em;
+  margin-top: .4em;
+  text-decoration: none;
+  transition-duration: .3s;
+margin-left: 22em;
+}
+
+
 
 
 
