@@ -10,7 +10,7 @@
       <% if current_user %>
       <%= link_to "Comment", new_comment_path(:thevideo_id => video.id, :concert_id => concert_id), class: 'post_com' %>
       <%= render partial: 'postcomment', :locals => {:video_id => video.id, :user_id => current_user.id, :concert_id => @concert.id} %>
-      <%= render partial: 'comments', :locals => {:commentvideo => video} %>
+      <%= render partial: 'comments', :class => "post_comment_form", :locals => {:commentvideo => video} %>
       <% end %>
 
 
