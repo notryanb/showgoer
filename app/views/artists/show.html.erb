@@ -40,7 +40,7 @@
          <% @artist_past_concerts.each do |concert| %>
            <%= link_to image_tag(concert.videos.sample.thumbnail_url, class: "vid  one_vid spread"),concert_path(concert.id) %>
            <%= link_to concert.venue, concert_path(concert.id) %><br>
-           <%= concert.date_time %><br>
+           <%= concert.date_time.strftime("%b . %d . %Y") %><br>
          <% end %>
          </div><br>
       </div>
@@ -50,7 +50,7 @@
 
        <% @artist_future_concerts.each do |concert| %>
        <%= concert.venue %><br>
-       <%= concert.date_time %><br><br>
+       <%= concert.date_time.strftime("%b . %d . %Y") %><br><br>
        <% end %>
   </div>
   </div>
