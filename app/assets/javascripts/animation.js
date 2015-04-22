@@ -35,11 +35,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-    $(".straight").click(function(){
-        $(".one_vid").toggleClass("spread");
-        
-    });
-
      $("#many").click(function(){
         $(".spread").toggleClass("one_vid");
     });
@@ -50,7 +45,12 @@ $(window).load(function() {
     var target = $(".content").offset().top;
     var interval = setInterval(function() {
         if ($(window).scrollTop() >= target) {
-            $("#camera_concert").css("filter","invert",("100%"));
+            $('#concert_header').addClass('stuck');
+            $('.pillars_menu').addClass('hue');
+        } else {
+            $('#concert_header').removeClass('stuck');
+            $('.pillars_menu').removeClass('hue');
         }
-    }, 250);
+    }, 100);
 });
+
