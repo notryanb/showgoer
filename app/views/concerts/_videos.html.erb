@@ -7,6 +7,7 @@
       <br>
       <% if current_user %>
       <%= link_to "Comment", new_comment_path(:thevideo_id => video.id, :concert_id => concert_id), class: 'post_com' %>
+      <%= render partial: 'postcomment', :locals => {:video_id => video.id, :user_id => current_user.id, :concert_id => @concert.id} %>
       <%= render partial: 'comments', :locals => {:commentvideo => video} %>
       <% end %>
 
@@ -23,7 +24,7 @@
          <span>Dislikes:</span>
        <% end %>
 
-        <span class="like_num likes-vote-count<%= video.id %>" 
+        <span class="like_num likes-vote-count<%= video.id %>"
             data-video-id="<%= video.id %>">
             <%= video.likes.count %>
         </span>
@@ -45,5 +46,5 @@
   </span>
 <% end %>
 </div>
-  
+
 

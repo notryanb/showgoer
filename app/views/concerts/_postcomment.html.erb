@@ -1,0 +1,11 @@
+<div class="the_new_form">
+<%= form_for(@comment) do |f| %>
+  <div class="actions" class= "new_form">
+    <%= f.text_field :content %><br>
+    <%= f.hidden_field :video_id, :value => params[:thevideo_id], :id => "comment_video_id", data:{:video_id => video_id } %><br>
+     <%= f.hidden_field :user_id, :value => current_user.id, :id => "comment_user_id", data:{:user_id => video_id } %><br>
+     <%= f.hidden_field :theconcert_id, :value => params[:concert_id], :id => "comment_concert_id", data:{:concert_id => concert_id } %><br>
+    <%= f.submit %>
+  </div>
+<%end%>
+</div>
