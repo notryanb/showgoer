@@ -26,7 +26,7 @@
     <div class="masthead-overlay"></div>
     <div class="masthead-arrow"></div>
 
-    
+
     <h1 id="video-header" class="wow fadeInDown animated" data-wow-delay='1.3s'>
       <% @concert.artists.each do |artist| %>
         <%= link_to artist.name, "#" %><br>
@@ -53,7 +53,7 @@
         <% if !current_user %>
           <h3> Why don't you sign up and post some (^_^)?</h3>
         <% end %>
-      <% end %>  
+      <% end %>
     </div>
 
     <% if current_user %>
@@ -72,7 +72,7 @@
           <% end %>
         </div>
 
-        <% if current_user %>    
+        <% if current_user %>
           <div id="user-attend">
             <% if current_user.attends.where(concert_id: @concert.id).count > 0 %>
               <button id="attend-btn">Attended!</button>
@@ -84,8 +84,8 @@
       </div>
 
       <div class="video-container">
-        <%= render partial: 'videos', :locals => {:related_videos => @related_videos} %>
-      </div>
+      <%= render partial: 'videos', :locals => {:related_videos => @related_videos, :concert_id => @concert.id} %>
+    </div>
 
     </div>
   </section>
