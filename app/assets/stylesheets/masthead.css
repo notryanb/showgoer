@@ -10,6 +10,7 @@ html {
 }
 .masthead-video {
     z-index: 0;
+    -webkit-filter: blur(6px);
 }
 .masthead-overlay {
     background-color: #000;
@@ -75,8 +76,13 @@ html {
     height: 120px !important;
     line-height: 1 !important;
     color: #fff !important;
-    margin-top: 2em;
+    margin-top: 1em;
     opacity: 0.9;
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    margin-left: 4.5em;
 }
 
 h1 span {
@@ -94,7 +100,7 @@ h2 {
     margin-bottom: 10px;
     font-size: 40px;
     letter-spacing: -0.05em;
-    color: #414141;
+    color: black;
 }
 #paragraph {
     margin-top: 0;
@@ -192,6 +198,10 @@ pre .m {
 .container {
     margin: auto;
     width: 720px;
+    background-color: rgb(92, 90, 90);
+    padding-bottom: 1em;
+    padding-right: 1.5em;
+    margin-top: -4em;
 }
 footer {
     text-align: right;
