@@ -4,6 +4,8 @@ class ConcertsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    
     @s3_direct_post = S3_BUCKET.presigned_post(key: "#{SecureRandom.uuid}"+"${filename}", success_action_status: 201, acl: :public_read)
 
     @concert = Concert.find_by(id: params[:id])

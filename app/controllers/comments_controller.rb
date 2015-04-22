@@ -7,14 +7,13 @@ class CommentsController < ApplicationController
   def create
     p "***********************************************"
     p "These are the comment_params: #{comment_params}"
+      @new_comment = Comment.new(comment_params)
+      
     if request.xhr?
-      @new_comment = comment.new(content: , video_id: , user_id: )
       render json: @new_comment.content, layout: false
       flash[:notice] = "Thank You for Commenting!"
     else
       @concertid = params[:comment][:theconcert_id]
-      @new_comment = Comment.new(comment_params)
-
     end
     # if @new_comment.save!
     #   flash[:notice] = "Thank You for Commenting!"
