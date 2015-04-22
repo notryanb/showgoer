@@ -3,7 +3,7 @@
     <% related_videos.each do |video| %>
     <video class="concert-video" width="600" controls>
       <source src="<%= video.url %>" type="video/mp4">
-      </video>
+    </video>
       <br>
       <% if current_user %>
       <%= link_to "Comment", new_comment_path(:thevideo_id => video.id, :concert_id => concert_id), class: 'post_com' %>

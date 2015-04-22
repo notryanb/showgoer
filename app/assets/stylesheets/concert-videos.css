@@ -93,10 +93,20 @@
 
 
 .upload-form-container {
-    font-family: 'Raleway', sans-serif;
-
+  font-family: 'Raleway', sans-serif;
+  margin-left: 4em;
+  margin-top: 0em;
+  background-color: white;
+  padding-left: 4em;
+  padding-bottom: 1em;
+  box-shadow: 1px 2px 5px #888888;
 }
 
+#videos_url {
+  box-shadow: 1px 2px 5px #888888;
+  padding-top: .8em;
+  padding-bottom: .8em;
+}
 
 #attend-btn {
     font-family: 'Raleway', sans-serif;
@@ -189,4 +199,10 @@
 .coms {
   margin-left: 30.6em;
   margin-top: -1.2em;
+}
+
+input#_videos_url {
+  box-shadow: 1px 2px 5px #888888;
+  padding-top: .8em;
+  padding-bottom: .8em;
 }
