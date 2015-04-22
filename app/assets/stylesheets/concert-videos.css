@@ -3,18 +3,18 @@
 }
 
 .like-btn {
-    font-family: 'Raleway', sans-serif;
+      font-family: 'Raleway', sans-serif;
   /* padding: 5px 10px; */
   width: 4.5em;
   background-color: silver;
   color: white;
-  border-color: green;
+  border: none;
   position: absolute;
   margin-top: -2.34em;
-  margin-left: .8em;
+  margin-left: .7em;
   width: 2.5em;
-  padding-left: 1.4em;
-  /* height: 2em; */
+  padding-left: 1.5em;
+  padding-right: 2.4em;
   transition-duration: .4s;
   padding-top: .2em;
   padding-bottom: 0.4em;
@@ -45,7 +45,7 @@
     border-left: none;
     border-right: none;
     /*border-radius: 2%;*/
-    margin-top: 2em;
+    margin-top: 4em;
     box-shadow: 10px 10px 5px #888888;
 }
 
@@ -205,4 +205,11 @@ input#_videos_url {
   box-shadow: 1px 2px 5px #888888;
   padding-top: .8em;
   padding-bottom: .8em;
+}
+
+#shadow_root + input {
+  margin-top: 4.6em;
+  margin-right: -.05em;
+  position: absolute;
+  -webkit-filter: hue-rotate(0deg);
 }
