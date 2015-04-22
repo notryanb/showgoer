@@ -680,12 +680,11 @@ ul:hover {
 
 #concert_header.stuck {
 	background-color: red;
-	margin-top: -1.4em;
 }
 
 .concert_menu {
-	margin-left: 52em;
-	margin-top: 2em;
+	margin-left: 44em;
+	margin-top: 1em;
 }
 
 .pillars_menu {
