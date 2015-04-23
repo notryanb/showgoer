@@ -2,7 +2,12 @@ All the Users<br>
 <br>
 <div class="all_users_page">
   <% @users.each do |user| %>
-  <img id='user_prof' src= "<%= user.url%>">
-  <%= link_to user.username, user_path(user.id) %>
+  <% if user.url == nil %>
+    <img id='dash_user_prof' src= "<%= gravatar_url(user)%>">
+      <%= link_to user.username, user_path(user.id) %>
+    <% else %>
+    <img id='dash_user_prof' src= "<%= user.url %>">
+      <%= link_to user.username, user_path(user.id) %>
+    <% end %>
   <% end %>
 </div>
