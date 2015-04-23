@@ -17,7 +17,7 @@ class ConcertsController < ApplicationController
     end 
 
     if @related_videos.count == 0
-      @header_video = '../blipfest2012.mp4'
+      @header_video = "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Omodaka.mp4"
     else
       @header_video = @related_videos.sample.url
     end

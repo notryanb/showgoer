@@ -2,14 +2,15 @@
   <div id='user_prof'>
     <div>
       <img id='user_prof' src= "<%= @user.url%>">
-      <p id='user_name'><%= @user.username %></p>
+      <p id='user_name'>@<%=@user.username %></p>
       <div id='area'>
         <div id="edit_user">
-          <%= link_to "Follow", createfollowings_path(@user.id), :class=>"follow_link", data:{ :originator_id => current_user.id, :target_id => @user.id }, method: :post %> |
+
+          <%= link_to "Follow", createfollowings_path(@user.id), :class=>"follow_link", data:{ :originator_id => current_user.id, :target_id => @user.id }, method: :post %>
+          <%= link_to "Followers", originators_path(@user.id) %>
           <%= @user_followers_count %>
-          <%= link_to "Followers", originators_path(@user.id) %> |
-          <%= @user_followings_count %>
           <%= link_to "Following", targets_path(@user.id) %>
+          <%= @user_followings_count %>
         </div>
       </div>
     </div>
@@ -20,12 +21,15 @@
     <% end %>
 
     <% User.user_contributed_concerts(@user.id).each do |concert| %>
-    <%= link_to concert.venue, concert_path(concert.id) %>
-    <%= concert.date_time.strftime("%b . %d . %Y")  %><br>
+    <h2><%= link_to concert.venue, concert_path(concert.id), class: "concert_ven" %></h2>
+    <h4 class="concert_date"><%= concert.date_time.strftime("%b . %d . %Y")  %></h4><br>
     <% end %>
   </div>
 </div>
 
+
+
+<% if false %>
 <div>
 <h6>The Videos that the User has liked.</h6>
 <% if current_user %>
@@ -50,9 +54,7 @@
 <% end %>
 <% end %>
 </div>
-
-
-
+<% end %>
 
 
 

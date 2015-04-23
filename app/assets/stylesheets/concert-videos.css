@@ -38,7 +38,7 @@
 .concert-video {
     display: inline-block;
     vertical-align: baseline;
-    border-top-width: 2.5em;
+    border-top-width: 2.5em.;
     border-color: white;
     border-style: solid;
     border-bottom-width: 2.5em;
@@ -46,7 +46,7 @@
     border-right: none;
     /*border-radius: 2%;*/
     margin-top: 4em;
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 4px 2px 3px #888888;
 }
 
 
@@ -90,7 +90,9 @@
         background: #5d2522;
         border: solid 1px #203E5F;
     }
-
+.likes {
+  margin-top: -1.2em
+}
 
 .upload-form-container {
   font-family: 'Raleway', sans-serif;
@@ -214,4 +216,9 @@ input#_videos_url {
   margin-left: .2em;
   border: 1px solid #911717 !important;
   border: red;
+}
+
+.comments2 {
+  width: 93em;
+  background-color: white;
 }
