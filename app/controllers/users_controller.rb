@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @search = Artist.search(params[:q])
     @user = User.new
     if current_user
-    @user_liked_vids = User.user_liked_videos(current_user)
-    @user_attendance = current_user.attends
+      @user_liked_vids = User.user_liked_videos(current_user)
+      @user_attendance = current_user.attends
     end
   end
 

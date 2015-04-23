@@ -1,7 +1,7 @@
 $(document).ready(function() {
 $(".post_com").click(function(event){
     event.preventDefault();
-    $(".the_new_form").toggle();
+    // $(".the_new_form").toggle();
     }); //create_button ending
 
    // AJAX call for posting new comment
@@ -9,7 +9,6 @@ $(".post_com").click(function(event){
     event.preventDefault(); 
     $target = $(event.target); 
     var form = this;
-    console.log("VIDEOID: "+ videoID);
     $.ajax({
       url: "/comments", // /greeting
       type: "POST", // 'post'
