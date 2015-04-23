@@ -80,7 +80,7 @@ Video.create!(user_id: 3, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.s
 
 # Kirans Seed Data
 
-kiran = User.create(email:"phanendar@gmail.com",
+kiran = User.create(email:"kiran@gmail.com",
             password:"123",
             username: "kirawesome",
             url: "/img/kiran.jpg")
@@ -95,16 +95,104 @@ malcolm = User.create(email:"malcolm@gmail.com",
             username: "awesomesaucemalcolm",
             url: "/img/malcolm.jpg")
 
-# Following.create(originator_id:1,target_id:2)
-# Following.create(originator_id:1,target_id:3)
+angel = User.create(email:"angelbaek1@gmail.com",
+            password:"123",
+            username: "awesomeangel",
+            url:)
 
-# Following.create(originator_id:2,target_id:1)
-# Following.create(originator_id:2,target_id:3)
+ben = User.create(email:"benjamin.cheng90@gmail.com",
+            password:"123",
+            username: "awesomeben",
+            url: )
 
-# Following.create(originator_id:3,target_id:1)
-# Following.create(originator_id:3,target_id:2)
+eveanandi = User.create(email:"butler.eveanandi@gmail.com",
+            password:"123",
+            username: "awesomeeveanandi",
+            url: )
 
+hoa = User.create(email:"hoathenguyen85@gmail.com",
+            password:"123",
+            username: "awesomehoa",
+            url: )
 
+kevin = User.create(email:"kevalwell@gmail.com",
+            password:"123",
+            username: "awesomekevin",
+            url: )
+
+natalia = User.create(email:"notika314@gmail.com",
+            password:"123",
+            username: "awesomenatalia",
+            url:)
+
+ryani = User.create(email:"ryanimmesberger@gmail.com",
+            password:"123",
+            username: "awesomeryani",
+            url:)
+
+sam = User.create(email:"samguergen@gmail.com",
+            password:"123",
+            username: "awesomesam",
+            url:)
+steph = User.create(email:"lo.stephaniec@gmail.com",
+            password:"123",
+            username: "awesomesteph",
+            url:)
+tracy = User.create(email:"tracy.teague05@gmail.com",
+            password:"123",
+            username: "awesometracy",
+            url:)
+
+lauren = User.create(email:"laurennicoleroth@gmail.com",
+            password:"123",
+            username: "awesomelauren",
+            url:)
+
+Following.create(originator_id:1,target_id:8)
+Following.create(originator_id:1,target_id:9)
+Following.create(originator_id:1,target_id:7)
+Following.create(originator_id:1,target_id:6)
+Following.create(originator_id:1,target_id:5)
+Following.create(originator_id:1,target_id:11)
+
+Following.create(originator_id:2,target_id:1)
+Following.create(originator_id:2,target_id:3)
+
+Following.create(originator_id:3,target_id:1)
+Following.create(originator_id:3,target_id:2)
+
+Following.create(originator_id:4,target_id:1)
+Following.create(originator_id:4,target_id:3)
+
+Following.create(originator_id:5,target_id:1)
+Following.create(originator_id:5,target_id:3)
+
+Following.create(originator_id:6,target_id:1)
+Following.create(originator_id:6,target_id:2)
+
+Following.create(originator_id:7,target_id:1)
+Following.create(originator_id:7,target_id:3)
+
+Following.create(originator_id:8,target_id:1)
+Following.create(originator_id:8,target_id:3)
+
+Following.create(originator_id:9,target_id:1)
+Following.create(originator_id:9,target_id:2)
+
+Following.create(originator_id:10,target_id:1)
+Following.create(originator_id:10,target_id:3)
+
+Following.create(originator_id:11,target_id:1)
+Following.create(originator_id:11,target_id:3)
+
+Following.create(originator_id:12,target_id:1)
+Following.create(originator_id:12,target_id:2)
+
+Following.create(originator_id:13,target_id:1)
+Following.create(originator_id:13,target_id:2)
+
+Following.create(originator_id:14,target_id:1)
+Following.create(originator_id:14,target_id:2)
 # saintsofvalory = Artist.create(name:"Saints of Valory",
 #             url: "/img/saintsofvalory.jpg",
 #   )
