@@ -74,13 +74,13 @@ tm = Artist.create!(name: "Tenement")
 
 Appearance.create!(artist_id: tm.id, concert_id: kf.id)
 Appearance.create!(artist_id: ic.id, concert_id: kf.id)
-Appearance.create!(artist_id: dp.id, concert_id: kf.id)
+Appearance.create!(artist_id: fp.id, concert_id: kf.id)
 
 Video.create!(user_id: 11, concert_id: ws, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Bear+Trade+-+02+York+UK.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 12, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Bit+Shifter.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Bit+Shifter.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 13, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS.sample)
 
 
 
