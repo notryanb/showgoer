@@ -98,55 +98,55 @@ malcolm = User.create(email:"malcolm@gmail.com",
 angel = User.create(email:"angelbaek1@gmail.com",
             password:"123",
             username: "awesomeangel",
-            url:)
+            url:"")
 
 ben = User.create(email:"benjamin.cheng90@gmail.com",
             password:"123",
             username: "awesomeben",
-            url: )
+            url:"")
 
 eveanandi = User.create(email:"butler.eveanandi@gmail.com",
             password:"123",
             username: "awesomeeveanandi",
-            url: )
+            url:"")
 
 hoa = User.create(email:"hoathenguyen85@gmail.com",
             password:"123",
             username: "awesomehoa",
-            url: )
+            url:"")
 
 kevin = User.create(email:"kevalwell@gmail.com",
             password:"123",
             username: "awesomekevin",
-            url: )
+            url:"")
 
 natalia = User.create(email:"notika314@gmail.com",
             password:"123",
             username: "awesomenatalia",
-            url:)
+            url:"")
 
 ryani = User.create(email:"ryanimmesberger@gmail.com",
             password:"123",
             username: "awesomeryani",
-            url:)
+            url:"")
 
 sam = User.create(email:"samguergen@gmail.com",
             password:"123",
             username: "awesomesam",
-            url:)
+            url:"")
 steph = User.create(email:"lo.stephaniec@gmail.com",
             password:"123",
             username: "awesomesteph",
-            url:)
+            url:"")
 tracy = User.create(email:"tracy.teague05@gmail.com",
             password:"123",
             username: "awesometracy",
-            url:)
+            url:"")
 
 lauren = User.create(email:"laurennicoleroth@gmail.com",
             password:"123",
             username: "awesomelauren",
-            url:)
+            url:"")
 
 Following.create(originator_id:1,target_id:8)
 Following.create(originator_id:1,target_id:9)
