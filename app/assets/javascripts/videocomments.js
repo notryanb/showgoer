@@ -9,7 +9,6 @@ $(".post_com").click(function(event){
     event.preventDefault(); 
     $target = $(event.target); 
     var form = this;
-    console.log("VIDEOID: "+ videoID);
     $.ajax({
       url: "/comments", // /greeting
       type: "POST", // 'post'
