@@ -34,13 +34,13 @@
           <div class="artist-masthead-overlay"></div>
           <div class="masthead-arrow"></div>
           <h1 id='video-header' class="wow fadeInDown animated" data-wow-delay='1.3s'><%= @artist.name %></h1><br>
+          <img src= "<%= @artist.url %>" height="420" width="auto" /><br>
         </a>
       </section>
     <div>
       <%= image_tag "layout.png", id: 'many' %>
     </div>
 
-          <img src= "/fellow_project.jpg" height="420" width="auto" /><br>
       <div id='past_sect'>
        <h3 id='past'> Past Concerts </h3>
        <p class="sort">Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> | <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
