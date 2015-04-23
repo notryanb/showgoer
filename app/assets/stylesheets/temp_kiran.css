@@ -4,3 +4,12 @@
 #comment_msg {
   display: none;
 }
+
+.the_new_form {
+  display: none;
+}
+
+.dash_img {
+  height: 150px;
+  width: auto;
+}
