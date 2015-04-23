@@ -1,8 +1,8 @@
 
 
     <% related_videos.each do |video| %>
-      <img id='user_prof' src= "<%= video.user.url%>">
-      <p id='user_name'><%= video.user.username %></p>
+      <img id='con_user_prof' src= "<%= video.user.url%>">
+      <p id='con_user_name'><%= video.user.username %></p>
     <video class="concert-video" width="600" controls>
       <source src="<%= video.url %>" type="video/mp4">
     </video>
