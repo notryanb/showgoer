@@ -643,7 +643,7 @@ ul:hover {
   margin-left: 11em;
   box-shadow: 5px 5px 5px #888888;
   bottom: 0;
-  margin-top: -25em;
+  margin-top: -25.7em;
 }
 
 #past {
@@ -687,12 +687,13 @@ ul:hover {
 }
 
 #many {
-	  height: 3em;
-  width: 3em;
-  float: right;
-  margin-left: 12.5em;
-  margin-top: -24.8em;
-  position: absolute;
+	height: 3em;
+	width: 3em;
+	float: right;
+	margin-left: 11em;
+	margin-top: -25.6em;
+	position: absolute;
+	box-shadow: 3px 3px 3px #282020;
 }
 
 #a_name {
