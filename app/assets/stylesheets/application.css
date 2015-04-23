@@ -628,6 +628,7 @@ ul:hover {
   padding-bottom: 2em;
   margin-left: 11em;
   box-shadow: 5px 5px 5px #888888;
+  bottom: 0;
 }
 
 #past {
@@ -861,7 +862,14 @@ margin-left: 22em;
 }
 
 .ven2 {
-
+	  position: absolute;
+  margin-left: 2.2em;
+  margin-top: -4em;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 1px #888888;
+  font-family: 'Raleway', sans-serif;
+  border-bottom-style: solid;
 }
 
 .con_date {
@@ -875,7 +883,13 @@ margin-left: 22em;
 }
 
 .con_date2 {
-
+	  position: absolute;
+  margin-left: 6em;
+  margin-top: -5.1em !important;
+  font-size: 1em;
+  color: white;
+  text-shadow: 1px 1px 1px #888888;
+  font-family: 'Raleway', sans-serif;
 }
 
 #artist_header {
