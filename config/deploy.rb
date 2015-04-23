@@ -1,7 +1,9 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
+set :rvm_bin_path, "/usr/local/rvm/bin"
+default_run_options[:pty] = true
 
-server: "45.55.250.45", :web, :app, :db, primary: true
+server "45.55.250.45", :web, :app, :db, primary: true
 
 set :application, "showgoer"
 set :user, "rails"
