@@ -612,6 +612,7 @@ ul:hover {
 #area {
 	margin-left: 9em;
   position: absolute;
+
   margin-top: -6em;
 }
 
@@ -629,6 +630,7 @@ ul:hover {
   margin-left: 11em;
   box-shadow: 5px 5px 5px #888888;
   bottom: 0;
+  margin-top: -25em;
 }
 
 #past {
@@ -675,8 +677,8 @@ ul:hover {
 	  height: 3em;
   width: 3em;
   float: right;
-  margin-left: 12.4em;
-  margin-top: .4em;
+  margin-left: 12.5em;
+  margin-top: -24.8em;
   position: absolute;
 }
 
@@ -800,7 +802,7 @@ ul:hover {
   margin-top: .4em;
   text-decoration: none;
   transition-duration: .3s;
-margin-left: 22em;
+	margin-left: 30em;
 }
 
 /************************USER PROF********************/

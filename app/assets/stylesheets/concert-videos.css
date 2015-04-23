@@ -46,7 +46,7 @@
     border-right: none;
     /*border-radius: 2%;*/
     margin-top: 4em;
-  text-shadow: 4px 2px 3px #888888;
+  box-shadow: 4px 2px 3px #888888;
 }
 
 
@@ -90,7 +90,9 @@
         background: #5d2522;
         border: solid 1px #203E5F;
     }
-
+.likes {
+  margin-top: -1.2em
+}
 
 .upload-form-container {
   font-family: 'Raleway', sans-serif;
