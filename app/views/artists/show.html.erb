@@ -48,6 +48,8 @@
          <% @artist_past_concerts.each do |concert| %>
            <% if concert.videos.count > 0 %>
              <%= link_to image_tag(concert.videos.sample.thumbnail_url, class: "vid  one_vid spread"),concert_path(concert.id) %>
+             <% else %>
+             <%= link_to image_tag("/default_thumb.jpg", class: "vid  one_vid spread"),concert_path(concert.id) %>
            <% end %>
            <h2 class='ven'><%= link_to concert.venue, concert_path(concert.id) %></h2><br>
            <h4 class='con_date'><%= concert.date_time.strftime("%b . %d . %Y") %></h4><br>
