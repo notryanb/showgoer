@@ -1,15 +1,15 @@
-<div id='user_prof'>
+<div id='dashboard'>
 
 	<div>
 		<% if current_user.url == nil %>
-		<img id='user_prof' src= "<%= gravatar_url(current_user)%>">
+		<img id='dash_user_prof' src= "<%= gravatar_url(current_user)%>">
 		<% else %>
-		<img id='user_prof' src= "<%= current_user.url %>">
+		<img id='dash_user_prof' src= "<%= current_user.url %>">
 		<% end %>
-		<p id='user_name'><%=current_user.username%></p>
-		<div id='area'>
+		<p id='dash_user_name'><%=current_user.username%></p>
+		<div id='dash_area'>
 			<%= link_to "Sign-Out", signout_path %>
-			<div id="edit_user">
+			<div id="dash_edit_user">
 				<%= link_to "Edit Profile", { :class=>"edit_profile_link" } %>
 			</div>
 		</div>
@@ -19,8 +19,12 @@
 
 	<h6>The User Videos</h6>
 	<% User.user_videos(current_user.id).each do |video| %>
-	<img src= "<%= video.thumbnail_url %>" class="dash_img">
+	<img src= "<%= video.thumbnail_url %>" class="dashboard_img">
 	<% end %>
+
+
+
+	<% if false %>
 
 	<h6>The Concerts that the User Contributed to</h6>
 	<% User.user_contributed_concerts(current_user.id).each do |concert| %>
@@ -49,5 +53,8 @@
 	<% else %>
 	<h6> The User hasen't attended any concerts yet!</h6>
 	<% end %>
+	<% end %>
+
+
 	<% end %>
 </div>
