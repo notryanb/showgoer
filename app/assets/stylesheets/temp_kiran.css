@@ -1,3 +1,6 @@
 .all_users_page a {
   color: red;
 }
+#comment_msg {
+  display: none;
+}
