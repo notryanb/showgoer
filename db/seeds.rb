@@ -43,20 +43,45 @@ mb = Concert.create!(venue: "Mr. Beery's", date_time: "2015-03-30 20:00:00")
 wp = Artist.create!(name: "Wax Phantom")
 fp = Artist.create!(name: "Fellow Project")
 vd = Artist.create!(name: "Veda")
+ic = Artist.create!(name: "Iron Chic")
 
+Appearance.create!(artist_id: ic.id, concert_id: mb.id)
 Appearance.create!(artist_id: wp.id, concert_id: mb.id)
 Appearance.create!(artist_id: fp.id, concert_id: mb.id)
 Appearance.create!(artist_id: vd.id, concert_id: mb.id)
 
-Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/43a8f032-9864-4cbc-81b0-ea1660d3769fWax+Phantom+-+02.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 6, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/43a8f032-9864-4cbc-81b0-ea1660d3769fWax+Phantom+-+02.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Wax+Phantom+-+01.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 4, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Wax+Phantom+-+01.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 3, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Veda+-+03.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 5, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Veda+-+03.mp4", thumbnail_url: THUMBNAILS.sample)
+#------------------------------------------------------------------
+ws = Concert.create!(venue: "Wood Shop, LI", date_time: "2015-02-15 19:00:00")
+dp = Artist.create!(name: "Deep Pockets")
 
+Appearance.create!(artist_id: ic.id, concert_id: ws.id)
+Appearance.create!(artist_id: fp.id, concert_id: ws.id)
+Appearance.create!(artist_id: dp.id, concert_id: ws.id)
 
+Video.create!(user_id: 2, concert_id: ws, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Bear+Trade+-+02+York+UK.mp4", thumbnail_url: THUMBNAILS[0])
 
+Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Bit+Shifter.mp4", thumbnail_url: THUMBNAILS[1])
 
+Video.create!(user_id: 8, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS.sample)
+
+#------------------------------------------------------------------
+dba = Concert.create!(venue: "Death By Audio", date_time: "2014-11-01 18:30:00")
+tm = Artist.create!(name: "Tenement")
+
+Appearance.create!(artist_id: tm.id, concert_id: dba.id)
+Appearance.create!(artist_id: ic.id, concert_id: dba.id)
+Appearance.create!(artist_id: fp.id, concert_id: dba.id)
+
+Video.create!(user_id: 11, concert_id: dba, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Fellow+Project+-+03+Norwich+UK.mp4", thumbnail_url: THUMBNAILS.sample)
+
+Video.create!(user_id: 1, concert_id: dba, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Fellow+Project+-+02+Norwich+UK.mp4", thumbnail_url: THUMBNAILS[2])
+
+Video.create!(user_id: 1, concert_id: dba, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS[3])
 
 
 
@@ -212,3 +237,25 @@ Following.create(originator_id:14,target_id:2)
 # appearance6 = Appearance.create(artist_id: 1, concert_id:6)
 # appearance7 = Appearance.create(artist_id: 1, concert_id:1)
 # appearance8 = Appearance.create(artist_id: 1, concert_id:2)
+
+Attend.create(user_id: 3, concert_id: mb.id)
+Attend.create(user_id: 4, concert_id: mb.id)
+Attend.create(user_id: 5, concert_id: mb.id)
+Attend.create(user_id: 6, concert_id: mb.id)
+Attend.create(user_id: 7, concert_id: mb.id)
+
+Attend.create(user_id: 8, concert_id: ws.id)
+Attend.create(user_id: 9, concert_id: ws.id)
+Attend.create(user_id: 10, concert_id: ws.id)
+Attend.create(user_id: 11, concert_id: ws.id)
+Attend.create(user_id: 12, concert_id: ws.id)
+Attend.create(user_id: 13, concert_id: ws.id)
+Attend.create(user_id: 14, concert_id: ws.id)
+
+Attend.create(user_id: 2, concert_id: ws.id)
+Attend.create(user_id: 4, concert_id: ws.id)
+Attend.create(user_id: 6, concert_id: ws.id)
+Attend.create(user_id: 8, concert_id: ws.id)
+Attend.create(user_id: 10, concert_id: ws.id)
+Attend.create(user_id: 12, concert_id: ws.id)
+Attend.create(user_id: 14, concert_id: ws.id)
