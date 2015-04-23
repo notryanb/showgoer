@@ -1,16 +1,21 @@
 <div class="all_users_page">
   <div id='user_prof'>
     <div>
-      <img id='user_prof' src= "<%= @user.url%>">
+     <% if @user.url == nil %>
+    <img id='dash_user_prof' src= "<%= gravatar_url(@user)%>">
+    <% else %>
+    <img id='dash_user_prof' src= "<%= @user.url %>">
+    <% end %>
       <p id='user_name'>@<%=@user.username %></p>
       <div id='area'>
         <div id="edit_user">
-
+          <% if current_user %>
           <%= link_to "Follow", createfollowings_path(@user.id), :class=>"follow_link", data:{ :originator_id => current_user.id, :target_id => @user.id }, method: :post %>
           <%= link_to "Followers", originators_path(@user.id) %>
           <%= @user_followers_count %>
           <%= link_to "Following", targets_path(@user.id) %>
           <%= @user_followings_count %>
+          <% end %>
         </div>
       </div>
     </div>
