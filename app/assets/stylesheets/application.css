@@ -617,11 +617,20 @@ ul:hover {
 }
 
 #user_name {
-	margin-left: 2em;
+	  font-family: 'Raleway', sans-serif;
+  position: absolute;
+   margin-left: 13.5em;
+  margin-top: -2em;
+  z-index: 100;
+  color: gray;
 }
 
 .vid_img{
 	margin-top: 2em;
+}
+
+.all_users_page {
+	  margin-top: 10em;
 }
 /****************ALL SHOWS****************/
 
@@ -817,12 +826,16 @@ ul:hover {
 
 
 #edit_user {
-	background: white;
-	padding: 3em 4
-	em 1em 1em;
-	margin-top: -3em;
-	box-shadow: 5px 10px 5px #888888;
-	margin-top: 4em;
+  background: white;
+  padding: 3em 4 em 1em 1em;
+  margin-top: -3em;
+  box-shadow: 5px 10px 5px #888888;
+  margin-top: 3.2em;
+  padding-top: 3em;
+  margin-left: -0.5em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 5em;
 
 }
 
@@ -853,8 +866,8 @@ ul:hover {
 #user_name {
 		font-family: 'Raleway', sans-serif;
 	position: absolute;
-	margin-left: 14.5em;
-	margin-top: -1em;
+  margin-left: 13.5em;
+  margin-top: -2em;
 	z-index: 100;
 	color: gray;
 }
@@ -932,6 +945,8 @@ ul:hover {
 	margin-top: -.4em;
 	padding-bottom: 1.2em;
 	transition-duration: .8s;
+	top: 0;
+}
 /************************USER PROF********************/
 
 
@@ -1016,6 +1031,9 @@ ul:hover {
 	  width: 17em;
   margin-top: 11em;
   margin-left: 3em;
+  border-width: .3em;
+  border-style: solid;
+  border-color: white;
 }
 
 
