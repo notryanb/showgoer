@@ -62,25 +62,25 @@ Appearance.create!(artist_id: ic.id, concert_id: ws.id)
 Appearance.create!(artist_id: fp.id, concert_id: ws.id)
 Appearance.create!(artist_id: dp.id, concert_id: ws.id)
 
-Video.create!(user_id: 2, concert_id: ws, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Bear+Trade+-+02+York+UK.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 2, concert_id: ws, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Bear+Trade+-+02+York+UK.mp4", thumbnail_url: THUMBNAILS[0])
 
-Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Bit+Shifter.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 2, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Bit+Shifter.mp4", thumbnail_url: THUMBNAILS[1])
 
 Video.create!(user_id: 8, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS.sample)
 
 #------------------------------------------------------------------
-kf = Concert.create!(venue: "Death By Audio", date_time: "2014-11-01 18:30:00")
+dba = Concert.create!(venue: "Death By Audio", date_time: "2014-11-01 18:30:00")
 tm = Artist.create!(name: "Tenement")
 
-Appearance.create!(artist_id: tm.id, concert_id: kf.id)
-Appearance.create!(artist_id: ic.id, concert_id: kf.id)
-Appearance.create!(artist_id: fp.id, concert_id: kf.id)
+Appearance.create!(artist_id: tm.id, concert_id: dba.id)
+Appearance.create!(artist_id: ic.id, concert_id: dba.id)
+Appearance.create!(artist_id: fp.id, concert_id: dba.id)
 
-Video.create!(user_id: 11, concert_id: ws, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Bear+Trade+-+02+York+UK.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 11, concert_id: dba, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Fellow+Project+-+03+Norwich+UK.mp4", thumbnail_url: THUMBNAILS.sample)
 
-Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/BlipFest+2012+-+Bit+Shifter.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 1, concert_id: dba, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Fellow+Project+-+02+Norwich+UK.mp4", thumbnail_url: THUMBNAILS[2])
 
-Video.create!(user_id: 1, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS.sample)
+Video.create!(user_id: 1, concert_id: dba, url: "https://s3.amazonaws.com/dbc.showgoer.videos/d76342a4-3506-4263-bcdd-b81e5d48cf52Fellow+Project+-+04+Larissa_Greece.mp4", thumbnail_url: THUMBNAILS[3])
 
 
 
@@ -249,4 +249,12 @@ Attend.create(user_id: 10, concert_id: ws.id)
 Attend.create(user_id: 11, concert_id: ws.id)
 Attend.create(user_id: 12, concert_id: ws.id)
 Attend.create(user_id: 13, concert_id: ws.id)
+Attend.create(user_id: 14, concert_id: ws.id)
+
+Attend.create(user_id: 2, concert_id: ws.id)
+Attend.create(user_id: 4, concert_id: ws.id)
+Attend.create(user_id: 6, concert_id: ws.id)
+Attend.create(user_id: 8, concert_id: ws.id)
+Attend.create(user_id: 10, concert_id: ws.id)
+Attend.create(user_id: 12, concert_id: ws.id)
 Attend.create(user_id: 14, concert_id: ws.id)
