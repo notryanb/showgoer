@@ -1,12 +1,19 @@
   
-  <header id='concert_header'>
-    <ul class="concert_menu wow bounceInUp animated">
-      <li class='line'>_____</li>
-      <li class='line'>_____</li>
-      <li class='line'>_____</li>
-    </ul>
-    <%= link_to image_tag('camera.png', id: 'camera_concert'), root_path %>
-  </header>
+  <header id='artist_header'>
+  <ul class="concert_menu wow bounceInUp animated">
+    <li class='concert_line'>_____</li>
+    <li class='concert_line'>_____</li>
+    <li class='concert_line'>_____</li>
+  </ul>
+  <div id='music'>
+    <%= image_tag 'pillar1.png', class: 'pillars_menu', id: 'pillar1_menu' %>
+    <%= image_tag 'pillar2.png', class: 'pillars_menu', id: 'pillar2_menu' %>
+    <%= image_tag 'pillar3.png', class: 'pillars_menu', id: 'pillar3_menu' %>
+    <%= image_tag 'pillar2.png', class: 'pillars_menu', id: 'pillar2_2_menu' %>
+    <%= image_tag 'pillar1.png', class: 'pillars_menu', id: 'pillar1_1_menu' %>
+  </div>
+  <%= link_to image_tag('camera.png', id: 'camera_concert'), root_path %>
+</header>
 
 
 <div id='vid_area'>
@@ -35,7 +42,7 @@
 
       <div id='past_sect'>
        <h3 id='past'> Past Concerts </h3>
-       <p>Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> | <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
+       <p class="sort">Sort: <%= link_to "newest", artist_path(:sort_type => "newest" ) %> | <%= link_to "oldest", artist_path(:sort_type => "oldest" ) %><br></p>
         <div id='vids'>     
          <% @artist_past_concerts.each do |concert| %>
            <% if concert.videos.count > 0 %>
@@ -47,6 +54,7 @@
          </div><br>
       </div>
 
+  <%if false %>
   <div id='upcoming'>
        <h3> Upcoming Concerts </h3>
 
@@ -55,4 +63,5 @@
        <%= concert.date_time.strftime("%b . %d . %Y") %><br><br>
        <% end %>
   </div>
+  <% end %>
   </div>

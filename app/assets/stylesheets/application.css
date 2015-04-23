@@ -623,9 +623,11 @@ ul:hover {
 #past_sect {
   float: left;
   width: 70%;
-  background-color: rgb(237, 225, 197);
+  background-color: rgba(92, 90, 90, 0.23);
   padding-right: 2em;
   padding-bottom: 2em;
+  margin-left: 11em;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 #past {
@@ -639,11 +641,13 @@ ul:hover {
 
 .spread {
 	background-color: black;
-	height: 15em;
+	height: 10em;
 	width: 15em;
 	margin-top: 1em;
-	margin-left: 1em;
+	margin-left: 1.46em;
 	display: inline-block;
+	-webkit-filter: blur(2px);
+	  box-shadow: 5px 5px 5px #888888;
 }
 
 .one_vid {
@@ -651,9 +655,11 @@ ul:hover {
 	height: 25em;
 	width: 40em;
 	margin-top: 1em;
-	margin-left: 1em;
+	margin-left: 9.5em;
 	display: inline-block;
-	-webkit-filter: blur(3px);
+	-webkit-filter: blur(2px);
+	  box-shadow: 5px 5px 5px #888888;
+
 
 }
 
@@ -665,11 +671,12 @@ ul:hover {
 }
 
 #many {
-	height: 3em;
-	width: 3em;
-	float: right;
-	margin-right: 6.4em;
-	margin-top: .4em;
+	  height: 3em;
+  width: 3em;
+  float: right;
+  margin-left: 12.4em;
+  margin-top: .4em;
+  position: absolute;
 }
 
 #a_name {
@@ -844,7 +851,7 @@ margin-left: 22em;
 
 .ven {
 	  position: absolute;
-  margin-left: 2.7em;
+  margin-left: 5em;
   margin-top: -4em;
   font-size: 4em;
   color: white;
@@ -853,9 +860,13 @@ margin-left: 22em;
     border-bottom-style: solid;
 }
 
+.ven2 {
+
+}
+
 .con_date {
 	  position: absolute;
-  margin-left: 6.7em;
+  margin-left: 11em;
   margin-top: -5.4em;
   font-size: 2em;
   color: white;
@@ -863,7 +874,29 @@ margin-left: 22em;
   font-family: 'Raleway', sans-serif;
 }
 
+.con_date2 {
 
+}
+
+#artist_header {
+	background-color: rgba(255, 0, 0, 0.83);
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	margin-top: -.4em;
+	padding-bottom: 1.2em;
+	transition-duration: .8s;
+
+}
+
+.sort {
+  margin-left: 1.4em;
+  background: red;
+  width: 18%;
+  padding: .6em;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 3px 3px 3px #888888;
+  }
 
 
 
