@@ -5,7 +5,6 @@ set :application, 'showgoer'
 set :repo_url, 'git@github.com:phanendar/showgoer.git'
 set :branch, 'deploy'
 
-git@github.com:phanendar/showgoer.git
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
