@@ -243,7 +243,7 @@ ul:hover {
 	margin-top: .4em;
 	text-decoration: none;
 	transition-duration: .3s;
-	margin-left: -4em;
+	margin-left: 4em;
 }
 
 
@@ -551,12 +551,15 @@ ul:hover {
 }
 
 #off_left {
-	position: absolute;
+	position: fixed;
 	top: 0;
-	right: 0;
+	/* right: -21em; */
 	bottom: 0;
 	left: 0;
-	overflow: hidden;
+	/* overflow: hidden; */
+	/* margin-left: 63em; */
+	/* border-left: 11px solid white; */
+	z-index: 100;
 }
 
 #ex3 {
@@ -573,7 +576,7 @@ ul:hover {
 	padding-top: .05em;
 	padding-bottom: .05em;
 	  margin-top: 4.4em;
-  margin-left: 29em;
+  margin-left: 33em;
 }
 
 #ex3:hover {
@@ -609,20 +612,29 @@ ul:hover {
 #area {
 	margin-left: 9em;
   position: absolute;
+
   margin-top: -6em;
 }
 
 #user_name {
 	margin-left: 2em;
 }
+
+.vid_img{
+	margin-top: 2em;
+}
 /****************ALL SHOWS****************/
 
 #past_sect {
   float: left;
   width: 70%;
-  background-color: rgb(237, 225, 197);
+  background-color: rgba(92, 90, 90, 0.23);
   padding-right: 2em;
   padding-bottom: 2em;
+  margin-left: 11em;
+  box-shadow: 5px 5px 5px #888888;
+  bottom: 0;
+  margin-top: -25em;
 }
 
 #past {
@@ -636,11 +648,13 @@ ul:hover {
 
 .spread {
 	background-color: black;
-	height: 15em;
+	height: 10em;
 	width: 15em;
 	margin-top: 1em;
-	margin-left: 1em;
+	margin-left: 1.46em;
 	display: inline-block;
+	-webkit-filter: blur(2px);
+	  box-shadow: 5px 5px 5px #888888;
 }
 
 .one_vid {
@@ -648,8 +662,11 @@ ul:hover {
 	height: 25em;
 	width: 40em;
 	margin-top: 1em;
-	margin-left: 1em;
+	margin-left: 9.5em;
 	display: inline-block;
+	-webkit-filter: blur(2px);
+	  box-shadow: 5px 5px 5px #888888;
+
 
 }
 
@@ -661,11 +678,12 @@ ul:hover {
 }
 
 #many {
-	height: 3em;
-	width: 3em;
-	float: right;
-	margin-right: 6.4em;
-	margin-top: .4em;
+	  height: 3em;
+  width: 3em;
+  float: right;
+  margin-left: 12.5em;
+  margin-top: -24.8em;
+  position: absolute;
 }
 
 #a_name {
@@ -788,12 +806,216 @@ ul:hover {
   margin-top: .4em;
   text-decoration: none;
   transition-duration: .3s;
-margin-left: 22em;
+	margin-left: 30em;
+}
+
+.container {
+	padding-bottom-bottom: 3em;
+}
+
+/************************USER PROF********************/
+
+
+#edit_user {
+	background: white;
+	padding: 3em 4
+	em 1em 1em;
+	margin-top: -3em;
+	box-shadow: 5px 10px 5px #888888;
+	margin-top: 4em;
+
+}
+
+ #user_prof img {
+ 	margin-top: -2.8em;
+ 	  box-shadow: 5px 7px 5px #888888;
+ 	  position: absolute;
+ }
+
+#edit_user text {
+	font-size: 10em;
+}
+
+#edit_user a {
+	font-family: 'Raleway', sans-serif;
+
+}
+
+.follow_link {
+	font-family: 'Raleway', sans-serif;
+	position: absolute;
+	margin-top: -2.5em;
+	color: white !important;
+	background: rgb(13, 250, 13);
+	padding: .3em;
+}
+
+#user_name {
+		font-family: 'Raleway', sans-serif;
+	position: absolute;
+	margin-left: 14.5em;
+	margin-top: -1em;
+	z-index: 100;
+	color: gray;
+}
+
+.concert_ven {
+	margin-top: 4.5em;
+	position: absolute;
+	font-size: .9em;
+	margin-left: 1.4em;
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 2px #888888;
+  border-bottom-style: solid;
+}
+
+.concert_date {
+  margin-top: 14.5em;
+  position: absolute;
+  font-size: .9em;
+  margin-left: 5.4em;
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 2px #888888;
+}
+
+/*################ARTIST SHOW****************/
+
+.ven {
+	  position: absolute;
+  margin-left: 5em;
+  margin-top: -4em;
+  font-size: 4em;
+  color: white;
+  text-shadow:  1px 1px 1px #888888;
+    font-family: 'Raleway', sans-serif;
+    border-bottom-style: solid;
+}
+
+.ven2 {
+	  position: absolute;
+  margin-left: 2.2em;
+  margin-top: -4em;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 1px #888888;
+  font-family: 'Raleway', sans-serif;
+  border-bottom-style: solid;
+}
+
+.con_date {
+	  position: absolute;
+  margin-left: 11em;
+  margin-top: -5.4em;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 1px #888888;
+  font-family: 'Raleway', sans-serif;
+}
+
+.con_date2 {
+	  position: absolute;
+  margin-left: 6em;
+  margin-top: -5.1em !important;
+  font-size: 1em;
+  color: white;
+  text-shadow: 1px 1px 1px #888888;
+  font-family: 'Raleway', sans-serif;
+}
+
+#artist_header {
+	background-color: rgba(255, 0, 0, 0.83);
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	margin-top: -.4em;
+	padding-bottom: 1.2em;
+	transition-duration: .8s;
+/************************USER PROF********************/
+
+
+#edit_user {
+	background: white;
+	padding: 3em 1em 1em 1em;
+	margin-top: -3em;
+	box-shadow: 5px 10px 5px #888888;
+	margin-top: 4em;
+
+}
+
+ #user_prof img {
+ 	margin-top: -2.8em;
+ 	  box-shadow: 5px 7px 5px #888888;
+ 	  position: absolute;
+ }
+
+#edit_user text {
+	font-size: 10em;
+}
+
+#edit_user a {
+	font-family: 'Raleway', sans-serif;
+
+}
+
+.follow_link {
+	font-family: 'Raleway', sans-serif;
+	position: absolute;
+	margin-top: -2.5em;
+	color: white !important;
+	background: rgb(13, 250, 13);
+	padding: .3em;
+}
+
+#user_name {
+		font-family: 'Raleway', sans-serif;
+	position: absolute;
+	margin-left: 14.5em;
+	margin-top: -1em;
+	z-index: 100;
+	color: gray;
 }
 
 
+}
 
+.sort {
+  margin-left: 1.4em;
+  background: red;
+  width: 18%;
+  padding: .6em;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 3px 3px 3px #888888;
+  }
 
+/**************Dashboard*************/
 
+#dash_user_prof {
+	  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 8em;
+  margin-left: 2em;
+}
+
+#dash_area {
+	position: absolute;
+	margin-top: 8em;
+	margin-left: 8em;
+}
+
+.edit_profile_link {
+	margin-top: 6.6em;
+	position: absolute;
+	margin-left: 7.9em;
+}
+
+.dashboard_img {
+	  width: 17em;
+  margin-top: 11em;
+  margin-left: 3em;
+}
 
 

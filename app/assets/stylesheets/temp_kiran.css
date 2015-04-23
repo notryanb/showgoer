@@ -12,4 +12,7 @@
 .dash_img {
   height: 150px;
   width: auto;
-}
+  position: absolute;
+  margin-top: 8em !important;
+  -webkit-filter: blur(1px);
+}	

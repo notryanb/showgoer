@@ -39,6 +39,8 @@ $(document).ready(function() {
 
      $("#many").click(function(){
         $(".spread").toggleClass("one_vid");
+        $(".ven").toggleClass("ven2");
+        $(".con_date").toggleClass("con_date2");
     });
 
 });
