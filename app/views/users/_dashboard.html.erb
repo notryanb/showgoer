@@ -43,8 +43,8 @@
 	<% if current_user %>
 	<% if @user_attendance.count > 0 %>
 	<%  @user_attendance.each do |concert| %>
-	<%= concert.venue %>
-	<%= concert.date_time.strftime("%b . %d . %Y") %>
+	<%= concert.concert.venue %>
+	<%= concert.concert.date_time.strftime("%b . %d . %Y") %>
 	<% end %>
 	<% else %>
 	<h6> The User hasen't attended any concerts yet!</h6>
