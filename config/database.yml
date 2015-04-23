@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: showgoer_production
-  username: showgoer
-  password: <%= ENV['SHOWGOER_DATABASE_PASSWORD'] %>
+  database: rails
