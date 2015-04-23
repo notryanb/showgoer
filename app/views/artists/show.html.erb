@@ -42,7 +42,7 @@
              <%= link_to image_tag(concert.videos.sample.thumbnail_url, class: "vid  one_vid spread"),concert_path(concert.id) %>
            <% end %>
            <h2 class='ven'><%= link_to concert.venue, concert_path(concert.id) %></h2><br>
-           <%= concert.date_time.strftime("%b . %d . %Y") %><br>
+           <h4 class='con_date'><%= concert.date_time.strftime("%b . %d . %Y") %></h4><br>
          <% end %>
          </div><br>
       </div>
