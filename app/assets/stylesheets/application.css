@@ -925,7 +925,7 @@ ul:hover {
 }
 
 #artist_header {
-	background-color: rgba(255, 0, 0, 0.83);
+	background-color: rgba(26, 25, 25, 0.83);
 	position: fixed;
 	z-index: 100;
 	width: 100%;
