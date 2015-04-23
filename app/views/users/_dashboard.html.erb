@@ -14,6 +14,12 @@
 			</div>
 		</div>
 	</div>
+	<% if current_user %>
+          <%= link_to "Followers", originators_path(current_user.id) %>
+          <%= @user_followers_count %>
+          <%= link_to "Following", targets_path(current_user.id) %>
+          <%= @user_followings_count %>
+          <% end %>
 
 	<!-- @user_videos = Video.where(user_id = current_user.url) -->
 
