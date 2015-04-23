@@ -619,6 +619,10 @@ ul:hover {
 #user_name {
 	margin-left: 2em;
 }
+
+.vid_img{
+	margin-top: 2em;
+}
 /****************ALL SHOWS****************/
 
 #past_sect {
@@ -805,6 +809,10 @@ ul:hover {
 	margin-left: 30em;
 }
 
+.container {
+	padding-bottom-bottom: 3em;
+}
+
 /************************USER PROF********************/
 
 
@@ -848,6 +856,27 @@ ul:hover {
 	margin-top: -1em;
 	z-index: 100;
 	color: gray;
+}
+
+.concert_ven {
+	margin-top: 4.5em;
+	position: absolute;
+	font-size: .9em;
+	margin-left: 1.4em;
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 2px #888888;
+  border-bottom-style: solid;
+}
+
+.concert_date {
+  margin-top: 14.5em;
+  position: absolute;
+  font-size: .9em;
+  margin-left: 5.4em;
+  color: white !important;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 2px #888888;
 }
 
 /*################ARTIST SHOW****************/

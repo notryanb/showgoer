@@ -21,12 +21,15 @@
     <% end %>
 
     <% User.user_contributed_concerts(@user.id).each do |concert| %>
-    <%= link_to concert.venue, concert_path(concert.id) %>
-    <%= concert.date_time.strftime("%b . %d . %Y")  %><br>
+    <h2><%= link_to concert.venue, concert_path(concert.id), class: "concert_ven" %></h2>
+    <h4 class="concert_date"><%= concert.date_time.strftime("%b . %d . %Y")  %></h4><br>
     <% end %>
   </div>
 </div>
 
+
+
+<% if false %>
 <div>
 <h6>The Videos that the User has liked.</h6>
 <% if current_user %>
@@ -51,9 +54,7 @@
 <% end %>
 <% end %>
 </div>
-
-
-
+<% end %>
 
 
 
