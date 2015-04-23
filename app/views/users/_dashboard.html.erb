@@ -19,7 +19,7 @@
 
 	<h6>The User Videos</h6>
 	<% User.user_videos(current_user.id).each do |video| %>
-	<%= video.url %>
+	<img src= "<%= video.thumbnail_url %>" class="dash_img">
 	<% end %>
 
 	<h6>The Concerts that the User Contributed to</h6>

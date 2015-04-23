@@ -16,7 +16,7 @@
 
 
     <% User.user_videos(@user.id).each do |video| %>
-    <%= video.url %><br>
+    <img src= "<%= video.thumbnail_url %>" class="dash_img">
     <% end %>
 
     <% User.user_contributed_concerts(@user.id).each do |concert| %>
