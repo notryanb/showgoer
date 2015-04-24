@@ -2,11 +2,11 @@
 
 <% related_videos.each do |video| %>
 <% if video.user.url == nil %>
-<img id='dash_user_prof' src= "<%= gravatar_url(video.user)%>">
+<img id='con_user_prof' src= "<%= gravatar_url(video.user)%>">
 <% else %>
-<img id='dash_user_prof' src= "<%= video.user.url %>">
+<img id='con_user_prof' src= "<%= video.user.url %>">
 <% end %>
-<p id='con_user_name'><%= link_to video.user.username, user_path(video.user.id) %></p>
+<p id='con_user_name'><%= link_to video.user.username, user_path(video.user.id), class: 'c_user_name' %></p>
 <video class="concert-video" width="600" controls>
   <source src="<%= video.url %>" type="video/mp4">
   </video>
