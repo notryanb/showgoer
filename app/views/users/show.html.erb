@@ -1,29 +1,51 @@
+  <header id='artist_header'>
+  <ul class="concert_menu wow bounceInUp animated">
+    <li class='concert_line'>_____</li>
+    <li class='concert_line'>_____</li>
+    <li class='concert_line'>_____</li>
+  </ul>
+  <div id='music'>
+    <%= image_tag 'pillar1.png', class: 'pillars_menu', id: 'pillar1_menu' %>
+    <%= image_tag 'pillar2.png', class: 'pillars_menu', id: 'pillar2_menu' %>
+    <%= image_tag 'pillar3.png', class: 'pillars_menu', id: 'pillar3_menu' %>
+    <%= image_tag 'pillar2.png', class: 'pillars_menu', id: 'pillar2_2_menu' %>
+    <%= image_tag 'pillar1.png', class: 'pillars_menu', id: 'pillar1_1_menu' %>
+  </div>
+  <%= link_to image_tag('camera.png', id: 'camera_concert'), root_path %>
+</header>
+
 <div class="all_users_page">
   <div id='user_prof'>
     <div>
-      <img id='user_prof' src= "<%= @user.url%>">
+     <% if @user.url == nil %>
+    <img id='show_user_prof' src= "<%= gravatar_url(@user)%>">
+    <% else %>
+    <img id='show_user_prof' src= "<%= @user.url %>">
+    <% end %>
       <p id='user_name'>@<%=@user.username %></p>
       <div id='area'>
         <div id="edit_user">
-
+          <% if current_user %>
           <%= link_to "Follow", createfollowings_path(@user.id), :class=>"follow_link", data:{ :originator_id => current_user.id, :target_id => @user.id }, method: :post %>
           <%= link_to "Followers", originators_path(@user.id) %>
           <%= @user_followers_count %>
           <%= link_to "Following", targets_path(@user.id) %>
           <%= @user_followings_count %>
+          <% end %>
         </div>
       </div>
     </div>
 
+    <div class='user_vids'>
+      <% User.user_videos(@user.id).each do |video| %>
+      <img src= "<%= video.thumbnail_url %>" class="dash_img">
+      <% end %>
 
-    <% User.user_videos(@user.id).each do |video| %>
-    <img src= "<%= video.thumbnail_url %>" class="dash_img">
-    <% end %>
-
-    <% User.user_contributed_concerts(@user.id).each do |concert| %>
-    <h2><%= link_to concert.venue, concert_path(concert.id), class: "concert_ven" %></h2>
-    <h4 class="concert_date"><%= concert.date_time.strftime("%b . %d . %Y")  %></h4><br>
-    <% end %>
+      <% User.user_contributed_concerts(@user.id).each do |concert| %>
+      <h2><%= link_to concert.venue, concert_path(concert.id), class: "concert_ven" %></h2>
+      <h4 class="concert_date"><%= concert.date_time.strftime("%b . %d . %Y")  %></h4><br>
+      <% end %>
+    </div>
   </div>
 </div>
 
