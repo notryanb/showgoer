@@ -610,7 +610,7 @@ ul:hover {
 }
 
 #area {
-	margin-left: 9em;
+	margin-left: 7.4em;
   position: absolute;
 
   margin-top: -6em;
@@ -643,7 +643,7 @@ ul:hover {
   margin-left: 11em;
   box-shadow: 5px 5px 5px #888888;
   bottom: 0;
-  margin-top: -25em;
+  margin-top: -26.3em;
 }
 
 #past {
@@ -687,12 +687,13 @@ ul:hover {
 }
 
 #many {
-	  height: 3em;
-  width: 3em;
-  float: right;
-  margin-left: 12.5em;
-  margin-top: -24.8em;
-  position: absolute;
+	height: 3em;
+	width: 3em;
+	float: right;
+	margin-left: 11em;
+	margin-top: -26.3em;
+	position: absolute;
+	box-shadow: 3px 3px 3px #282020;
 }
 
 #a_name {
@@ -822,6 +823,19 @@ ul:hover {
 	padding-bottom-bottom: 3em;
 }
 
+.c_user_name {
+	color: grey;
+}
+
+#con_user_prof {
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	position: absolute;
+	margin-top: 4.3em;
+	margin-left: .5em;
+}
+
 /************************USER PROF********************/
 
 
@@ -893,7 +907,22 @@ ul:hover {
   text-shadow: 2px 2px 2px #888888;
 }
 
+#show_user_prof {
+	  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 8em;
+  margin-left: 36em;
+}
+
 /*################ARTIST SHOW****************/
+
+.art_name {
+	text-shadow: 5px 5px 5px #888888;
+  font-family: 'Raleway', sans-serif;
+
+}
 
 .ven {
 	  position: absolute;
@@ -946,16 +975,18 @@ ul:hover {
 	padding-bottom: 1.2em;
 	transition-duration: .8s;
 	top: 0;
+	margin-left: -.3em;
 }
 /************************USER PROF********************/
 
 
 #edit_user {
-	background: white;
-	padding: 3em 1em 1em 1em;
-	margin-top: -3em;
-	box-shadow: 5px 10px 5px #888888;
-	margin-top: 4em;
+	  background: white;
+  padding: 3em 7em 1em 1em;
+  margin-top: -3em;
+  box-shadow: 5px 10px 5px #888888;
+  margin-top: 14em;
+  margin-left: 24em;
 
 }
 
@@ -985,11 +1016,11 @@ ul:hover {
 
 #user_name {
 		font-family: 'Raleway', sans-serif;
-	position: absolute;
-	margin-left: 14.5em;
-	margin-top: -1em;
-	z-index: 100;
-	color: gray;
+  position: absolute;
+  margin-left: 36.5em;
+  margin-top: 8.8em;
+  z-index: 100;
+  color: gray;
 }
 
 
@@ -1003,6 +1034,12 @@ ul:hover {
   font-family: 'Raleway', sans-serif;
   box-shadow: 3px 3px 3px #888888;
   }
+
+ .user_vids {
+ 	display: inline-block;
+ 	margin-top: 9em;
+ 	margin-left: 1em;
+ }
 
 /**************Dashboard*************/
 

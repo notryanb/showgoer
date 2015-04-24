@@ -18,9 +18,9 @@
   <div id='user_prof'>
     <div>
      <% if @user.url == nil %>
-    <img id='dash_user_prof' src= "<%= gravatar_url(@user)%>">
+    <img id='show_user_prof' src= "<%= gravatar_url(@user)%>">
     <% else %>
-    <img id='dash_user_prof' src= "<%= @user.url %>">
+    <img id='show_user_prof' src= "<%= @user.url %>">
     <% end %>
       <p id='user_name'>@<%=@user.username %></p>
       <div id='area'>
@@ -36,15 +36,16 @@
       </div>
     </div>
 
+    <div class='user_vids'>
+      <% User.user_videos(@user.id).each do |video| %>
+      <img src= "<%= video.thumbnail_url %>" class="dash_img">
+      <% end %>
 
-    <% User.user_videos(@user.id).each do |video| %>
-    <img src= "<%= video.thumbnail_url %>" class="dash_img">
-    <% end %>
-
-    <% User.user_contributed_concerts(@user.id).each do |concert| %>
-    <h2><%= link_to concert.venue, concert_path(concert.id), class: "concert_ven" %></h2>
-    <h4 class="concert_date"><%= concert.date_time.strftime("%b . %d . %Y")  %></h4><br>
-    <% end %>
+      <% User.user_contributed_concerts(@user.id).each do |concert| %>
+      <h2><%= link_to concert.venue, concert_path(concert.id), class: "concert_ven" %></h2>
+      <h4 class="concert_date"><%= concert.date_time.strftime("%b . %d . %Y")  %></h4><br>
+      <% end %>
+    </div>
   </div>
 </div>
 

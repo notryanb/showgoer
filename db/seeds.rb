@@ -52,6 +52,7 @@ Appearance.create!(artist_id: wp.id, concert_id: mb.id)
 Appearance.create!(artist_id: fp.id, concert_id: mb.id)
 Appearance.create!(artist_id: vd.id, concert_id: mb.id)
 
+
 Video.create!(user_id: 6, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/43a8f032-9864-4cbc-81b0-ea1660d3769fWax+Phantom+-+02.mp4", thumbnail_url: THUMBNAILS.sample)
 
 Video.create!(user_id: 4, concert_id: 1501, url: "https://s3.amazonaws.com/dbc.showgoer.videos/Wax+Phantom+-+01.mp4", thumbnail_url: THUMBNAILS.sample)
